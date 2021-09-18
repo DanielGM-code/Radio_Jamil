@@ -1,0 +1,176 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background-color: #303743;
+}
+
+.div-ventana{
+	width: 200vh;
+	height: 97vh;
+	margin: auto;
+	
+	/* Propiedades de flexbox */
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.div-ventana div{
+	margin: 2%;
+}
+
+.div-contenedorLogo{
+	width: 45vh;
+	height: 60vh;
+}
+
+.div-contenedorInicioDeSesion{
+	width: 70vh;
+	height: 60vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background: #313949;
+	box-shadow: inset -5px -5px 10px rgba(57, 66, 83, 0.25), inset 5px 5px 10px #262C37;
+	border-radius: 50px;
+}
+
+.div-contenedorFormulario{
+	width: 80vh;
+	height: 40vh;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: auto;
+	align-items: center;
+}
+
+.div-contenedorFormulario div, img{
+	margin: 2%;
+}
+
+.image-botonLogo{
+	width: 45vh;
+	height: 45vh;
+	border: 2px solid rgba(49, 57, 73, 0.5);
+	box-sizing: border-box;
+	filter: drop-shadow(-10px -10px 20px rgba(72, 80, 99, 0.26)) drop-shadow(10px 10px 20px #262C37);
+	border-radius: 60px;
+  	cursor: pointer;
+  	transition: all 0.3s ease-in-out;
+}
+
+.image-botonLogo:hover{
+	transform: scale(1.1);
+}
+
+.image-botonLogo:focus {
+  animation: shrink  1s ease;
+  animation-iteration-count: 1;
+}
+
+.image-botonLogo:active {
+  animation: shrink  1s ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes shrink {
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+.button-iniciarSesion:hover{
+	transform: scale(1.1);
+}
+
+.button-iniciarSesion:focus {
+  animation: swing 1s ease;
+  animation-iteration-count: 1;
+}
+
+.button-iniciarSesion:active {
+  animation: swing 1s ease;
+  animation-iteration-count: 1
+}
+
+@keyframes swing {
+  15% {
+    transform: translateX(10px);
+  }
+  30% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  65% {
+    transform: translateX(-6px);
+  }
+  80% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.image-sinImagen{
+	width: 10vh;
+	height: 10vh;
+}
+
+.input-nombreUsuario{
+	width: 50vh;
+	height: 8.5vh;
+	border: 1px solid #313949;
+	background: #313949;
+	box-sizing: border-box;
+	box-shadow: inset -5px -5px 10px rgba(64, 75, 95, 0.25), inset 5px 5px 10px #2C3341;
+	border-radius: 20px;
+  	outline: none;
+	font-size: 3.5vh;
+	color: #FFFFFF;
+	padding-left: 2.3vh;
+}
+
+.input-password{
+	width: 50vh;
+	height: 8.5vh;
+	background: #313949;
+	border: 1px solid #313949;
+	box-sizing: border-box;
+	box-shadow: inset -5px -5px 10px rgba(64, 75, 95, 0.25), inset 5px 5px 10px #2C3341;
+	border-radius: 20px;
+  	outline: none;
+	font-size: 3.5vh;
+	color: #FFFFFF;
+	padding-left: 2.3vh;
+}
+
+.button-iniciarSesion{
+	width: 30vh;
+	height: 9vh;
+	background: linear-gradient(180deg, #2C3341 0%, #313949 100%);
+	border: 2px solid rgba(49, 57, 73, 0.5);
+	box-sizing: border-box;
+	box-shadow: -10px -10px 20px rgba(72, 80, 99, 0.26), 10px 10px 20px #262C37;
+	border-radius: 50px;
+	margin-bottom: 4vh;
+	font-size: 3.5vh;
+	color: #FFFFFF;
+	cursor: pointer;
+  	transition: all 0.3s ease-in-out;
+}
+
+.image-botonPausa{
+	width: 10vh;
+	height: 10vh;
+	margin-top: 2vh;
+}
