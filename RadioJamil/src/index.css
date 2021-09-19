@@ -21,12 +21,12 @@ body{
 	margin: 2%;
 }
 
-.div-contenedorLogo{
+.div-contenedor1{
 	width: 45vh;
 	height: 60vh;
 }
 
-.div-contenedorInicioDeSesion{
+.div-contenedor2{
 	width: 70vh;
 	height: 60vh;
 	display: flex;
@@ -38,7 +38,7 @@ body{
 	border-radius: 50px;
 }
 
-.div-contenedorFormulario{
+.div-contenedor-formulario{
 	width: 80vh;
 	height: 40vh;
 	display: flex;
@@ -48,11 +48,11 @@ body{
 	align-items: center;
 }
 
-.div-contenedorFormulario div, img{
+.div-contenedor-formulario div, img{
 	margin: 2%;
 }
 
-.image-botonLogo{
+.imagebutton-logo{
 	width: 45vh;
 	height: 45vh;
 	border: 2px solid rgba(49, 57, 73, 0.5);
@@ -63,16 +63,16 @@ body{
   	transition: all 0.3s ease-in-out;
 }
 
-.image-botonLogo:hover{
+.imagebutton-logo:hover{
 	transform: scale(1.1);
 }
 
-.image-botonLogo:focus {
+.imagebutton-logo:focus {
   animation: shrink  1s ease;
   animation-iteration-count: 1;
 }
 
-.image-botonLogo:active {
+.imagebutton-logo:active {
   animation: shrink  1s ease;
   animation-iteration-count: 1;
 }
@@ -86,16 +86,16 @@ body{
   }
 }
 
-.button-iniciarSesion:hover{
+.button-iniciarsesion:hover{
 	transform: scale(1.1);
 }
 
-.button-iniciarSesion:focus {
+.button-iniciarsesion:focus {
   animation: swing 1s ease;
   animation-iteration-count: 1;
 }
 
-.button-iniciarSesion:active {
+.button-iniciarsesion:active {
   animation: swing 1s ease;
   animation-iteration-count: 1
 }
@@ -121,12 +121,12 @@ body{
   }
 }
 
-.image-sinImagen{
+.image-sinimagen{
 	width: 10vh;
 	height: 10vh;
 }
 
-.input-nombreUsuario{
+.input-nombreusuario{
 	width: 50vh;
 	height: 8.5vh;
 	border: 1px solid #313949;
@@ -154,7 +154,7 @@ body{
 	padding-left: 2.3vh;
 }
 
-.button-iniciarSesion{
+.button-iniciarsesion{
 	width: 30vh;
 	height: 9vh;
 	background: linear-gradient(180deg, #2C3341 0%, #313949 100%);
@@ -169,7 +169,7 @@ body{
   	transition: all 0.3s ease-in-out;
 }
 
-.image-botonPausa{
+.imagebutton-pausa{
 	width: 10vh;
 	height: 10vh;
 	margin-top: 2vh;
