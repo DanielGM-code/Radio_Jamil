@@ -1,2 +1,1 @@
-node_modules\electron\dist\electron.exe C:\Users\dagam\Documents\GitHub\Radio_Jamil\RadioJamil
-
+node_modules\electron\dist\electron.exe F:\Documentos\GitHub\Radio_Jamil\RadioJamil
