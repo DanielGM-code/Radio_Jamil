@@ -10,7 +10,7 @@ body{
 /* Ventana principal */
 .div-ventana{
 	/* Valores para que sean compatibles con cualquier resolución */
-	width: 		200vh;
+	width: 		97vh;
 	height:		97vh;
 	margin: 	auto;
 	
