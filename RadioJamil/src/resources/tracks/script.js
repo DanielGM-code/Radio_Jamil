@@ -19,6 +19,7 @@ const cargarCancion = function (fuente) {
 const $botonReproducir = document.querySelector("#buttonReproducir");
     
 // La cancion que podemos reproducir o pausar
+// TO DO: Canciones random? 
 var numeroDeCancion = 0;
 var numeroCanciones = listaCanciones.length;
 var nombreCancion = obtenerCancion(numeroDeCancion);
@@ -29,8 +30,12 @@ $botonReproducir.onclick = () => {
     cancion.pause();
     nombreCancion = obtenerCancion(numeroDeCancion);
     cancion = cargarCancion("resources/tracks/" + nombreCancion + ".flac");
+    cancion.volume = 0.2;
     cancion.play();
 	
+    //Actualizamos nombre de la canción:
+    document.getElementById("labelNombreCancion").innerHTML = nombreCancion;
+
 	// Si llego a la última canción, regreso a la primera
     if(numeroDeCancion < numeroCanciones-1){
         numeroDeCancion += 1;
