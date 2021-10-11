@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Iniciar sesión</title>
+	<!-- CDN FONT AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- CSS MAIN -->
+	<link href="css/index.css" rel="stylesheet" type="text/css"> 
+</head>
+<body>
+	<!-- Ventana principal -->
+	<div class="div-contenedor">
+		<!-- Logo y nombre de la canción -->
+		<div class="div-contenedor-logo">
+			<input class="button" 
+				   id="buttonReproducir" 
+				   type="image" 
+				   src="resources/images/logo.png" 
+				   alt=" "/>
+
+			<label class="label-nombreCancion" 
+				   id="labelNombreCancion"/>
+		</div>
+		
+		<!-- Formulario de inicio de sesión -->
+		<div class="div-contenedor-formulario">
+			<input class="input-text"
+				   id="textFieldUsuario"
+				   type="email" 
+				   placeholder=" | Usuario"/>
+
+			<input class="input-text" 
+				   type="password"
+				   id="textFieldPassword"
+				   placeholder=" | Contraseña"/>
+
+			<input class="button" 
+				   id="buttonIniciarSesion" 
+				   type="button" 
+				   value="Iniciar sesión">
+		</div>
+	</div>
+	<!-- Scripyt para reproducir música -->
+	<script src="resources/tracks/script.js"></script>
+</body>
+</html>
