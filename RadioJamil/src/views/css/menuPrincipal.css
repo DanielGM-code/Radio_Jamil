@@ -8,6 +8,7 @@ body{
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
 /* Incluye el botón de cerrar sesión */
 .div-cabecera{
+	width: 				99vw;
 	display: 			flex;
 	flex-wrap: 			nowrap;
 	justify-content: 	flex-end;
@@ -16,7 +17,7 @@ body{
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
 	height: 			90vh;
-	width: 				99vw;
+	width: 				97vw;
 	/* Propiedades de flexbox */
 	display: 			flex;
 	flex-wrap: 			nowrap;
@@ -59,7 +60,7 @@ body{
 
 /* Incluye el nombre de las canciones y comerciales de la programación actual */
 .div-contenedor-programacion-tabla{
-	height: 			80vh;
+	height: 			74vh;
 	width: 				40vw;
 	border-radius: 		30px;
 	background: 		#2a305a;
@@ -103,7 +104,7 @@ body{
              			-5px -5px 10px #2f3564;
 	/* Estilo de texto */
 	color: 				#FFFFFF;
-	font-size: 			3.5vh;
+	font-size: 			3vh;
 	/* Necesario para la animación */
   	cursor: 			pointer;
   	transition: 		all 0.3s ease-in-out;

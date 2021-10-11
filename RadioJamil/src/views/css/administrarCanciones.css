@@ -8,6 +8,7 @@ body{
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
 /* Incluye el botón de cerrar sesión y regresar*/
 .div-cabecera{
+	width: 				99vw;
 	display: 			flex;
 	flex-wrap: 			nowrap;
 	justify-content: 	space-between;
@@ -16,7 +17,7 @@ body{
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
 	height: 			90vh;
-	width: 				99vw;
+	width: 				97vw;
 	/* Propiedades de flexbox */
 	display: 			flex;
 	flex-wrap: 			nowrap;
