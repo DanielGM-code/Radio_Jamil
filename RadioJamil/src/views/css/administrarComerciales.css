@@ -6,11 +6,11 @@ body{
 }
 
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
-/* Incluye el botón de cerrar sesión */
+/* Incluye el botón de cerrar sesión y regresar*/
 .div-cabecera{
 	display: 			flex;
 	flex-wrap: 			nowrap;
-	justify-content: 	flex-end;
+	justify-content: 	space-between;
 }
 
 /* Clase principal de la que heredan todos los contenedores*/
@@ -24,9 +24,8 @@ body{
 	justify-content: 	center;
 }
 
-/* Incluye el contenedor de los botones del menú principal */
-.div-contenedor-botones{
-	margin: 			5%;
+.div-contenedor-formulario{
+	margin: 			3%;
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -36,8 +35,7 @@ body{
 }
 
 /* Incluye el contenedor de la programación actual */
-.div-contenedor-programacion{
-	margin: 			5%;
+.div-contenedor-formulario-textFields{
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -46,41 +44,39 @@ body{
 	flex-direction: 	column;
 }
 
-.div-contenedor-programacion-label{
-	height: 			5vh;
-	width: 				40vw;
-	margin: 			1%;
+.div-contenedor-botones{
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
 	align-items: 		inherit;
 	justify-content: 	inherit;
+	flex-direction: 	row;
 }
 
-/* Incluye el nombre de las canciones y comerciales de la programación actual */
-.div-contenedor-programacion-tabla{
-	height: 			80vh;
-	width: 				40vw;
-	border-radius: 		30px;
-	background: 		#2a305a;
-	box-shadow: 		inset 7px 7px 14px #252a4f,
-            			inset -7px -7px 14px #2f3665;
+.div-contenedor-logo{
+	margin: 			3%;
 	/* Propiedades heredadas de contenedor */
-	flex-wrap: 			nowrap;
-	align-items: 		center;
-	justify-content: 	center;
-	overflow-y: 		auto;
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	column;
 }
 
-/* Separación entre los botones */
-.div-contenedor input{
+/* Separación entre labels */
+.div-contenedor-formulario input{
+	margin: 	3%;
+}
+
+/* Separación entre botones */
+.div-contenedor-botones input{
 	margin: 	5%;
 }
 
 
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
 
-.label-fechaProgramacion{
+.label{
 	width: 					20vw;
 	text-align: 			center;
 	margin-top: 			5%;
@@ -89,14 +85,26 @@ body{
 	font-size: 				3.5vh;
 }
 
+.label-nombreCancion{
+	width: 					20vw;
+	text-align: 			center;
+	margin-top: 			5%;
+	/* Estilo de texto */
+	color: 					#FFFFFF;
+	font-size: 				3.5vh;
+	/* Efecto que limita el número de letras */
+	display: 				-webkit-box;
+  	-webkit-line-clamp: 	1;
+  	-webkit-box-orient: 	vertical;
+  	overflow: 				hidden;
+}
+
 /* - - - - - - - - - - - - - - - -  - I M A G E N E S  Y  B O T O N E S - - - - - - - - - - - - - - - - - */
 
 /* Clase principal de la que heredan todos los botones*/
-.button-menu{
-	height: 			10vh;
-	width: 				30vw;
-	border-radius: 		50px;
+.button{
 	background:         #2a305a;
+	border-radius: 		50px;
 	outline: 			none;
 	border: 			none;
 	box-shadow:  		5px 5px 10px #252b50,
@@ -109,7 +117,15 @@ body{
   	transition: 		all 0.3s ease-in-out;
 }
 
-.button-cerrarSesion{
+/* Imagen principal con el logo del sistema */
+/* Funciona como botón que reproduce una canción al pulsarlo */
+#buttonReproducir{
+	height: 			45vh;
+	width: 				45vh;
+}
+
+/* Botones de regresar y cerrar sesión*/
+.button-cabecera{
 	outline: 			none;
 	border: 			none;
 	border-radius: 		15px;
@@ -125,6 +141,52 @@ body{
   	transition: 		all 0.3s ease-in-out;
 }
 
+/* Botones de canciones y comerciales*/
+.button-menu{
+	height: 			6vh;
+	width: 				13vw;
+	border-radius: 		50px;
+	background:         #2a305a;
+	outline: 			none;
+	border: 			none;
+	box-shadow:  		5px 5px 10px #252b50,
+             			-5px -5px 10px #2f3564;
+	/* Estilo de texto */
+	color: 				#FFFFFF;
+	font-size: 			3vh;
+	font-family: 		"Font Awesome 5 Free";
+	/* Necesario para la animación */
+  	cursor: 			pointer;
+  	transition: 		all 0.3s ease-in-out;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - T E X T  F I E L D - - - - - - - - - - - - - - - - - - - */
+
+/* Clase principal de la que heredan todos los text field*/
+.input-text{
+	height: 			5vh;
+	width: 				22vw;
+	border-radius: 		15px;
+	padding-left: 		1vw;
+	outline: 			none;
+	border: 			none;
+	background: 		#2a305a;
+	box-shadow: 		inset 7px 7px 14px #252a4f,
+            			inset -7px -7px 14px #2f3665;
+	/* Estilo del texto ingresado */
+	color: 				#FFFFFF;
+	font-size: 			2.5vh;
+}
+
+/* Estilo de texto mostrado */
+.input-text::placeholder{
+	color: 				#FFFFFF;
+	font-family: 		"Font Awesome 5 Free"; 
+	font-size: 			2.5vh;
+}
+
+
 /* - - - - - - - - - - - - - - - - - - - - A N I M A C I O N E S - - - - - - - - - - - - - - - - - - - - */
 
 /* - - - - - - - Animación - Botón del logo - - - - - - - */
@@ -133,7 +195,15 @@ body{
 	transform: scale(1.1);
 }
 
-.button-cerrarSesion:hover{
+.button-cabecera:hover{
+	transform: scale(1.1);
+}
+
+.button-buscador:hover{
+	transform: scale(1.1);
+}
+
+.button:hover{
 	transform: scale(1.1);
 }
 
@@ -147,11 +217,29 @@ body{
   animation-iteration-count: 1;
 }
 
-.button-cerrarSesion:active {
+.button-cabecera:active {
   animation: shrink  0.6s ease;
   animation-iteration-count: 1;
 }
-.button-cerrarSesion:focus {
+.button-cabecera:focus {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+
+.button-buscador:active {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+.button-buscador:focus {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+
+.button:active {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+.button:focus {
   animation: shrink  0.6s ease;
   animation-iteration-count: 1;
 }
