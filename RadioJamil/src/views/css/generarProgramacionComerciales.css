@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background-color: 	#2a305a;
+}
+
+/* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
+/* Incluye el botón de cerrar sesión y regresar*/
+.div-cabecera{
+	width: 				99vw;
+	display: 			flex;
+	flex-wrap: 			nowrap;
+	justify-content: 	space-between;
+}
+
+/* Clase principal de la que heredan todos los contenedores*/
+.div-contenedor{
+	height: 			87vh;
+	width: 				97vw;
+	/* Propiedades de flexbox */
+	display: 			flex;
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
+}
+
+/* Incluye el resultado de las comerciales y botones del menú */
+.div-contenedor-comerciales{
+	margin: 3%;
+	margin-top: 			5%;
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	column;
+}
+
+/* Incluye los resultados de la búsqueda */
+.div-contenedor-canciones-resultados{
+	height: 			65vh;
+	width: 				30vw;
+	border-radius: 		30px;
+	background: 		#2a305a;
+	box-shadow: 		inset 7px 7px 14px #252a4f,
+            			inset -7px -7px 14px #2f3665;
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	column;
+	overflow-y: 		auto;
+}
+
+/* Incluye los botones del menú */
+.div-contenedor-botones{
+	margin-top: 			2%;
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	row;
+}
+
+/* Incluye el contenedor de la programación */
+.div-contenedor-programacion{
+	margin: 3%;
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	column;
+}
+
+/* Incluye la programación */
+.div-contenedor-programacion-label{
+	height: 			5vh;
+	width: 				40vw;
+	margin: 			1%;
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+}
+
+/* Incluye el nombre de las canciones y comerciales de la programación */
+.div-contenedor-programacion-tabla{
+	height: 			74vh;
+	width: 				40vw;
+	border-radius: 		30px;
+	background: 		#2a305a;
+	box-shadow: 		inset 7px 7px 14px #252a4f,
+            			inset -7px -7px 14px #2f3665;
+	/* Propiedades heredadas de contenedor */
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
+	overflow-y: 		auto;
+}
+
+/* Separación entre los botones */
+.div-contenedor-botones input{
+	margin: 	2%;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
+
+.label{
+	width: 					20vw;
+	text-align: 			center;
+	margin-top: 			5%;
+	/* Estilo de texto */
+	color: 					#FFFFFF;
+	font-size: 				3.5vh;
+}
+
+
+/* - - - - - - - - - - - - - - - -  - I M A G E N E S  Y  B O T O N E S - - - - - - - - - - - - - - - - - */
+
+/* Botones de regresar y cerrar sesión*/
+.button-cabecera{
+	outline: 			none;
+	border: 			none;
+	border-radius: 		15px;
+	background: 		#2a305a;
+	box-shadow:  		5px 5px 10px #252b50,
+             			-5px -5px 10px #2f3564;
+	/* Estilo de texto */
+	color: 				#FFFFFF;
+	font-family: 		"Font Awesome 5 Free"; 
+	font-size: 			3.5vh;
+	/* Necesario para la animación */
+  	cursor: 			pointer;
+  	transition: 		all 0.3s ease-in-out;
+}
+
+/* Botones de canciones y comerciales*/
+.button-menu{
+	height: 			10vh;
+	width: 				14vw;
+	border-radius: 		50px;
+	background:         #2a305a;
+	outline: 			none;
+	border: 			none;
+	box-shadow:  		5px 5px 10px #252b50,
+             			-5px -5px 10px #2f3564;
+	/* Estilo de texto */
+	color: 				#FFFFFF;
+	font-size: 			3vh;
+	font-family: 		"Font Awesome 5 Free";
+	/* Necesario para la animación */
+  	cursor: 			pointer;
+  	transition: 		all 0.3s ease-in-out;
+}
+
+.button-buscador{
+	height: 			5vh;
+	width: 				4vw;
+	outline: 			none;
+	border: 			none;
+	border-radius: 		15px;
+	background: 		#2a305a;
+	box-shadow:  		5px 5px 10px #252b50,
+             			-5px -5px 10px #2f3564;
+	/* Estilo de texto */
+	color: 				#FFFFFF;
+	font-family: 		"Font Awesome 5 Free"; 
+	font-size: 			3.5vh;
+	/* Necesario para la animación */
+  	cursor: 			pointer;
+  	transition: 		all 0.3s ease-in-out;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - T E X T  F I E L D - - - - - - - - - - - - - - - - - - - */
+
+/* Clase principal de la que heredan todos los text field*/
+.input-text{
+	height: 			5vh;
+	width: 				24vw;
+	border-radius: 		10px;
+	margin-bottom: 		2%;
+	padding-left: 		1vw;
+	outline: 			none;
+	border: 			none;
+	background: 		#2a305a;
+	box-shadow: 		inset 7px 7px 14px #252a4f,
+            			inset -7px -7px 14px #2f3665;
+	/* Estilo del texto ingresado */
+	color: 				#FFFFFF;
+	font-size: 			3vh;
+}
+
+/* Estilo de texto mostrado */
+.input-text::placeholder{
+	color: 				#FFFFFF; 
+	font-size: 			3vh;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - A N I M A C I O N E S - - - - - - - - - - - - - - - - - - - - */
+
+/* - - - - - - - Animación - Botón del logo - - - - - - - */
+/* Hace saltar la imagen cuando el puntero está encima */
+.button-menu:hover{
+	transform: scale(1.1);
+}
+
+.button-cabecera:hover{
+	transform: scale(1.1);
+}
+
+.button-buscador:hover{
+	transform: scale(1.1);
+}
+
+/* Disparadores del efecto Shrink (Funciona al dar click) */
+.button-menu:active {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+.button-menu:focus {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+
+.button-cabecera:active {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+.button-cabecera:focus {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+
+.button-buscador:active {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+.button-buscador:focus {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+
+/* Frames de la animación Shrink */
+@keyframes shrink {
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Menú principal</title>
+	<!-- CDN FONT AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- CSS MAIN -->
+	<link href="css/menuPrincipal.css" rel="stylesheet" type="text/css"> 
+</head>
+<body>
+	<div class="div-cabecera">
+			<input class="button-cerrarSesion" 
+				   id="buttonCerrarSesion" 
+				   type="button" 
+				   value=""
+				   onclick="window.open('index.html', '_self')">
+	</div>
+	<!-- Ventana principal -->
+	<div class="div-contenedor">			
+		<!-- Contenedor de los botones del menú principal-->
+		<div class="div-contenedor-botones">
+			<input class="button-menu" 
+				   id="buttonGenerarProgramacion" 
+				   type="button" 
+				   value="Generar programación"
+				   onclick="window.open('generarProgramacionCalendario.html', '_self')">
+			
+			<input class="button-menu" 
+				   id="buttonCatalogoDeCanciones" 
+				   type="button" 
+				   value="Administrar catálogo de canciones"
+				   onclick="window.open('administrarCanciones.html', '_self')">
+			
+			<input class="button-menu" 
+				   id="buttonCatalogoDeComerciales" 
+				   type="button" 
+				   value="Administrar catálogo de comerciales"
+				   onclick="window.open('administrarComerciales.html', '_self')">
+			
+			<input class="button-menu" 
+				   id="buttonPeticionesOyentes" 
+				   type="button" 
+				   value="Peticiones de oyentes">
+			
+			<input class="button-menu" 
+				   id="buttonUsuarios" 
+				   type="button" 
+				   value="Administrar usuarios">
+		</div>
+		
+		<div class="div-contenedor-programacion">
+			<div class="div-contenedor-programacion-label">
+				  <p><label class="label-fechaProgramacion" 
+							id="labelFechaProgramacion">
+					  		Programación actual:
+					  </label>
+				</p>
+			</div>
+			
+			<div class="div-contenedor-programacion-tabla">
+			</div>	
+		</div>
+	</div>
+</body>
+</html>
