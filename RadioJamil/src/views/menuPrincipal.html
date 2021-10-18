@@ -10,28 +10,35 @@
 </head>
 <body>
 	<div class="div-cabecera">
+		<a href="index.html">
 			<input class="button-cerrarSesion" 
 				   id="buttonCerrarSesion" 
 				   type="button" 
-				   value=""
-				   onclick="window.open('index.html', '_self')">
+				   value="">
+		</a>
 	</div>
 	<!-- Ventana principal -->
 	<div class="div-contenedor">			
 		<!-- Contenedor de los botones del menú principal-->
 		<div class="div-contenedor-botones">
-			<input class="button-menu" 
-				   id="buttonGenerarProgramacion" 
-				   type="button" 
-				   value="Generar programación"
-				   onclick="window.open('generarProgramacionCalendario.html', '_self')">
-			
-			<input class="button-menu" 
-				   id="buttonCatalogoDeCanciones" 
-				   type="button" 
-				   value="Administrar catálogo de canciones"
-				   onclick="window.open('administrarCanciones.html', '_self')">
-			
+			<a href="generarProgramacionCalendario.html">
+				<input class="button-menu" 
+					id="buttonGenerarProgramacion" 
+					type="button" 
+					value="Generar programación">
+			</a>
+			<a href="administrarCanciones.html">
+				<input class="button-menu" 
+					id="buttonCatalogoDeCanciones" 
+					type="button" 
+					value="Administrar catálogo de canciones">
+			</a>
+			<a href="administrarComerciales.html">
+				<input class="button-menu" 
+					id="buttonCatalogoDeComerciales" 
+					type="button" 
+					value="Administrar catálogo de comerciales">
+			</a>
 			<input class="button-menu" 
 				   id="buttonCatalogoDeComerciales" 
 				   type="button" 
