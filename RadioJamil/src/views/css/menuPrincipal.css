@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body{
-	background-color: 	#2a305a;
+	background-color: 	#36393F;
 }
 
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
@@ -16,8 +16,8 @@ body{
 
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
-	height: 			90vh;
-	width: 				97vw;
+	height: 			100vh;
+	width: 				100vw;
 	/* Propiedades de flexbox */
 	display: 			flex;
 	flex-wrap: 			nowrap;
@@ -27,7 +27,6 @@ body{
 
 /* Incluye el contenedor de los botones del menú principal */
 .div-contenedor-botones{
-	margin: 			5%;
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -38,7 +37,6 @@ body{
 
 /* Incluye el contenedor de la programación actual */
 .div-contenedor-programacion{
-	margin: 			5%;
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -50,7 +48,6 @@ body{
 .div-contenedor-programacion-label{
 	height: 			5vh;
 	width: 				40vw;
-	margin: 			1%;
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -58,14 +55,14 @@ body{
 	justify-content: 	inherit;
 }
 
-/* Incluye el nombre de las canciones y comerciales de la programación actual */
+/* Incluye el nombre de las canciones de la programación actual */
 .div-contenedor-programacion-tabla{
-	height: 			74vh;
+	height: 			75vh;
 	width: 				40vw;
-	border-radius: 		30px;
-	background: 		#2a305a;
-	box-shadow: 		inset 7px 7px 14px #252a4f,
-            			inset -7px -7px 14px #2f3665;
+	border-radius: 		15px;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
 	/* Propiedades heredadas de contenedor */
 	flex-wrap: 			nowrap;
 	align-items: 		center;
@@ -74,85 +71,72 @@ body{
 }
 
 /* Separación entre los botones */
-.div-contenedor input{
-	margin: 	5%;
+.div-contenedor-botones input{
+	margin-top: 	10%;
+}
+
+/* Separación entre cada contenedor */
+.div-contenedor div{
+	margin-left: 	2%;
+	margin-right:   2%;
+	margin-bottom:  5%;
 }
 
 
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
-
-.label-fechaProgramacion{
+.label{
 	width: 					20vw;
-	text-align: 			center;
 	margin-top: 			5%;
+	text-align: 			center;
 	/* Estilo de texto */
-	color: 					#FFFFFF;
+	color: 					#b8b8b8;
 	font-size: 				3.5vh;
+	/* Efecto que limita el número de letras */
+	display: 				-webkit-box;
+  	-webkit-line-clamp: 	1;
+  	-webkit-box-orient: 	vertical;
+  	overflow: 				hidden;
 }
 
 /* - - - - - - - - - - - - - - - -  - I M A G E N E S  Y  B O T O N E S - - - - - - - - - - - - - - - - - */
 
 /* Clase principal de la que heredan todos los botones*/
-.button-menu{
+.button{
 	height: 			10vh;
 	width: 				30vw;
+	outline: 			none;
+	border: 			none;
 	border-radius: 		50px;
-	background:         #2a305a;
-	outline: 			none;
-	border: 			none;
-	box-shadow:  		5px 5px 10px #252b50,
-             			-5px -5px 10px #2f3564;
+	background: 		#36393F;
+	box-shadow:  		5px 5px 0px #313339,
+				 		-5px -5px 0px #3b3f45;
 	/* Estilo de texto */
-	color: 				#FFFFFF;
-	font-size: 			3vh;
-	/* Necesario para la animación */
-  	cursor: 			pointer;
-  	transition: 		all 0.3s ease-in-out;
-}
-
-.button-cerrarSesion{
-	outline: 			none;
-	border: 			none;
-	border-radius: 		15px;
-	background: 		#2a305a;
-	box-shadow:  		5px 5px 10px #252b50,
-             			-5px -5px 10px #2f3564;
-	/* Estilo de texto */
-	color: 				#FFFFFF;
-	font-family: 		"Font Awesome 5 Free"; 
+	color: 				#b8b8b8;
 	font-size: 			3.5vh;
 	/* Necesario para la animación */
   	cursor: 			pointer;
   	transition: 		all 0.3s ease-in-out;
 }
 
-/* - - - - - - - - - - - - - - - - - - - - A N I M A C I O N E S - - - - - - - - - - - - - - - - - - - - */
-
-/* - - - - - - - Animación - Botón del logo - - - - - - - */
-/* Hace saltar la imagen cuando el puntero está encima */
-.button-menu:hover{
-	transform: scale(1.1);
+#buttonCerrarSesion{
+	height: 			5vh;
+	width: 				4vw;
+	/* Fuente de texto */
+	font-family: 		"Font Awesome 5 Free";
 }
 
-.button-cerrarSesion:hover{
+/* - - - - - - - - - - - - - - - - - - - - A N I M A C I O N E S - - - - - - - - - - - - - - - - - - - - */
+/* Hace saltar la imagen cuando el puntero está encima */
+.button:hover{
 	transform: scale(1.1);
 }
 
 /* Disparadores del efecto Shrink (Funciona al dar click) */
-.button-menu:active {
+.button:active {
   animation: shrink  0.6s ease;
   animation-iteration-count: 1;
 }
-.button-menu:focus {
-  animation: shrink  0.6s ease;
-  animation-iteration-count: 1;
-}
-
-.button-cerrarSesion:active {
-  animation: shrink  0.6s ease;
-  animation-iteration-count: 1;
-}
-.button-cerrarSesion:focus {
+.button:focus {
   animation: shrink  0.6s ease;
   animation-iteration-count: 1;
 }

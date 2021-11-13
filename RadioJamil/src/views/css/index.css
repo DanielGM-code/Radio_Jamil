@@ -2,14 +2,15 @@
 /* CSS Document */
 
 body{
-	background-color: 	#2a305a;
+	background-color: 	#36393F;
 }
 
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
-	height: 			97vh;
-	width: 				99vw;
+	height: 			100vh;
+	width: 				100vw;
+	position: 			fixed;
 	/* Propiedades de flexbox */
 	display: 			flex;
 	flex-wrap: 			nowrap;
@@ -31,16 +32,16 @@ body{
 .div-contenedor-formulario{
 	height: 			57vh;
 	width: 				35vw;
-	border-radius: 		30px;
-	background: 		#2a305a;
-	flex-direction: 	column;
-	box-shadow:  		5px 5px 10px #252b50,
-             			-5px -5px 10px #2f3564;
+	border-radius: 		15px;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
 	align-items: 		inherit;
 	justify-content:    inherit;
+	flex-direction: 	column;
 }
 
 /* Separación entre cada contenedor */
@@ -50,17 +51,18 @@ body{
 
 /* Separación entre los inputs del formulario */
 .div-contenedor-formulario div, input{
-	margin: 	5%;
+	margin-bottom: 	5%;
+	margin-top: 	5%;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
 
-.label-nombreCancion{
+.label{
 	width: 					20vw;
-	text-align: 			center;
 	margin-top: 			5%;
+	text-align: 			center;
 	/* Estilo de texto */
-	color: 					#FFFFFF;
+	color: 					#757575;
 	font-size: 				3.5vh;
 	/* Efecto que limita el número de letras */
 	display: 				-webkit-box;
@@ -74,14 +76,14 @@ body{
 
 /* Clase principal de la que heredan todos los botones*/
 .button{
-	background:         #2a305a;
-	border-radius: 		50px;
 	outline: 			none;
 	border: 			none;
-	box-shadow:  		5px 5px 10px #252b50,
-             			-5px -5px 10px #2f3564;
+	border-radius: 		50px;
+	background: 		#36393F;
+	box-shadow:  		5px 5px 0px #313339,
+				 		-5px -5px 0px #3b3f45;
 	/* Estilo de texto */
-	color: 				#FFFFFF;
+	color: 				#b8b8b8;
 	font-size: 			3.5vh;
 	/* Necesario para la animación */
   	cursor: 			pointer;
@@ -99,7 +101,6 @@ body{
 #buttonIniciarSesion{
 	height: 			8.5vh;
 	width: 				25vw;
-	border-radius: 		20px;
 }
 
 
@@ -109,21 +110,21 @@ body{
 .input-text{
 	height: 			8.5vh;
 	width: 				25vw;
-	border-radius: 		15px;
 	padding-left: 		2vw;
 	outline: 			none;
 	border: 			none;
-	background: 		#2a305a;
-	box-shadow: 		inset 7px 7px 14px #252a4f,
-            			inset -7px -7px 14px #2f3665;
-	/* Estilo del texto ingresado */
-	color: 				#FFFFFF;
+	border-radius: 		15px;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
+	/* Estilo de texto */
+	color: 				#b8b8b8;
 	font-size: 			3.5vh;
 }
 
 /* Estilo de texto mostrado */
 .input-text::placeholder{
-	color: 				#FFFFFF;
+	color: 				#b8b8b8;
 	font-family: 		"Font Awesome 5 Free"; 
 	font-size: 			3.5vh;
 }
@@ -160,16 +161,12 @@ body{
 
 /* - - - - - - - Animación - Botón de inicio de sesión - - - - - - - */
 /* Hace saltar al botón cuando el puntero está encima */
-#buttonIniciarSesion:hover{
+.button:hover{
 	transform: scale(1.1);
 }
 
 
 /* Disparadores del efecto Swing (Funciona al dar click) */
-#buttonIniciarSesion:focus {
-  animation: swing 1s ease;
-  animation-iteration-count: 1;
-}
 #buttonIniciarSesion:active {
   animation: swing 1s ease;
   animation-iteration-count: 1
@@ -196,4 +193,3 @@ body{
     transform: translateX(0);
   }
 }
-

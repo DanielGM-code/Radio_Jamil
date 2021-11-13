@@ -8,61 +8,63 @@
 	<!-- CSS MAIN -->
 	<link href="css/menuPrincipal.css" rel="stylesheet" type="text/css"> 
 </head>
-<body>
+<body style="overflow-x:hidden; overflow-y:hidden">
+	<!-- Cabecera -->
 	<div class="div-cabecera">
 		<a href="index.html">
-			<input class="button-cerrarSesion" 
+			<input class="button"
 				   id="buttonCerrarSesion" 
 				   type="button" 
 				   value="">
 		</a>
 	</div>
+	
 	<!-- Ventana principal -->
-	<div class="div-contenedor">			
+	<div class="div-contenedor">
+		
 		<!-- Contenedor de los botones del menú principal-->
 		<div class="div-contenedor-botones">
-			<a href="generarProgramacionCalendario.html">
-				<input class="button-menu" 
-					id="buttonGenerarProgramacion" 
-					type="button" 
-					value="Generar programación">
-			</a>
-			<a href="administrarCanciones.html">
-				<input class="button-menu" 
-					id="buttonCatalogoDeCanciones" 
-					type="button" 
-					value="Administrar catálogo de canciones">
-			</a>
-			<a href="administrarComerciales.html">
-				<input class="button-menu" 
-					id="buttonCatalogoDeComerciales" 
-					type="button" 
-					value="Administrar catálogo de comerciales">
-			</a>
-			<input class="button-menu" 
-				   id="buttonCatalogoDeComerciales" 
-				   type="button" 
-				   value="Administrar catálogo de comerciales"
-				   onclick="window.open('administrarComerciales.html', '_self')">
 			
-			<input class="button-menu" 
+			<a href="gestionarProgramacion.html">
+				<input class="button" 
+					id="buttonGestionarProgramacion" 
+					type="button" 
+					value="Gestionar programación">
+			</a>
+			
+			<a href="gestionarCanciones.html">
+				<input class="button" 
+					id="buttonGestionarCanciones" 
+					type="button" 
+					value="Gestionar canciones">
+			</a>
+			
+			<a>
+			<input class="button" 
 				   id="buttonPeticionesOyentes" 
 				   type="button" 
 				   value="Peticiones de oyentes">
+			</a>
 			
-			<input class="button-menu" 
+			<a>
+			<input class="button" 
 				   id="buttonUsuarios" 
 				   type="button" 
-				   value="Administrar usuarios">
+				   value="Gestionar usuarios">
+			</a>
 		</div>
 		
+		<!-- Contenedor de la programación actual-->
 		<div class="div-contenedor-programacion">
+			
 			<div class="div-contenedor-programacion-label">
-				  <p><label class="label-fechaProgramacion" 
+				
+				  <p><label class="label" 
 							id="labelFechaProgramacion">
 					  		Programación actual:
 					  </label>
 				</p>
+				
 			</div>
 			
 			<div class="div-contenedor-programacion-tabla">
