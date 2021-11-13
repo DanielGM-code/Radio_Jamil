@@ -53,7 +53,7 @@ body{
 }
 
 /* Incluye el contenedor de la programación */
-.div-contenedor-programacion{
+.div-contenedor-peticiones{
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -63,7 +63,7 @@ body{
 }
 
 /* Incluye la programación */
-.div-contenedor-programacion-label{
+.div-contenedor-fecha-label{
 	height: 			6vh;
 	width: 				40vw;
 	/* Propiedades heredadas de contenedor */
@@ -74,7 +74,7 @@ body{
 }
 
 /* Incluye el nombre de las canciones de la programación actual */
-.div-contenedor-programacion-tabla{
+.div-contenedor-peticiones-tabla{
 	height: 			75vh;
 	width: 				40vw;
 	border-radius: 		15px;
