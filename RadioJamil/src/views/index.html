@@ -8,18 +8,23 @@
 	<!-- CSS MAIN -->
 	<link href="css/index.css" rel="stylesheet" type="text/css"> 
 </head>
-<body>
+<body style="overflow-x:hidden; overflow-y:hidden">
+	
+	<!-- particles.js container -->
+	<div id="particles-js">
 	<!-- Ventana principal -->
 	<div class="div-contenedor">
 		<!-- Logo y nombre de la canción -->
 		<div class="div-contenedor-logo">
-			<input class="button" 
+			<a>
+				<input class="button" 
 				   id="buttonReproducir" 
 				   type="image" 
 				   src="resources/images/logo.png" 
 				   alt=" "/>
+			</a>
 
-			<label class="label-nombreCancion" 
+			<label class="label" 
 				   id="labelNombreCancion"/>
 		</div>
 		
@@ -35,15 +40,19 @@
 				   id="textFieldPassword"
 				   placeholder=" | Contraseña"/>
 
-			<a href="menuPrincipal.html">
-				<input class="button" 
-					id="buttonIniciarSesion" 
-					type="button" 
-					value="Iniciar sesión"/>
-			</a>
+			<input class="button" 
+				   id="buttonIniciarSesion" 
+				   type="button" 
+				   value="Iniciar sesión"
+				   onclick="window.open('menuPrincipal.html', '_self')">
 		</div>
 	</div>
-	<!-- Scripyt para reproducir música -->
+	</div>
+	<!-- Script para reproducir música -->
 	<script src="resources/tracks/script.js"></script>
+	
+	<!-- Script para reproducir particulas -->
+	<script src="resources/particles/particles.min.js"></script>
+    <script src="resources/particles/app.js"></script>
 </body>
 </html>

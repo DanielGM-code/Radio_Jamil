@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body{
-	background-color: 	#2a305a;
+	background-color: 	#36393F;
 }
 
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
@@ -16,8 +16,8 @@ body{
 
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
-	height: 			90vh;
-	width: 				97vw;
+	height: 			100vh;
+	width: 				100vw;
 	/* Propiedades de flexbox */
 	display: 			flex;
 	flex-wrap: 			nowrap;
@@ -25,8 +25,8 @@ body{
 	justify-content: 	center;
 }
 
-.div-contenedor-formulario{
-	margin: 			3%;
+/* Incluye el resultado de las canciones*/
+.div-contenedor-canciones{
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -35,8 +35,25 @@ body{
 	flex-direction: 	column;
 }
 
-/* Incluye el contenedor de la programación actual */
-.div-contenedor-formulario-textFields{
+/* Incluye los resultados de la búsqueda */
+.div-contenedor-canciones-resultados{
+	height: 			75vh;
+	width: 				30vw;
+	border-radius: 		15px;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	column;
+	overflow-y: 		auto;
+}
+
+/* Incluye el contenedor de la programación */
+.div-contenedor-programacion{
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -45,53 +62,47 @@ body{
 	flex-direction: 	column;
 }
 
-.div-contenedor-botones{
+/* Incluye la programación */
+.div-contenedor-programacion-label{
+	height: 			6vh;
+	width: 				40vw;
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
 	align-items: 		inherit;
 	justify-content: 	inherit;
-	flex-direction: 	row;
 }
 
-.div-contenedor-logo{
-	margin: 			3%;
+/* Incluye el nombre de las canciones de la programación actual */
+.div-contenedor-programacion-tabla{
+	height: 			75vh;
+	width: 				40vw;
+	border-radius: 		15px;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
 	/* Propiedades heredadas de contenedor */
-	display: 			inherit;
-	flex-wrap: 			inherit;
-	align-items: 		inherit;
-	justify-content: 	inherit;
-	flex-direction: 	column;
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
+	overflow-y: 		auto;
 }
 
-/* Separación entre labels */
-.div-contenedor-formulario input{
-	margin: 	3%;
+/* Separación entre cada contenedor */
+.div-contenedor div{
+	margin-left: 	2%;
+	margin-right:   2%;
+	margin-bottom:  5%;
 }
-
-/* Separación entre botones */
-.div-contenedor-botones input{
-	margin: 	5%;
-}
-
 
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
 
 .label{
 	width: 					20vw;
-	text-align: 			center;
 	margin-top: 			5%;
-	/* Estilo de texto */
-	color: 					#FFFFFF;
-	font-size: 				3.5vh;
-}
-
-.label-nombreCancion{
-	width: 					20vw;
 	text-align: 			center;
-	margin-top: 			5%;
 	/* Estilo de texto */
-	color: 					#FFFFFF;
+	color: 					#b8b8b8;
 	font-size: 				3.5vh;
 	/* Efecto que limita el número de letras */
 	display: 				-webkit-box;
@@ -104,138 +115,57 @@ body{
 
 /* Clase principal de la que heredan todos los botones*/
 .button{
-	background:         #2a305a;
-	border-radius: 		50px;
+	height: 			5vh;
+	width: 				4vw;
 	outline: 			none;
 	border: 			none;
-	box-shadow:  		5px 5px 10px #252b50,
-             			-5px -5px 10px #2f3564;
+	border-radius: 		50px;
+	background: 		#36393F;
+	box-shadow:  		5px 5px 0px #313339,
+				 		-5px -5px 0px #3b3f45;
 	/* Estilo de texto */
-	color: 				#FFFFFF;
+	color: 				#b8b8b8;
 	font-size: 			3.5vh;
 	/* Necesario para la animación */
   	cursor: 			pointer;
   	transition: 		all 0.3s ease-in-out;
-}
-
-/* Imagen principal con el logo del sistema */
-/* Funciona como botón que reproduce una canción al pulsarlo */
-#buttonReproducir{
-	height: 			45vh;
-	width: 				45vh;
-}
-
-/* Botones de regresar y cerrar sesión*/
-.button-cabecera{
-	outline: 			none;
-	border: 			none;
-	border-radius: 		15px;
-	background: 		#2a305a;
-	box-shadow:  		5px 5px 10px #252b50,
-             			-5px -5px 10px #2f3564;
-	/* Estilo de texto */
-	color: 				#FFFFFF;
-	font-family: 		"Font Awesome 5 Free"; 
-	font-size: 			3.5vh;
-	/* Necesario para la animación */
-  	cursor: 			pointer;
-  	transition: 		all 0.3s ease-in-out;
-}
-
-/* Botones de canciones y comerciales*/
-.button-menu{
-	height: 			6vh;
-	width: 				13vw;
-	border-radius: 		50px;
-	background:         #2a305a;
-	outline: 			none;
-	border: 			none;
-	box-shadow:  		5px 5px 10px #252b50,
-             			-5px -5px 10px #2f3564;
-	/* Estilo de texto */
-	color: 				#FFFFFF;
-	font-size: 			3vh;
+	/* Fuente de texto */
 	font-family: 		"Font Awesome 5 Free";
-	/* Necesario para la animación */
-  	cursor: 			pointer;
-  	transition: 		all 0.3s ease-in-out;
 }
-
 
 /* - - - - - - - - - - - - - - - - - - - - - - - T E X T  F I E L D - - - - - - - - - - - - - - - - - - - */
 
 /* Clase principal de la que heredan todos los text field*/
 .input-text{
-	height: 			5vh;
-	width: 				22vw;
-	border-radius: 		15px;
+	height: 			6vh;
+	width: 				29vw;
+	border-radius: 		10px;
 	padding-left: 		1vw;
 	outline: 			none;
 	border: 			none;
-	background: 		#2a305a;
-	box-shadow: 		inset 7px 7px 14px #252a4f,
-            			inset -7px -7px 14px #2f3665;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
 	/* Estilo del texto ingresado */
 	color: 				#FFFFFF;
-	font-size: 			2.5vh;
+	font-size: 			3vh;
 }
 
 /* Estilo de texto mostrado */
 .input-text::placeholder{
-	color: 				#FFFFFF;
-	font-family: 		"Font Awesome 5 Free"; 
-	font-size: 			2.5vh;
+	color: 				#FFFFFF; 
+	font-size: 			3vh;
 }
 
 
 /* - - - - - - - - - - - - - - - - - - - - A N I M A C I O N E S - - - - - - - - - - - - - - - - - - - - */
 
-/* - - - - - - - Animación - Botón del logo - - - - - - - */
 /* Hace saltar la imagen cuando el puntero está encima */
-.button-menu:hover{
-	transform: scale(1.1);
-}
-
-.button-cabecera:hover{
-	transform: scale(1.1);
-}
-
-.button-buscador:hover{
-	transform: scale(1.1);
-}
-
 .button:hover{
 	transform: scale(1.1);
 }
 
 /* Disparadores del efecto Shrink (Funciona al dar click) */
-.button-menu:active {
-  animation: shrink  0.6s ease;
-  animation-iteration-count: 1;
-}
-.button-menu:focus {
-  animation: shrink  0.6s ease;
-  animation-iteration-count: 1;
-}
-
-.button-cabecera:active {
-  animation: shrink  0.6s ease;
-  animation-iteration-count: 1;
-}
-.button-cabecera:focus {
-  animation: shrink  0.6s ease;
-  animation-iteration-count: 1;
-}
-
-.button-buscador:active {
-  animation: shrink  0.6s ease;
-  animation-iteration-count: 1;
-}
-.button-buscador:focus {
-  animation: shrink  0.6s ease;
-  animation-iteration-count: 1;
-}
-
 .button:active {
   animation: shrink  0.6s ease;
   animation-iteration-count: 1;
