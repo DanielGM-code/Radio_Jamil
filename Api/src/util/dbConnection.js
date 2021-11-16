@@ -13,7 +13,7 @@ const mysqlConnection = mysql.createConnection({
       console.error(err);
       return;
     }
-    console.log('db is connected');
+    // console.log('db is connected');
   });
   
   module.exports = mysqlConnection;
