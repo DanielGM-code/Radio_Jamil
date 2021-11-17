@@ -20,8 +20,8 @@ function update(id, cancion, callback){
     [id, cancion.nombreCancion, cancion.idArtista, cancion.idGenero, cancion.idCategoria, cancion.referencia, cancion.esPeticion, cancion.diasReproduccion],callback)
 }
 
-function invalid(id, callback){
-    dbConnection.query('call SP_Delete_Cancion(?)', id, callback)
+function setInactive(id, callback){
+    dbConnection.query('call SP_Delete_Cancion(?)', [id], callback)
 }
 
-module.exports = {getAll, add, get, update, invalid}
+module.exports = {getAll, add, get, update, setInactive}

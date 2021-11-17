@@ -70,7 +70,7 @@ router.route('/canciones/:id')
         }
     })
     .delete((req, res) =>{ //Borrar una cancion
-        cancionDAO.invalid([req.params.id], (err, rows, fields) =>{ //Método del DAO (Con un callback)
+        cancionDAO.setInactive([req.params.id], (err, rows, fields) =>{ //Método del DAO (Con un callback)
             //Manejamos la respuesta de la DB
             if(err){
                 console.log(err)
