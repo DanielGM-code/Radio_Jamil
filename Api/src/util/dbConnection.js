@@ -4,11 +4,11 @@ const mysqlConnection = mysql.createConnection({
     host: 'reww4n.xyz',
     user: 'nodejs',
     password: 'WeHate2021',
-    database: 'prueba',
+    database: 'radio',
     multipleStatements: true
   });
   
-  mysqlConnection.connect(function (err) {
+  mysqlConnection.connect((err) => {
     if (err) {
       console.error(err);
       return;

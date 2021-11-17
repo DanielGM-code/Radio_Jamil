@@ -33,7 +33,13 @@ router.route('/users/:id')
                 console.log(err)
                 return
             }
-            res.status(200).json(rows[0])
+            if(rows[0]){
+                res.status(200).json(rows[0])
+            }
+            else{
+                res.status(404).json({Message : 'User not found'})
+            }
+
         })
     })
     .put((req, res) =>{ //Actualizar un usuario
