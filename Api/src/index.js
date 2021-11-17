@@ -14,6 +14,7 @@ const routes = path.join(__dirname, '/routes')
 // app.use(require(path.join(routes, 'users.js')))
 app.use(require(path.join(routes, 'usersOld.js')))
 app.use(require(path.join(routes, 'canciones.js')))
+app.use(require(path.join(routes, 'patrones.js')))
 
 //Starting app
 app.listen(app.get('port'), () => {
