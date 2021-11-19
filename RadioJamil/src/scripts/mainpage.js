@@ -16,20 +16,20 @@ const cargarCancion = function (fuente) {
 };
 
 // Tengo acceso al botón mediante su id
-const $botonReproducir = document.querySelector("#buttonReproducir");
+const btnReproducir = document.querySelector("#buttonReproducir");
     
 // La cancion que podemos reproducir o pausar
 // TO DO: Canciones random? 
 var numeroDeCancion = 0;
 var numeroCanciones = listaCanciones.length;
 var nombreCancion = obtenerCancion(numeroDeCancion);
-var cancion = cargarCancion("resources/tracks/" + nombreCancion + ".flac");
+var cancion = cargarCancion(`resources/tracks/${nombreCancion}.flac`);
 
-$botonReproducir.onclick = () => {
+btnReproducir.onclick = () => {
 	// Primero se pausa la canción para que no se reproduzcan dos o más al mismo tiempo
     cancion.pause();
     nombreCancion = obtenerCancion(numeroDeCancion);
-    cancion = cargarCancion("resources/tracks/" + nombreCancion + ".flac");
+    cancion = cargarCancion(`resources/tracks/${nombreCancion}.flac`);
     cancion.volume = 0.2;
     cancion.play();
 	
@@ -44,7 +44,6 @@ $botonReproducir.onclick = () => {
     }
 };
 
-// Este método me permite obtener el nombre de la canción mediante su posición en el arreglo
 function obtenerCancion(numeroDeCancion) {
     let cancionObtenida = listaCanciones[numeroDeCancion];
 
