@@ -12,15 +12,15 @@ router.post('/login', (req, res) =>{
     user = req.body
 
     if(!user){
-        return res.status(401).json({message: 'Missing data'})
+        return res.status(401).json({Mensaje: 'Missing data'})
     }
     if(!user.id || !user.password){
-        return res.status(401).json({message: 'Missing data'})
+        return res.status(401).json({Mensaje: 'Missing data'})
     }
 
     userController.checkCredentials(user.id, user.password, (err, result) =>{
         if(!result){
-            return res.status(401).json({message: 'Invalid credentials'})
+            return res.status(401).json({Mensaje: 'Invalid credentials'})
         }
         auth.sign(user, 'password', '120s', (err, token) => {
             res.status(200).json({token})
@@ -29,7 +29,7 @@ router.post('/login', (req, res) =>{
 });
 
 router.post('/register', (req, res) =>{
-    userController.registerUser(req.body, res.status(200).json({message: 'User added'}))
+    userController.registerUser(req.body, res.status(200).json({Mensaje: 'User added'}))
 });
 
 router.get('/radio/usersAuth', auth.verifyToken, (req, res) =>{

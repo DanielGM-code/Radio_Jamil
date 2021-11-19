@@ -11,8 +11,6 @@ app.use(express.json());
 //Routes
 const routes = path.join(__dirname, '/routes')
 // app.use(require(path.join(routes, 'login.js')))
-//app.use(require(path.join(routes, 'users.js')))
-app.use(require(path.join(routes, 'usersOld.js')))
 app.use(require(path.join(routes, 'canciones.js')))
 app.use(require(path.join(routes, 'patrones.js')))
 app.use(require(path.join(routes, 'programaciones.js')))

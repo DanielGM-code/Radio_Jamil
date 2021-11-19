@@ -44,7 +44,7 @@ router.route('/patrones/:id')
                 res.status(200).json(rows[0][0])
             }
             else{
-                res.status(404).json({Message : 'patron no encontrada'})
+                res.status(404).json({Mensaje : 'patron no encontrada'})
             }
 
         })
