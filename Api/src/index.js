@@ -1,5 +1,6 @@
-const express = require("express");
+const express = require('express');
 const path = require('path');
+
 const app = express();
 
 app.set('port', process.env.PORT || 2610);
@@ -8,7 +9,11 @@ app.set('port', process.env.PORT || 2610);
 app.use(express.json());
 
 //Routes
-app.use(require(path.join(__dirname, 'routes.js')))
+const routes = path.join(__dirname, '/routes')
+// app.use(require(path.join(routes, 'login.js')))
+app.use(require(path.join(routes, 'canciones.js')))
+app.use(require(path.join(routes, 'patrones.js')))
+app.use(require(path.join(routes, 'programaciones.js')))
 
 //Starting app
 app.listen(app.get('port'), () => {
