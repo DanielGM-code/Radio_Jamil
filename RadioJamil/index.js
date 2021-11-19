@@ -4,7 +4,7 @@ const path = require('path');
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
+    width: 900,
     height: 600,
     fullscreenable: true,
     webPreferences: {
@@ -14,7 +14,7 @@ const createWindow = () => {
   });
 
   //Load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'views/index.html'));
+  mainWindow.loadFile(path.join(__dirname, 'src/index.html'));
 
   // Open the DevTools.
   // mainWindow.openDevTools();
