@@ -3,8 +3,8 @@ const path = require('path');
 const passport = require('passport');
 
 const parentFolder = path.resolve(__dirname, '..')
-const userController = require(path.join(parentFolder,  '/util', 'userController.js'))
-const auth = require(path.join(parentFolder,  '/util', 'auth.js'))
+const userController = require(parentFolder, '/dataAccess',  'userController.js')
+const auth = require(path.join(parentFolder, 'auth.js'))
 
 const router = express.Router();
 
