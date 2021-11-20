@@ -1,7 +1,5 @@
 const path = require('path');
-
-const parentFolder = path.resolve(__dirname, '..')
-const dbConnection = require(path.join(parentFolder, 'util', 'dbConnection.js'))
+const dbConnection = require(path.join(__dirname, 'dbConnection.js'))
 
 function getAll(callback){
     dbConnection.query('call SP_Read_All_Patron()', callback)

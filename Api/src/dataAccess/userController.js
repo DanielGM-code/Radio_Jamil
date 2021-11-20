@@ -1,5 +1,6 @@
 const bcrypt = require('bcrypt');
-dbConnection = require('./dbConnection.js')
+const path = require('path');
+const dbConnection = require(path.join(__dirname,  'dbConnection.js'))
 
 function getUser(id){
     return new Promise((resolve, reject) =>{
