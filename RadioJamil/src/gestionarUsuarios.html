@@ -9,76 +9,68 @@
 	<link href="css/gestionarCanciones.css" rel="stylesheet" type="text/css">
 </head>
 <body style="overflow-x:hidden; overflow-y:hidden">
-	<!-- Cabecera -->
-	<div class="div-cabecera">
-			<a  href="menuPrincipal.html">
-				<input class="button" 
-					   id="buttonRegresar" 
-					   type="button" 
-					   value="">
-			</a>
-		
-			<a href="index.html">
-				<input class="button" 
-					   id="buttonCerrarSesion" 
-					   type="button" 
-					   value="">
-			</a>
+	
+	<!-- particles.js container -->
+	<div id="particles-js">
+
+		<!-- Ventana principal -->
+		<div class="div-contenedor">
+
+			<!-- Contenedor para buscar canciones-->
+			<div class="div-contenedor-canciones">
+				<div>
+					<input class="input-text"
+						   id="textFieldBuscador"
+						   type="text" 
+						   placeholder=" | Nombre / Correo / Tipo de usuario"/>
+				</div>
+
+				<!-- Contenedor para los resultados de la búsqueda-->
+				<div class="div-contenedor-canciones-resultados"></div>
+			</div>
+
+			<!-- Contenedor del formulario para registrar una canción-->
+			<div class="div-contenedor-formulario">
+
+				<div><p><label class="label">Registrar usuario:</label></p></div>
+
+				<!-- Contenedor con los text fields del formulario-->
+				<div class="div-contenedor-formulario-textFields">
+					<input class="input-text"
+						   id="textFieldNombre"
+						   type="text" 
+						   placeholder="    |  Nombre completo"/>
+
+					<input class="input-text"
+						   id="textFieldCorreo"
+						   type="text" 
+						   placeholder="   |  Correo electrónico"/>
+
+					<input class="input-text"
+						   id="textFieldTipoUsuario"
+						   type="text" 
+						   placeholder="  |  Tipo de usuario"/>
+				</div>
+
+				<!-- Contenedor con los botones de registrar y cancelar-->
+				<div class="div-contenedor-botones">
+
+					<input class="button" 
+						   id="buttonCancelar" 
+						   type="button" 
+						   value="  Cancelar">
+
+					<input class="button" 
+						   id="buttonRegistrar" 
+						   type="button" 
+						   value="  Registrar">
+				</div>
+			</div>
+		</div>
 	</div>
 	
-	<!-- Ventana principal -->
-	<div class="div-contenedor">
-		
-		<!-- Contenedor para buscar canciones-->
-		<div class="div-contenedor-canciones">
-			<div>
-				<input class="input-text"
-					   id="textFieldBuscador"
-					   type="text" 
-					   placeholder="Nombre/Correo/Tipo de usuario"/>
-			</div>
-			
-			<!-- Contenedor para los resultados de la búsqueda-->
-			<div class="div-contenedor-canciones-resultados"></div>
-		</div>
-		
-		<!-- Contenedor del formulario para registrar una canción-->
-		<div class="div-contenedor-formulario">
-			
-			<div><p><label class="label">Registrar usuario:</label></p></div>
-			
-			<!-- Contenedor con los text fields del formulario-->
-			<div class="div-contenedor-formulario-textFields">
-				<input class="input-text"
-					   id="textFieldNombre"
-					   type="text" 
-					   placeholder="  |  Nombre completo"/>
-
-				<input class="input-text"
-					   id="textFieldCorreo"
-					   type="text" 
-					   placeholder="  |  Correo electrónico"/>
-
-				<input class="input-text"
-					   id="textFieldTipoUsuario"
-					   type="text" 
-					   placeholder="  |  Tipo de usuario"/>
-			</div>
-			
-			<!-- Contenedor con los botones de registrar y cancelar-->
-			<div class="div-contenedor-botones">
-			
-				<input class="button" 
-					   id="buttonCancelar" 
-					   type="button" 
-					   value="  Cancelar">
-				
-				<input class="button" 
-					   id="buttonRegistrar" 
-					   type="button" 
-					   value="  Registrar">
-			</div>
-		</div>
-	</div>
+	<!-- Script para reproducir particulas -->
+	<script src="resources/particles/particles.min.js"></script>
+    <script src="resources/particles/app.js"></script>
 </body>
 </html>
