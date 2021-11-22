@@ -6,6 +6,12 @@ body{
 }
 
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
+
+.div-ventana-botones{
+	flex-wrap: 			wrap;
+	flex-direction: 	row;
+}
+
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
 	height: 			100vh;
