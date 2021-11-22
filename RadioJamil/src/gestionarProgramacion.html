@@ -10,64 +10,56 @@
 </head>
 <body style="overflow-x:hidden; overflow-y:hidden">
 	
-	<!-- Cabecera -->
-	<div class="div-cabecera">
+	<!-- particles.js container -->
+	<div id="particles-js">
 		
-		<a href="menuPrincipal.html">
-			<input class="button" 
-				   id="buttonRegresar" 
-				   type="button" 
-				   value="">
-		</a>
-		<a href="index.html">
-			<input class="button" 
-				id="buttonCerrarSesion" 
-				type="button" 
-				value="">
-		</a>
-	</div>
-	<!-- Ventana principal -->
-	<div class="div-contenedor">
-		
-		<!-- Contenedor para buscar canciones-->
-		<div class="div-contenedor-canciones">
-			<div>
-				<input class="input-text"
-					   id="textFieldBuscador"
-					   type="text" 
-					   placeholder="Canción/Artista/Albúm"/>
-			</div>
-			
-			<!-- Contenedor para los resultados de la búsqueda-->
-			<div class="div-contenedor-canciones-resultados">
-				<table class="tablaResultados">
-					<thead class="tablaHeader">
-						<tr class="tablaHeadersFila">
-							<th>Nombre de la canción</th>
-							<th>Artista</th>
-						</tr>
-					</thead>
-					<tbody class="tablaCuerpo" id="tablaCuerpo">
+		<!-- Ventana principal -->
+		<div class="div-contenedor">
 
-					</tbody>
-				</table>
+			<!-- Contenedor para buscar canciones-->
+			<div class="div-contenedor-canciones">
+				<div>
+					<input class="input-text"
+						   id="textFieldBuscador"
+						   type="text" 
+						   placeholder="  |  Canción / Artista"/>
+				</div>
+
+				<!-- Contenedor para los resultados de la búsqueda-->
+				<div class="div-contenedor-canciones-resultados">
+					<table class="tablaResultados">
+						<thead class="tablaHeader">
+							<tr class="tablaHeadersFila">
+								<th>Nombre de la canción</th>
+								<th>Artista</th>
+							</tr>
+						</thead>
+						<tbody class="tablaCuerpo" id="tablaCuerpo">
+
+						</tbody>
+					</table>
+				</div>
 			</div>
-		</div>
-		
-		<!-- Contenedor de la programación actual-->
-		<div class="div-contenedor-programacion">
-			<div class="div-contenedor-programacion-label">
-				  <p><label class="label" 
-							id="labelFechaProgramacion">
-					  		Programación del día:
-					  </label>
-				</p>
+
+			<!-- Contenedor de la programación actual-->
+			<div class="div-contenedor-programacion">
+				<div class="div-contenedor-programacion-label">
+					  <p><label class="label" 
+								id="labelFechaProgramacion">
+								Programación del día:
+						  </label>
+					</p>
+				</div>
+
+				<div class="div-contenedor-programacion-tabla">
+				</div>	
 			</div>
-			
-			<div class="div-contenedor-programacion-tabla">
-			</div>	
 		</div>
 	</div>
+	
+	<!-- Script para reproducir particulas -->
+	<script src="resources/particles/particles.min.js"></script>
+    <script src="resources/particles/app.js"></script>
 
 	<script src="scripts/gestionarProgramacion.js"></script>
 </body>
