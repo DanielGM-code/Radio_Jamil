@@ -54,12 +54,19 @@ body{
 
 /* Incluye el formulario para registrar una canción */
 .div-contenedor-formulario-textFields{
-	/* Propiedades heredadas de contenedor */
-	display: 			inherit;
-	flex-wrap: 			inherit;
-	align-items: 		inherit;
-	justify-content: 	inherit;
-	flex-direction: 	column;
+	width: 				35vw;
+	flex-wrap: 			wrap;
+	flex-direction: 	row;
+}
+
+.div-iconos{
+	width: 2vw;
+	margin-top: 		1.5%;
+	float:  			left;
+	/* Fuete de texto */
+	color: 				#FFFFFF; 
+	font-size: 			4vh;
+	font-family: 		"Font Awesome 5 Free";
 }
 
 .div-contenedor-botones{
