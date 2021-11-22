@@ -31,17 +31,15 @@ body{
 /* Incluye los resultados de la búsqueda */
 .div-contenedor-canciones-resultados{
 	height: 			65vh;
-	width: 				30vw;
+	width: 				50vw;
 	border-radius: 		15px;
 	background: 		#36393F;
 	box-shadow: 		inset 5px 5px 0px #313339,
 						inset -5px -5px 0px #3b3f45;
 	/* Propiedades heredadas de contenedor */
-	display: 			inherit;
-	flex-wrap: 			inherit;
-	align-items: 		inherit;
-	justify-content: 	inherit;
-	flex-direction: 	column;
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
 	overflow-y: 		auto;
 }
 
@@ -75,8 +73,9 @@ body{
 }
 
 .tablaResultados{
-	color: 		#FFFFFF;
-	margin-top: 2%;
+	color: 			#FFFFFF;
+	margin-top: 	2%;
+	padding-left: 	3%;
 }
 
 /* Separación entre text fields */
@@ -90,20 +89,26 @@ body{
 	margin-right:   2%;
 }
 
+.div-headers{
+	margin-top: 2%;
+}
+
+
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
 
 .label{
-	width: 					20vw;
 	margin-top: 			5%;
-	text-align: 			center;
 	/* Estilo de texto */
 	color: 					#757575;
 	font-size: 				3.5vh;
-	/* Efecto que limita el número de letras */
-	display: 				-webkit-box;
-  	-webkit-line-clamp: 	1;
-  	-webkit-box-orient: 	vertical;
-  	overflow: 				hidden;
+}
+
+#label1{
+	margin-left: 1%;
+}
+
+#label2{
+	margin-left: 47%;
 }
 
 /* - - - - - - - - - - - - - - - -  - I M A G E N E S  Y  B O T O N E S - - - - - - - - - - - - - - - - - */
@@ -208,3 +213,22 @@ body{
     transform: scale(0.8);
   }
 }
+
+/* - - - - - - - - - - - - - - - - - - - - S C R O L L  B A R - - - - - - - - - - - - - - - - - - - - */
+
+*::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    display: none;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    border: 1px solid gray;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
