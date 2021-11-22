@@ -142,10 +142,11 @@ body{
 	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
 }
-#buttonCerrarSesion{	
-	height: 			5vh;
-	width: 				4vw;
-	/* Fuete de texto */
+
+#buttonCerrarSesion{
+	height: 			2vh;
+	width: 				2vw;
+	/* Fuente de texto */
 	font-family: 		"Font Awesome 5 Free";
 }
 

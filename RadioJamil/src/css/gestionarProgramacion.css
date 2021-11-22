@@ -133,6 +133,13 @@ body{
 	font-family: 		"Font Awesome 5 Free";
 }
 
+#buttonCerrarSesion{
+	height: 			2vh;
+	width: 				2vw;
+	/* Fuente de texto */
+	font-family: 		"Font Awesome 5 Free";
+}
+
 /* - - - - - - - - - - - - - - - - - - - - - - - T E X T  F I E L D - - - - - - - - - - - - - - - - - - - */
 
 /* Clase principal de la que heredan todos los text field*/
