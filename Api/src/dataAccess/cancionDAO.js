@@ -27,12 +27,12 @@ function agregar(cancion, callback){
 
 function obtener(id, callback){
     dbConnection.query('call SP_Read_Cancion(?)', [id], (err, rows, fields) =>{
-        if(err){
+        respuesta = rows[0][0]
+        if(err || !respuesta){
             return callback(err)
         }
         else{
-            respuesta = rows[0][0]
-            dbConnection.query('call SP_Read_Artista(?)', [respuesta.idArtista], (err, rows, fields) =>{
+            dbConnection.query('call SP_Read_Artista(?)', [respuesta.id], (err, rows, fields) =>{
                 if(err){
                     return callback(err)
                 }
