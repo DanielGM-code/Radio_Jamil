@@ -9,7 +9,7 @@ body{
 
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
-	height: 			100vh;
+	height: 			90vh;
 	width: 				100vw;
 	position: 			fixed;
 	/* Propiedades de flexbox */
@@ -17,6 +17,17 @@ body{
 	flex-wrap: 			nowrap;
 	align-items: 		center;
 	justify-content: 	center;
+}
+
+
+.div-botones-cabecera{
+	height: 			5vh;
+	width: 				100vw;
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	row;
 }
 
 /* Incluye el contenedor de los botones del menú principal */
@@ -90,6 +101,21 @@ body{
   	overflow: 				hidden;
 }
 
+#label1{
+	margin-top: 			5%;
+	/* Estilo de texto */
+	color: 					#757575;
+	font-size: 				3.5vh;
+	margin-left: 1%;
+}
+
+#label2{
+	margin-top: 			5%;
+	/* Estilo de texto */
+	color: 					#757575;
+	font-size: 				3.5vh;
+}
+
 /* - - - - - - - - - - - - - - - -  - I M A G E N E S  Y  B O T O N E S - - - - - - - - - - - - - - - - - */
 
 /* Clase principal de la que heredan todos los botones*/
@@ -111,11 +137,37 @@ body{
 }
 
 #buttonCerrarSesion{
-	height: 			2vh;
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
 	width: 				2vw;
-	/* Fuente de texto */
+	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
+	color: 				#DF0C0F
 }
+
+#buttonMinimizar{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#DFD70B
+}
+
+
+#buttonPantallaCompleta{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#19FF25
+}
+
+
 
 /* - - - - - - - - - - - - - - - - - - - - A N I M A C I O N E S - - - - - - - - - - - - - - - - - - - - */
 /* Hace saltar la imagen cuando el puntero está encima */

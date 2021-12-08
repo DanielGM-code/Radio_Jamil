@@ -13,54 +13,125 @@
 	<!-- particles.js container -->
 	<div id="particles-js">
 		
-		<a href="menuPrincipal.html">
-					<input class="button" 
-						id="buttonCerrarSesion" 
-						type="button" 
-						value="X">
-		</a>
+		<div class="div-botones-cabecera">
+			<a href="menuPrincipal.html">
+			<input id="buttonCerrarSesion" 
+					type="button"
+					value="">
+			</a>
+			
+			<a href="index.html">
+			<input id="buttonMinimizar" 
+					type="button"
+				   	value="">
+			</a>
+			
+			<a href="index.html">
+			<input id="buttonPantallaCompleta" 
+					type="button"
+				   	value="">
+			</a>
+		</div>
 		
 		<!-- Ventana principal -->
 		<div class="div-contenedor">
 
-			<!-- Contenedor para buscar canciones-->
-			<div class="div-contenedor-canciones">
+			<!-- Contenedor para buscar horarios-->
+			<div class="div-contenedor-horarios">
 				<div>
 					<input class="input-text"
-						   id="textFieldBuscador"
+						   id="textFieldBuscadorHorario"
 						   type="text" 
-						   placeholder="  |  Canción / Artista"/>
+						   placeholder="  Buscar por Día u Hora un horario"/>
+					
+					<input id="buttonRetornarHorario" 
+						   	type="button" 
+						   	value="">
+					
 				</div>
-
+				
+				
 				<!-- Contenedor para los resultados de la búsqueda-->
-				<div class="div-contenedor-canciones-resultados">
-					<table class="tablaResultados">
-						<thead class="tablaHeader">
-							<tr class="tablaHeadersFila">
-								<th>Nombre de la canción</th>
-								<th>Artista</th>
-							</tr>
-						</thead>
-						<tbody class="tablaCuerpo" id="tablaCuerpo">
-
+				<div class="div-contenedor-horarios-resultados">
+					<div class="div-headers">
+						<label class="label" id="label1">Día:</label>
+						<label class="label" id="label2">Hora:</label>
+					</div>
+					<table class="tablaResultados" id="tablaHorarios">
+						<tbody class="tablaCuerpo" id="tablaCuerpoHorarios">
 						</tbody>
 					</table>
 				</div>
 			</div>
+			
+			
 
-			<!-- Contenedor de la programación actual-->
-			<div class="div-contenedor-programacion">
-				<div class="div-contenedor-programacion-label">
-					  <p><label class="label" 
-								id="labelFechaProgramacion">
-								Programación del día:
-						  </label>
-					</p>
+			<!-- Contenedor para buscar canciones-->
+			<div class="div-contenedor-horarios">
+				<div>
+					<input class="input-text"
+						   id="textFieldBuscadorCancion"
+						   type="text" 
+						   placeholder="  Buscar por Nombre o Artista una canción"/>
+					
+					<input id="buttonRetornarCancion" 
+						   	type="button" 
+						   	value="">
+					
+				</div>
+				
+				<!-- Contenedor para los resultados de la búsqueda-->
+				<div class="div-contenedor-horarios-resultados">
+					<div class="div-headers">
+						<label class="label" id="label3">Nombre:</label>
+						<label class="label" id="label4">Artista:</label>
+					</div>
+					<table class="tablaResultados" id="tablaCanciones">
+						<tbody class="tablaCuerpo" id="tablaCuerpoCanciones">
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<!-- Contenedor del formulario para registrar una canción-->
+			<div class="div-contenedor-formulario">
+
+				<div><p><label class="label">Horarios y canciones asignadas:</label></p></div>
+
+				<!-- Contenedor con los text fields del formulario-->
+				<div class="div-contenedor-formulario-textFields">
+					
+					<div>
+						<input class="input-text"
+							   id="textFieldHorario"
+							   type="text" 
+							   placeholder="Horario"/>
+					</div>
+					
+					<div>
+						<input class="input-text"
+							   id="textFieldCanción"
+							   type="text" 
+							   placeholder="Canción"/>
+					</div>
 				</div>
 
-				<div class="div-contenedor-programacion-tabla">
-				</div>	
+				<!-- Contenedor con los botones de registrar y cancelar-->
+				<div class="div-contenedor-botones">
+
+					<input class="button" 
+						   id="buttonCancelar" 
+						   type="button" 
+						   value=" Cancelar">
+
+					<input class="button" 
+						   id="buttonCambiar" 
+						   type="button" 
+						   value=" Cambiar">
+				</div>
 			</div>
+			
+			
 		</div>
 	</div>
 	
