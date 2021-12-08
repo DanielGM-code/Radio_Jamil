@@ -14,8 +14,11 @@ app.use(cors());
 const routes = path.join(__dirname, '/routes')
 // app.use(require(path.join(routes, 'login.js')))
 app.use(require(path.join(routes, 'cancion.js')))
-app.use(require(path.join(routes, 'patron.js')))
-app.use(require(path.join(routes, 'programacion.js')))
+app.use(require(path.join(routes, 'artista.js')))
+app.use(require(path.join(routes, 'categoria.js')))
+app.use(require(path.join(routes, 'genero.js')))
+// app.use(require(path.join(routes, 'patron.js')))
+// app.use(require(path.join(routes, 'programacion.js')))
 
 //Starting app
 app.listen(app.get('port'), () => {
