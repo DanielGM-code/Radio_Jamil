@@ -15,6 +15,22 @@ router.route('/generos')
             res.status(200).json(respuesta)
         })
     })
+    .post((req, res) =>{
+        const genero = req.body
+        if(genero.hasOwnProperty('nombre')){
+            generoDAO.agregar(genero, (err, respuesta) =>{
+                if(err){
+                    console.log(err)
+                    res.status(400).json(err)
+                    return
+                }
+                res.status(201).json({Mensaje : 'Genero agregado'})
+            })
+        }
+        else{
+            res.status(400).json({Mensaje : 'datos invalidos'})
+        }
+    });
 
 router.route('/generos/:id')
     .get((req, res) =>{

@@ -24,5 +24,15 @@ function obtener(id, callback){
     })
 }
 
+function agregar(nombre, callback){
+    dbConnection.query('call SP_Create_Categoria(?);', [nombre], (err, rows, fields) => {
+        if(err){
+            callback(err)
+        }
+        else{
+            callback(null, rows)
+        }
+    })
+}
 
-module.exports = {obtener, obtenerTodos}
+module.exports = {obtener, obtenerTodos, agregar}

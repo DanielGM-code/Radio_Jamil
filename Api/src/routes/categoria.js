@@ -15,6 +15,22 @@ router.route('/categorias')
             res.status(200).json(respuesta)
         })
     })
+    .post((req, res) =>{
+        const categoria = req.body
+        if(categoria.hasOwnProperty('nombre')){
+            categoriaDAO.agregar(categoria, (err, respuesta) =>{
+                if(err){
+                    console.log(err)
+                    res.status(400).json(err)
+                    return
+                }
+                res.status(201).json({Mensaje : 'categoria agregado'})
+            })
+        }
+        else{
+            res.status(400).json({Mensaje : 'datos invalidos'})
+        }
+    });
 
 router.route('/categorias/:id')
     .get((req, res) =>{
