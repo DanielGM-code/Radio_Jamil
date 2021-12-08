@@ -19,15 +19,7 @@ function obtener(id, callback){
             return callback(err)
         }
         else{
-            respuesta = rows[0][0]
-            dbConnection.query('call SP_Read_Artista(?)', [id], (err, rows, fields) =>{
-                if(err){
-                    return callback(err)
-                }
-                else{
-                    callback(null, rows[0][0])
-                }
-            })
+            callback(null, rows[0][0])
         }
     })
 }

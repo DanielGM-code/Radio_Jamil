@@ -44,7 +44,7 @@ router.route('/artistas/:id')
                 res.status(200).json(respuesta)
             }
             else{
-                res.status(404).json({Mensaje : 'Cancion no encontrada'})
+                res.status(404).json({Mensaje : 'Artista no encontrada'})
             }
 
         })
