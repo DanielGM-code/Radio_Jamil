@@ -12,10 +12,17 @@ const cuerpoTabla = document.getElementById('tablaCuerpo')
 const btnCancelar = document.getElementById('buttonCancelar')
 const btnAceptar = document.getElementById('buttonRegistrar')
 
-var esRegistro = true
-var idArtista = 0;
-var idGenero = 0;
-var idCategoria = 0;
+var cancionSeleccionada = {
+    id: 0,
+    nombre: '',
+    idArtista: 0,
+    idGenero: 0,
+    idCategoria: 0,
+    referencia: 0,
+    estado: "activo",
+    esPeticion: null,
+    diasReproduccion: 1234567
+}
 
 function cargarItems(items) {
     cuerpoTabla.innerHTML = ''
@@ -33,6 +40,8 @@ function cargarItems(items) {
 }
 
 function clickFila(idCancion){
+    cancionSeleccionada.id = idCancion
+
     pedirCancion(idCancion).then(cancion => {
         txtCancion.value = cancion.nombre
         txtArtista.value = cancion.artista.nombre
@@ -40,7 +49,6 @@ function clickFila(idCancion){
         txtCategoria.value = cancion.nombreCategoria
     })
     .then( () => {
-        esRegistro = false
         btnCancelar.value = '  Limpiar'
         btnAceptar.value = '  Guardar'
     })
@@ -75,14 +83,14 @@ window.onload = () =>{
         })
     })
 
-    pedirArtistas()/*.then(artistas => {
-        return artistas.map(artista => {
-            return artista.nombre
-        })
-    })*/
-    .then(artistas => {
+    pedirArtistas().then(artistas => {
         txtArtista.addEventListener('input', evento =>{
-            autocompletar(artistas, evento.target.value, resultadosArtista, 'idArtista')
+            if(evento.target.value){
+                autocompletar(artistas, evento.target.value, resultadosArtista, 'cancionSeleccionada.idArtista')
+            }
+            else{
+                cancionSeleccionada.idArtista = 0
+            }
         })
 
         resultadosArtista.addEventListener('click', evento => {
@@ -90,14 +98,14 @@ window.onload = () =>{
         })  
     }) 
     
-    pedirGeneros()/*.then(generos => {
-        return generos.map(genero => {
-            return genero.nombre
-        })
-    })*/
-    .then(generos => {
+    pedirGeneros().then(generos => {
         txtGenero.addEventListener('input', evento =>{
-            autocompletar(generos, evento.target.value, resultadosGenero, 'idGenero')
+            if(evento.target.value){
+                autocompletar(generos, evento.target.value, resultadosGenero, 'cancionSeleccionada.idGenero')
+            }
+            else{
+                cancionSeleccionada.idGenero = 0
+            }
         })
 
         resultadosGenero.addEventListener('click', evento => {
@@ -105,14 +113,14 @@ window.onload = () =>{
         })  
     }) 
 
-    pedirCategorias()/*.then(categorias => {
-        return categorias.map(categorias => {
-            return categorias.nombre
-        })
-    })*/
-    .then(categorias => {
+    pedirCategorias().then(categorias => {
         txtCategoria.addEventListener('input', evento =>{
-            autocompletar(categorias, evento.target.value, resultadosCategoria, 'idCategoria')
+            if(evento.target.value){
+                autocompletar(categorias, evento.target.value, resultadosCategoria, 'cancionSeleccionada.idCategoria')
+            }
+            else{
+                cancionSeleccionada.idCategoria = 0
+            }
         })
 
         resultadosCategoria.addEventListener('click', evento => {
@@ -126,21 +134,26 @@ window.onload = () =>{
         txtGenero.value = ''
         txtCategoria.value = ''
 
+        cancionSeleccionada.id = 0
+        cancionSeleccionada.idArtista = 0
+        cancionSeleccionada.idGenero = 0
+        cancionSeleccionada.idCategoria = 0
+        cancionSeleccionada.nombre = ''
+
         btnCancelar.value = '  Cancelar'
         btnAceptar.value = '  Registrar'
-
-        esRegistro = true
     })
 
     btnAceptar.addEventListener('click', evento => {
-        if(esRegistro){
+        cancionSeleccionada.nombre = txtCancion.value
+
+        if(cancionSeleccionada.id === 0){
             console.log('Voy a registrar')
         }
         else{
             console.log('Estoy editando')
         }
-        console.log(idArtista)
-        console.log(idGenero)
-        console.log(idCategoria)
+
+        console.log(cancionSeleccionada)
     })
 }
