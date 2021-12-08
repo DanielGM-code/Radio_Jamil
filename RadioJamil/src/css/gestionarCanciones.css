@@ -258,3 +258,7 @@ body{
 	text-decoration: none;
 	display: block;
   }
+
+  .escondido{
+	display: none;
+  }
