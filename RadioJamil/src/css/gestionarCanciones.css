@@ -8,7 +8,7 @@ body{
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
-	height: 			100vh;
+	height: 			90vh;
 	width: 				100vw;
 	position: 			fixed;
 	/* Propiedades de flexbox */
@@ -17,6 +17,7 @@ body{
 	align-items: 		center;
 	justify-content: 	center;
 }
+
 
 /* Incluye el resultado de las canciones*/
 .div-contenedor-canciones{
@@ -136,24 +137,43 @@ body{
   	transition: 		all 0.3s ease-in-out;
 }
 
-#buttonRegresar{
-	height: 			5vh;
-	width: 				4vw;
-	/* Fuete de texto */
-	font-family: 		"Font Awesome 5 Free";
-}
 
 #buttonCerrarSesion{
-	height: 			2vh;
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
 	width: 				2vw;
-	/* Fuente de texto */
+	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
+	color: 				#DF0C0F
 }
+
+#buttonMinimizar{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#DFD70B
+}
+
+
+#buttonPantallaCompleta{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#19FF25
+}
+
 
 #buttonCancelar{
 	height: 			5vh;
 	width: 				12vw;
-	margin-right: 		10%;
+	margin-right: 		5%;
 	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
 }
@@ -161,9 +181,26 @@ body{
 #buttonRegistrar{
 	height: 			5vh;
 	width: 				12vw;
-	margin-left: 		10%;
+	margin-right: 		5%;
 	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
+}
+
+#buttonEliminar{
+	height: 			5vh;
+	width: 				12vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+}
+
+#buttonRetornar{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#FFFFFF;
 }
 
 
@@ -242,10 +279,11 @@ body{
   }
 
 /* DANNY ARREGLA MI CAGADERO DE CSS PLISSSS (Si, me robé el código) */ 
-  .dropdown { 
+  .dropdown {
+	border-radius: 20px;
 	display: none;
 	position: absolute;
-	background-color: #f9f9f9;
+	background-color: #313339;
 	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
@@ -253,7 +291,7 @@ body{
 
 /* Para cambiar la forma de cada elemento de los resultados */
   .contenido-dropdown{
-	color: black;
+	color: #FFFFFF;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
