@@ -2,23 +2,36 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<title>Registrar canción</title>
+	<title>Gestionar usuario</title>
 	<!-- CDN FONT AWESOME -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- CSS MAIN -->
-	<link href="css/gestionarCanciones.css" rel="stylesheet" type="text/css">
+	<link href="css/gestionarUsuarios.css" rel="stylesheet" type="text/css">
 </head>
 <body style="overflow-x:hidden; overflow-y:hidden">
 	
 	<!-- particles.js container -->
 	<div id="particles-js">
-		
-		<a href="menuPrincipal.html">
-					<input class="button" 
-						id="buttonCerrarSesion" 
-						type="button" 
-						value="X">
-		</a>
+
+		<div class="div-botones-cabecera">
+			<a href="menuPrincipal.html">
+			<input id="buttonCerrarSesion" 
+					type="button"
+					value="">
+			</a>
+			
+			<a href="index.html">
+			<input id="buttonMinimizar" 
+					type="button"
+				   	value="">
+			</a>
+			
+			<a href="index.html">
+			<input id="buttonPantallaCompleta" 
+					type="button"
+				   	value="">
+			</a>
+		</div>
 
 		<!-- Ventana principal -->
 		<div class="div-contenedor">
@@ -29,34 +42,57 @@
 					<input class="input-text"
 						   id="textFieldBuscador"
 						   type="text" 
-						   placeholder=" | Nombre / Correo / Tipo de usuario"/>
+						   placeholder=" Nombre ó Correo electrónico"/>
+					
+					
+					<input id="buttonRetornar" 
+						   	type="button" 
+						   	value="">	
 				</div>
-
 				<!-- Contenedor para los resultados de la búsqueda-->
-				<div class="div-contenedor-canciones-resultados"></div>
+				<div class="div-contenedor-canciones-resultados">
+					<div class="div-headers">
+						<label class="label" id="label1">Nombre:</label>
+						<label class="label" id="label2">Correo electrónico:</label>
+					</div>
+					<table class="tablaResultados" id="tabla">
+						<tbody class="tablaCuerpo" id="tablaCuerpo">
+						</tbody>
+					</table>
+				</div>
 			</div>
 
 			<!-- Contenedor del formulario para registrar una canción-->
 			<div class="div-contenedor-formulario">
 
-				<div><p><label class="label">Registrar usuario:</label></p></div>
+				<div><p><label class="label">Registrar Usuario:</label></p></div>
 
 				<!-- Contenedor con los text fields del formulario-->
 				<div class="div-contenedor-formulario-textFields">
-					<input class="input-text"
-						   id="textFieldNombre"
-						   type="text" 
-						   placeholder="    |  Nombre completo"/>
-
-					<input class="input-text"
-						   id="textFieldCorreo"
-						   type="text" 
-						   placeholder="   |  Correo electrónico"/>
-
-					<input class="input-text"
-						   id="textFieldTipoUsuario"
-						   type="text" 
-						   placeholder="  |  Tipo de usuario"/>
+					
+					<div>
+						<div class="div-iconos"></div>
+						<input class="input-text"
+							   id="textFieldNombre"
+							   type="text" 
+							   placeholder="Nombre completo"/>	
+					</div>
+					
+					<div>
+						<div class="div-iconos"></div>
+						<input class="input-text"
+							   id="textFieldCorreo"
+							   type="text" 
+							   placeholder="Correo electrónico"/>
+					</div>
+					
+					<div>
+						<div class="div-iconos"></div>
+						<input class="input-text"
+							   id="textFieldTipoUsuario"
+							   type="text" 
+							   placeholder="Tipo de Usuario"/>	
+					</div>
 				</div>
 
 				<!-- Contenedor con los botones de registrar y cancelar-->
@@ -70,12 +106,16 @@
 					<input class="button" 
 						   id="buttonRegistrar" 
 						   type="button" 
-						   value="  Registrar">
+						   value="  Registrar">
+					
+					<input class="button" 
+						   id="buttonEliminar" 
+						   type="button" 
+						   value="  Eliminar">
 				</div>
 			</div>
 		</div>
 	</div>
-	
 	<!-- Script para reproducir particulas -->
 	<script src="resources/particles/particles.min.js"></script>
     <script src="resources/particles/app.js"></script>

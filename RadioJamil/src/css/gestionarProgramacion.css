@@ -9,7 +9,7 @@ body{
 
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
-	height: 			100vh;
+	height: 			90vh;
 	width: 				100vw;
 	position: 			fixed;
 	/* Propiedades de flexbox */
@@ -20,7 +20,7 @@ body{
 }
 
 /* Incluye el resultado de las canciones*/
-.div-contenedor-canciones{
+.div-contenedor-horarios{
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -30,19 +30,17 @@ body{
 }
 
 /* Incluye los resultados de la búsqueda */
-.div-contenedor-canciones-resultados{
-	height: 			75vh;
+.div-contenedor-horarios-resultados{
+	height: 			65vh;
 	width: 				30vw;
 	border-radius: 		15px;
 	background: 		#36393F;
 	box-shadow: 		inset 5px 5px 0px #313339,
 						inset -5px -5px 0px #3b3f45;
 	/* Propiedades heredadas de contenedor */
-	display: 			inherit;
-	flex-wrap: 			inherit;
-	align-items: 		inherit;
-	justify-content: 	inherit;
-	flex-direction: 	column;
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
 	overflow-y: 		auto;
 }
 
@@ -82,33 +80,85 @@ body{
 	overflow-y: 		auto;
 }
 
+
+.div-contenedor-formulario{
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	column;
+}
+
+/* Incluye el formulario para registrar una canción */
+.div-contenedor-formulario-textFields{
+	flex-wrap: 			wrap;
+	flex-direction: 	row;
+}
+
+.div-iconos{
+	width: 2vw;
+	margin-top: 		1.5%;
+	float:  			left;
+	/* Fuete de texto */
+	color: 				#FFFFFF; 
+	font-size: 			4vh;
+	font-family: 		"Font Awesome 5 Free";
+}
+
+.div-contenedor-botones{
+	margin-top: 		5%;
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	row;
+}
+
 .tablaResultados{
-	color: 		#FFFFFF;
-	margin-top: 2%;
+	color: 			#FFFFFF;
+	margin-top: 	2%;
+	padding-left: 	3%;
+}
+
+/* Separación entre text fields */
+.div-contenedor input{
+	margin-bottom: 	5%;
 }
 
 /* Separación entre cada contenedor */
 .div-contenedor div{
 	margin-left: 	2%;
 	margin-right:   2%;
-	margin-top:  	2%;
-	margin-bottom:  2%;
 }
 
+.div-headers{
+	margin-top: 2%;
+}
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
 
 .label{
-	width: 					20vw;
 	margin-top: 			5%;
-	text-align: 			center;
 	/* Estilo de texto */
-	color: 					#b8b8b8;
+	color: 					#757575;
 	font-size: 				3.5vh;
-	/* Efecto que limita el número de letras */
-	display: 				-webkit-box;
-  	-webkit-line-clamp: 	1;
-  	-webkit-box-orient: 	vertical;
-  	overflow: 				hidden;
+}
+
+#label1{
+	margin-left: 1%;
+}
+
+#label2{
+	margin-left: 35%;
+}
+
+#label3{
+	margin-left: 1%;
+}
+
+#label4{
+	margin-left: 35%;
 }
 
 /* - - - - - - - - - - - - - - - -  - I M A G E N E S  Y  B O T O N E S - - - - - - - - - - - - - - - - - */
@@ -134,18 +184,79 @@ body{
 }
 
 #buttonCerrarSesion{
-	height: 			2vh;
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
 	width: 				2vw;
-	/* Fuente de texto */
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#DF0C0F
+}
+
+#buttonMinimizar{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#DFD70B
+}
+
+
+#buttonPantallaCompleta{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#19FF25
+}
+
+#buttonRetornarHorario{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#FFFFFF;
+}
+
+
+#buttonRetornarCancion{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#FFFFFF;
+}
+
+#buttonCancelar{
+	height: 			5vh;
+	width: 				11vw;
+	margin-right: 		10%;
+	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
 }
+
+#buttonCambiar{
+	height: 			5vh;
+	width: 				11vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - T E X T  F I E L D - - - - - - - - - - - - - - - - - - - */
 
 /* Clase principal de la que heredan todos los text field*/
 .input-text{
 	height: 			6vh;
-	width: 				29vw;
+	width: 				25vw;
 	border-radius: 		10px;
 	padding-left: 		1vw;
 	outline: 			none;
@@ -155,13 +266,13 @@ body{
 						inset -5px -5px 0px #3b3f45;
 	/* Estilo del texto ingresado */
 	color: 				#FFFFFF;
-	font-size: 			3vh;
+	font-size: 			2.5vh;
 }
 
 /* Estilo de texto mostrado */
 .input-text::placeholder{
 	color: 				#FFFFFF; 
-	font-size: 			3vh;
+	font-size: 			2.5vh;
 	font-family: 		"Font Awesome 5 Free";
 }
 

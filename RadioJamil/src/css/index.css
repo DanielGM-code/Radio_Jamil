@@ -104,6 +104,37 @@ body{
 	width: 				25vw;
 }
 
+#buttonCerrarSesion{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#DF0C0F
+}
+
+#buttonMinimizar{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#DFD70B
+}
+
+
+#buttonPantallaCompleta{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#19FF25
+}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - T E X T  F I E L D - - - - - - - - - - - - - - - - - - - */
 
