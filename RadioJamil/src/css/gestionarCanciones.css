@@ -240,3 +240,25 @@ body{
   *::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+/* DANNY ARREGLA MI CAGADERO DE CSS PLISSSS (Si, me robé el código) */ 
+  .dropdown { 
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+
+/* Para cambiar la forma de cada elemento de los resultados */
+  .contenido-dropdown{
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+
+  .escondido{
+	display: none;
+  }
