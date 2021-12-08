@@ -5,8 +5,11 @@ const resultadosGenero = document.getElementById('resultadosGenero')
 const txtGenero = document.getElementById('textFieldGenero')
 const resultadosCategoria = document.getElementById('resultadosCategoria')
 const txtCategoria = document.getElementById('textFieldCategoria')
-const cuerpoTabla = document.getElementById("tablaCuerpo")
+const cuerpoTabla = document.getElementById('tablaCuerpo')
+const btnCancelar = document.getElementById('buttonCancelar')
+const btnAceptar = document.getElementById('buttonRegistrar')
 
+var esRegistro = true
 
 function cargarItems(items) {
     items.forEach( item => {
@@ -27,6 +30,11 @@ function clickFila(idCancion){
         txtArtista.value = cancion.artista.nombre
         txtGenero.value = cancion.nombreGenero
         txtCategoria.value = cancion.nombreCategoria
+    })
+    .then( () => {
+        esRegistro = false
+        btnCancelar.value = '  Limpiar'
+        btnAceptar.value = '  Guardar'
     })
 }
 
@@ -80,4 +88,25 @@ window.onload = () =>{
             clickCompletar(txtCategoria, resultadosCategoria, evento)
         })  
     }) 
+
+    btnCancelar.addEventListener('click', evento => {
+        txtCancion.value = ''
+        txtArtista.value = ''
+        txtGenero.value = ''
+        txtCategoria.value = ''
+
+        btnCancelar.value = '  Cancelar'
+        btnAceptar.value = '  Registrar'
+
+        esRegistro = true
+    })
+
+    btnAceptar.addEventListener('click', evento => {
+        if(esRegistro){
+            console.log('Voy a registrar')
+        }
+        else{
+            console.log('Estoy editando')
+        }
+    })
 }

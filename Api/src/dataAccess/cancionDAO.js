@@ -15,7 +15,7 @@ function obtenerTodos(callback){
 
 function agregar(cancion, callback){
     dbConnection.query('call SP_Create_Cancion(?, ?, ?, ?, ?, ?, ?, @estado, @mensaje); SELECT @estado as estado, @mensaje as mensaje',
-        [cancion.nombreCancion, cancion.idArtista, cancion.idGenero, cancion.idCategoria, cancion.referencia, cancion.esPeticion, cancion.diasReproduccion], (err, rows, fields) => {
+        [cancion.nombre, cancion.idArtista, cancion.idGenero, cancion.idCategoria, cancion.referencia, cancion.esPeticion, cancion.diasReproduccion], (err, rows, fields) => {
             if(err){
                 callback(err)
             }
@@ -32,7 +32,7 @@ function obtener(id, callback){
             return callback(err)
         }
         else{
-            dbConnection.query('call SP_Read_Artista(?)', [respuesta.id], (err, rows, fields) =>{
+            dbConnection.query('call SP_Read_Artista(?)', [respuesta.idArtista], (err, rows, fields) =>{
                 if(err){
                     return callback(err)
                 }
