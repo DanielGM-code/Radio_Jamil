@@ -77,7 +77,7 @@ router.route('/canciones/:id')
     });
 
 function cancionValida(cancion){
-    if(cancion.hasOwnProperty('nombreCancion') 
+    if(cancion.hasOwnProperty('nombre') 
     && cancion.hasOwnProperty('idArtista') 
     && cancion.hasOwnProperty('idGenero') 
     && cancion.hasOwnProperty('idCategoria') 

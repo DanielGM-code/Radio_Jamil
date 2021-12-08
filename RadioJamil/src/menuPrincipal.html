@@ -9,67 +9,70 @@
 	<link href="css/menuPrincipal.css" rel="stylesheet" type="text/css"> 
 </head>
 <body style="overflow-x:hidden; overflow-y:hidden">
-	<!-- Cabecera -->
-	<div class="div-cabecera">
+		
+	<!-- particles.js container -->
+	<div id="particles-js">
+
 		<a href="index.html">
-			<input class="button"
-				   id="buttonCerrarSesion" 
-				   type="button" 
-				   value="">
+					<input class="button" 
+						id="buttonCerrarSesion" 
+						type="button" 
+						value="X">
 		</a>
+		<!-- Ventana principal -->
+		<div class="div-contenedor">
+
+			<!-- Contenedor de los botones del menú principal-->
+			<div class="div-contenedor-botones">
+
+				<a href="gestionarProgramacion.html">
+					<input class="button" 
+						id="buttonGestionarProgramacion" 
+						type="button" 
+						value="Gestionar programación">
+				</a>
+
+				<a href="gestionarCanciones.html">
+					<input class="button" 
+						id="buttonGestionarCanciones" 
+						type="button" 
+						value="Gestionar canciones">
+				</a>
+				
+				<input class="button" 
+					   id="buttonPeticionesOyentes" 
+					   type="button" 
+					   value="Peticiones de oyentes">
+
+				<a href="gestionarUsuarios.html">
+				<input class="button" 
+					   id="buttonUsuarios" 
+					   type="button" 
+					   value="Gestionar usuarios">
+				</a>
+			</div>
+
+			<!-- Contenedor de la programación actual-->
+			<div class="div-contenedor-programacion">
+
+				<div class="div-contenedor-programacion-label">
+
+					  <p><label class="label" 
+								id="labelFechaProgramacion">
+								Programación actual:
+						  </label>
+					</p>
+
+				</div>
+
+				<div class="div-contenedor-programacion-tabla">
+				</div>	
+			</div>
+		</div>
 	</div>
 	
-	<!-- Ventana principal -->
-	<div class="div-contenedor">
-		
-		<!-- Contenedor de los botones del menú principal-->
-		<div class="div-contenedor-botones">
-			
-			<a href="gestionarProgramacion.html">
-				<input class="button" 
-					id="buttonGestionarProgramacion" 
-					type="button" 
-					value="Gestionar programación">
-			</a>
-			
-			<a href="gestionarCanciones.html">
-				<input class="button" 
-					id="buttonGestionarCanciones" 
-					type="button" 
-					value="Gestionar canciones">
-			</a>
-			
-			<a href="peticiones.html">
-			<input class="button" 
-				   id="buttonPeticionesOyentes" 
-				   type="button" 
-				   value="Peticiones de oyentes">
-			</a>
-			
-			<a href="gestionarUsuarios.html">
-			<input class="button" 
-				   id="buttonUsuarios" 
-				   type="button" 
-				   value="Gestionar usuarios">
-			</a>
-		</div>
-		
-		<!-- Contenedor de la programación actual-->
-		<div class="div-contenedor-programacion">
-			
-			<div class="div-contenedor-programacion-label">
-				
-				  <p><label class="label" 
-							id="labelFechaProgramacion">
-					  		Programación actual:
-					  </label>
-				</p>
-				
-			</div>
-			
-			<div class="div-contenedor-programacion-tabla">
-			</div>	
-		</div>
-	</div>
+	<!-- Script para reproducir particulas -->
+	<script src="resources/particles/particles.min.js"></script>
+    <script src="resources/particles/app.js"></script>
 </body>
 </html>
