@@ -9,104 +9,101 @@
 	<link href="css/gestionarCanciones.css" rel="stylesheet" type="text/css">
 </head>
 <body style="overflow-x:hidden; overflow-y:hidden">
-	<!-- Cabecera -->
-	<div class="div-cabecera">
-			<a  href="menuPrincipal.html">
-				<input class="button" 
-					   id="buttonRegresar" 
-					   type="button" 
-					   value="">
-			</a>
-		
-			<a href="index.html">
-				<input class="button" 
-					   id="buttonCerrarSesion" 
-					   type="button" 
-					   value="">
-			</a>
-	</div>
 	
-	<!-- Ventana principal -->
-	<div class="div-contenedor">
-		
-		<!-- Contenedor para buscar canciones-->
-		<div class="div-contenedor-canciones">
-			<div>
-				<input class="input-text"
-					   id="textFieldBuscador"
-					   type="text" 
-					   placeholder="Canción/Artista/Albúm"/>
+	<!-- particles.js container -->
+	<div id="particles-js">
+
+		<a href="menuPrincipal.html">
+					<input class="button" 
+						id="buttonCerrarSesion" 
+						type="button" 
+						value="X">
+		</a>
+
+		<!-- Ventana principal -->
+		<div class="div-contenedor">
+
+			<!-- Contenedor para buscar canciones-->
+			<div class="div-contenedor-canciones">
+				<div>
+					<input class="input-text"
+						   id="textFieldBuscador"
+						   type="text" 
+						   placeholder=" Canción ó Artista"/>
+				</div>
+				<!-- Contenedor para los resultados de la búsqueda-->
+				<div class="div-contenedor-canciones-resultados">
+					<div class="div-headers">
+						<label class="label" id="label1">Nombre:</label>
+						<label class="label" id="label2">Artista:</label>
+					</div>
+					<table class="tablaResultados" id="tabla">
+						<tbody class="tablaCuerpo" id="tablaCuerpo">
+						</tbody>
+					</table>
+				</div>
 			</div>
-			
-			<!-- Contenedor para los resultados de la búsqueda-->
-			<div class="div-contenedor-canciones-resultados">
-				<table class="tablaResultados" id="tabla">
-					<thead class="tablaHeader">
-						<tr class="tablaHeadersFila">
-							<th>Nombre</th>
-							<th>Artista</th>
-						</tr>
-					</thead>
-					<tbody class="tablaCuerpo" id="tablaCuerpo">
 
-					</tbody>
-				</table>
-			</div>
-		</div>
-		
-		<!-- Contenedor del formulario para registrar una canción-->
-		<div class="div-contenedor-formulario">
-			
-			<div><p><label class="label">Registrar canción:</label></p></div>
-			
-			<!-- Contenedor con los text fields del formulario-->
-			<div class="div-contenedor-formulario-textFields">
-				<input class="input-text"
-					   id="textFieldCancion"
-					   type="text" 
-					   placeholder="  |  Canción"/>
+			<!-- Contenedor del formulario para registrar una canción-->
+			<div class="div-contenedor-formulario">
 
-				<input class="input-text"
-					   id="textFieldArtista"
-					   type="text" 
-					   placeholder="  |  Artista"/>
+				<div><p><label class="label">Registrar canción:</label></p></div>
 
-				<input class="input-text"
-					   id="textFieldAlbum"
-					   type="text" 
-					   placeholder="  |  Álbum"/>
+				<!-- Contenedor con los text fields del formulario-->
+				<div class="div-contenedor-formulario-textFields">
+						
+					<div>
+						<div class="div-iconos"></div>
+						<input class="input-text"
+							   id="textFieldCancion"
+							   type="text" 
+							   placeholder="Canción"/>
+					</div>
+					
+					<div>
+						<div class="div-iconos"></div>
+						<input class="input-text"
+							   id="textFieldArtista"
+							   type="text" 
+							   placeholder="Artista"/>
+					</div>
+					
+					<div>
+						<div class="div-iconos"></div>
+						<input class="input-text"
+							   id="textFieldGenero"
+							   type="text" 
+							   placeholder="Genero"/>
+					</div>
+					
+					<div>
+						<div class="div-iconos"></div>
+						<input class="input-text"
+							   id="textFieldCategoria"
+							   type="text" 
+							   placeholder="Categoría"/>
+					</div>
+				</div>
 
-				<input class="input-text"
-					   id="textFieldDuracion"
-					   type="text" 
-					   placeholder="  |  Duración"/>
+				<!-- Contenedor con los botones de registrar y cancelar-->
+				<div class="div-contenedor-botones">
 
-				<input class="input-text"
-					   id="textFieldGenero"
-					   type="text" 
-					   placeholder="  |  Genero"/>
+					<input class="button" 
+						   id="buttonCancelar" 
+						   type="button" 
+						   value="  Cancelar">
 
-				<input class="input-text"
-					   id="textFieldCategoria"
-					   type="text" 
-					   placeholder="   |  Cetegoría"/>
-			</div>
-			
-			<!-- Contenedor con los botones de registrar y cancelar-->
-			<div class="div-contenedor-botones">
-			
-				<input class="button" 
-					   id="buttonCancelar" 
-					   type="button" 
-					   value="  Cancelar">
-				
-				<input class="button" 
-					   id="buttonRegistrar" 
-					   type="button" 
-					   value="  Registrar">
+					<input class="button" 
+						   id="buttonRegistrar" 
+						   type="button" 
+						   value="  Registrar">
+				</div>
 			</div>
 		</div>
 	</div>
+	<!-- Script para reproducir particulas -->
+	<script src="resources/particles/particles.min.js"></script>
+    <script src="resources/particles/app.js"></script>d
 	<script src="scripts/llamadasApi.js"></script>
 	<script src="scripts/gestionarCanciones.js"></script>
 </body>

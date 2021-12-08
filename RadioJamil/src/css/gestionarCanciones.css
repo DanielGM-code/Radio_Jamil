@@ -6,18 +6,11 @@ body{
 }
 
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
-/* Incluye el botón de cerrar sesión y regresar*/
-.div-cabecera{
-	width: 				99vw;
-	display: 			flex;
-	flex-wrap: 			nowrap;
-	justify-content: 	space-between;
-}
-
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
 	height: 			100vh;
 	width: 				100vw;
+	position: 			fixed;
 	/* Propiedades de flexbox */
 	display: 			flex;
 	flex-wrap: 			nowrap;
@@ -27,7 +20,6 @@ body{
 
 /* Incluye el resultado de las canciones*/
 .div-contenedor-canciones{
-	margin-bottom: 		5%;
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -39,22 +31,19 @@ body{
 /* Incluye los resultados de la búsqueda */
 .div-contenedor-canciones-resultados{
 	height: 			65vh;
-	width: 				30vw;
+	width: 				50vw;
 	border-radius: 		15px;
 	background: 		#36393F;
 	box-shadow: 		inset 5px 5px 0px #313339,
 						inset -5px -5px 0px #3b3f45;
 	/* Propiedades heredadas de contenedor */
-	display: 			inherit;
-	flex-wrap: 			inherit;
-	align-items: 		inherit;
-	justify-content: 	inherit;
-	flex-direction: 	column;
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
 	overflow-y: 		auto;
 }
 
 .div-contenedor-formulario{
-	margin-bottom: 		3%;
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -65,12 +54,19 @@ body{
 
 /* Incluye el formulario para registrar una canción */
 .div-contenedor-formulario-textFields{
-	/* Propiedades heredadas de contenedor */
-	display: 			inherit;
-	flex-wrap: 			inherit;
-	align-items: 		inherit;
-	justify-content: 	inherit;
-	flex-direction: 	column;
+	width: 				35vw;
+	flex-wrap: 			wrap;
+	flex-direction: 	row;
+}
+
+.div-iconos{
+	width: 2vw;
+	margin-top: 		1.5%;
+	float:  			left;
+	/* Fuete de texto */
+	color: 				#FFFFFF; 
+	font-size: 			4vh;
+	font-family: 		"Font Awesome 5 Free";
 }
 
 .div-contenedor-botones{
@@ -83,15 +79,15 @@ body{
 	flex-direction: 	row;
 }
 
+.tablaResultados{
+	color: 			#FFFFFF;
+	margin-top: 	2%;
+	padding-left: 	3%;
+}
+
 /* Separación entre text fields */
 .div-contenedor input{
 	margin-bottom: 	5%;
-}
-
-/* Separación entre botones */
-.div-contenedor-botones input{
-	margin-left: 	30%;
-	margin-right: 	30%;
 }
 
 /* Separación entre cada contenedor */
@@ -100,20 +96,26 @@ body{
 	margin-right:   2%;
 }
 
+.div-headers{
+	margin-top: 2%;
+}
+
+
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
 
 .label{
-	width: 					20vw;
 	margin-top: 			5%;
-	text-align: 			center;
 	/* Estilo de texto */
 	color: 					#757575;
 	font-size: 				3.5vh;
-	/* Efecto que limita el número de letras */
-	display: 				-webkit-box;
-  	-webkit-line-clamp: 	1;
-  	-webkit-box-orient: 	vertical;
-  	overflow: 				hidden;
+}
+
+#label1{
+	margin-left: 1%;
+}
+
+#label2{
+	margin-left: 47%;
 }
 
 /* - - - - - - - - - - - - - - - -  - I M A G E N E S  Y  B O T O N E S - - - - - - - - - - - - - - - - - */
@@ -140,9 +142,18 @@ body{
 	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
 }
-#buttonCerrarSesion{	
+
+#buttonCerrarSesion{
+	height: 			2vh;
+	width: 				2vw;
+	/* Fuente de texto */
+	font-family: 		"Font Awesome 5 Free";
+}
+
+#buttonCancelar{
 	height: 			5vh;
-	width: 				4vw;
+	width: 				12vw;
+	margin-right: 		10%;
 	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
 }
@@ -150,13 +161,7 @@ body{
 #buttonRegistrar{
 	height: 			5vh;
 	width: 				12vw;
-	/* Fuete de texto */
-	font-family: 		"Font Awesome 5 Free";
-}
-
-#buttonCancelar{
-	height: 			5vh;
-	width: 				12vw;
+	margin-left: 		10%;
 	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
 }
@@ -167,7 +172,7 @@ body{
 /* Clase principal de la que heredan todos los text field*/
 .input-text{
 	height: 			6vh;
-	width: 				30vw;
+	width: 				29vw;
 	border-radius: 		10px;
 	padding-left: 		1vw;
 	outline: 			none;
@@ -216,3 +221,22 @@ body{
     transform: scale(0.8);
   }
 }
+
+/* - - - - - - - - - - - - - - - - - - - - S C R O L L  B A R - - - - - - - - - - - - - - - - - - - - */
+
+*::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    display: none;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    border: 1px solid gray;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

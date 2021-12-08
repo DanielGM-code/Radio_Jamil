@@ -6,18 +6,12 @@ body{
 }
 
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
-/* Incluye el botón de cerrar sesión */
-.div-cabecera{
-	width: 				99vw;
-	display: 			flex;
-	flex-wrap: 			nowrap;
-	justify-content: 	flex-end;
-}
 
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
 	height: 			100vh;
 	width: 				100vw;
+	position: 			fixed;
 	/* Propiedades de flexbox */
 	display: 			flex;
 	flex-wrap: 			nowrap;
@@ -79,14 +73,12 @@ body{
 .div-contenedor div{
 	margin-left: 	2%;
 	margin-right:   2%;
-	margin-bottom:  5%;
 }
-
 
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
 .label{
 	width: 					20vw;
-	margin-top: 			5%;
+	margin-bottom: 			5%;
 	text-align: 			center;
 	/* Estilo de texto */
 	color: 					#b8b8b8;
@@ -119,8 +111,8 @@ body{
 }
 
 #buttonCerrarSesion{
-	height: 			5vh;
-	width: 				4vw;
+	height: 			2vh;
+	width: 				2vw;
 	/* Fuente de texto */
 	font-family: 		"Font Awesome 5 Free";
 }
