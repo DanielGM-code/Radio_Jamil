@@ -5,8 +5,8 @@ const router = express.Router();
 const cancionDAO = require(path.join(path.resolve(__dirname, '..'), 'dataAccess', 'cancionDAO.js'))
 
 router.route('/canciones')
-    .get((req, res) =>{ // Obtener TODAS las canciones
-        cancionDAO.getAll((err, respuesta) =>{ 
+    .get((req, res) =>{ 
+        cancionDAO.obtenerTodos((err, respuesta) =>{ 
             if(err){
                 console.log(err)
                 res.status(400).json(err)
@@ -15,10 +15,10 @@ router.route('/canciones')
             res.status(200).json(respuesta)
         })
     })
-    .post((req, res) =>{ //Insertar una cancion
+    .post((req, res) =>{
         const cancion = req.body
         if(cancionValida(cancion)){
-            cancionDAO.add(cancion, (err, respuesta) =>{
+            cancionDAO.agregar(cancion, (err, respuesta) =>{
                 if(err){
                     console.log(err)
                     res.status(400).json(err)
@@ -33,8 +33,8 @@ router.route('/canciones')
     });
 
 router.route('/canciones/:id')
-    .get((req, res) =>{ //Obtener UNA SOLA cancion
-        cancionDAO.get(req.params.id,(err, respuesta) =>{
+    .get((req, res) =>{
+        cancionDAO.obtener(req.params.id,(err, respuesta) =>{
             if(err){
                 console.log(err)
                 res.status(400).json(err)
@@ -49,10 +49,10 @@ router.route('/canciones/:id')
 
         })
     })
-    .put((req, res) =>{ //Actualizar una cancion
+    .patch((req, res) =>{
         const cancion = req.body
         if(cancionValida(cancion)){
-            cancionDAO.update(req.params.id, cancion, (err, respuesta) =>{ 
+            cancionDAO.actualizar(req.params.id, cancion, (err, respuesta) =>{ 
                 if(err){
                     console.log(err)
                     res.status(400).json(err)
@@ -65,19 +65,19 @@ router.route('/canciones/:id')
             res.status(400).json({Mensaje : 'datos invalidos'})
         }
     })
-    .delete((req, res) =>{ //Borrar una cancion
-        cancionDAO.setInactive([req.params.id], (err, respuesta) =>{ 
+    .delete((req, res) =>{
+        cancionDAO.ajustarInactivo([req.params.id], (err, respuesta) =>{ 
             if(err){
                 console.log(err)
                 res.status(400).json(err)
                 return
             }
-            res.status(200).json({Mensaje: 'Eliminado'})
+            res.status(204).json({Mensaje: 'Eliminado'})
         })
     });
 
 function cancionValida(cancion){
-    if(cancion.hasOwnProperty('nombreCancion') 
+    if(cancion.hasOwnProperty('nombre') 
     && cancion.hasOwnProperty('idArtista') 
     && cancion.hasOwnProperty('idGenero') 
     && cancion.hasOwnProperty('idCategoria') 

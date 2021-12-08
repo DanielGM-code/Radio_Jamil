@@ -2,7 +2,7 @@ const path = require('path');
 
 const dbConnection = require(path.join(__dirname, 'dbConnection.js'))
 
-function getAll(callback){
+function obtenerTodos(callback){
     dbConnection.query('call SP_Read_All_Cancion()', (err, rows, fields) =>{
         if(err){
             return callback(err)
@@ -13,9 +13,9 @@ function getAll(callback){
     })
 }
 
-function add(cancion, callback){
+function agregar(cancion, callback){
     dbConnection.query('call SP_Create_Cancion(?, ?, ?, ?, ?, ?, ?, @estado, @mensaje); SELECT @estado as estado, @mensaje as mensaje',
-        [cancion.nombreCancion, cancion.idArtista, cancion.idGenero, cancion.idCategoria, cancion.referencia, cancion.esPeticion, cancion.diasReproduccion], (err, rows, fields) => {
+        [cancion.nombre, cancion.idArtista, cancion.idGenero, cancion.idCategoria, cancion.referencia, cancion.esPeticion, cancion.diasReproduccion], (err, rows, fields) => {
             if(err){
                 callback(err)
             }
@@ -25,13 +25,13 @@ function add(cancion, callback){
         })
 }
 
-function get(id, callback){
+function obtener(id, callback){
     dbConnection.query('call SP_Read_Cancion(?)', [id], (err, rows, fields) =>{
-        if(err){
+        respuesta = rows[0][0]
+        if(err || !respuesta){
             return callback(err)
         }
         else{
-            respuesta = rows[0][0]
             dbConnection.query('call SP_Read_Artista(?)', [respuesta.idArtista], (err, rows, fields) =>{
                 if(err){
                     return callback(err)
@@ -45,7 +45,7 @@ function get(id, callback){
     })
 }
 
-function update(id, cancion, callback){
+function actualizar(id, cancion, callback){
     dbConnection.query('call SP_Update_Cancion(?, ?, ?, ?, ?, ?, ?, ?, @estado, @Mensaje); SELECT @estado as estado, @mensaje as mensaje',
     [id, cancion.nombreCancion, cancion.idArtista, cancion.idGenero, cancion.idCategoria, cancion.referencia, cancion.esPeticion, cancion.diasReproduccion],(err, rows, fields) => {
         if(err){
@@ -57,7 +57,7 @@ function update(id, cancion, callback){
     })
 }
 
-function setInactive(id, callback){
+function ajustarInactivo(id, callback){
     dbConnection.query('call SP_Delete_Cancion(?)', [id], (err, rows, fields) => {
         if(err){
             callback(err)
@@ -68,4 +68,4 @@ function setInactive(id, callback){
     })
 }
 
-module.exports = {getAll, add, get, update, setInactive}
+module.exports = {obtenerTodos, agregar, obtener, actualizar, ajustarInactivo}

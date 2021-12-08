@@ -12,7 +12,7 @@
 	
 	<!-- particles.js container -->
 	<div id="particles-js">
-		
+
 		<a href="menuPrincipal.html">
 					<input class="button" 
 						id="buttonCerrarSesion" 
@@ -31,7 +31,6 @@
 						   type="text" 
 						   placeholder=" Canción ó Artista"/>
 				</div>
-
 				<!-- Contenedor para los resultados de la búsqueda-->
 				<div class="div-contenedor-canciones-resultados">
 					<div class="div-headers">
@@ -67,6 +66,7 @@
 							   id="textFieldArtista"
 							   type="text" 
 							   placeholder="Artista"/>
+						<div id="resultadosArtista" class="dropdown"></div>	
 					</div>
 					
 					<div>
@@ -75,6 +75,7 @@
 							   id="textFieldGenero"
 							   type="text" 
 							   placeholder="Genero"/>
+						<div id="resultadosGenero" class="dropdown"></div>	
 					</div>
 					
 					<div>
@@ -83,6 +84,7 @@
 							   id="textFieldCategoria"
 							   type="text" 
 							   placeholder="Categoría"/>
+						<div id="resultadosCategoria" class="dropdown"></div>	
 					</div>
 				</div>
 
@@ -104,9 +106,9 @@
 	</div>
 	<!-- Script para reproducir particulas -->
 	<script src="resources/particles/particles.min.js"></script>
-    <script src="resources/particles/app.js"></script>
-	
+    <script src="resources/particles/app.js"></script>d
 	<script src="scripts/llamadasApi.js"></script>
+	<script src="scripts/autocompletar.js"></script>
 	<script src="scripts/gestionarCanciones.js"></script>
 </body>
 </html>
