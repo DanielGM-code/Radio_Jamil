@@ -41,7 +41,12 @@ function clickFila(id){
     pedirPatron(id).then(patron =>{
         patronSeleccionado.nombre = patron.nombre;
         txtPatron.value = patron.nombre
-        //CArgar las categorias ya vinculadas al patron
+        return patron.id
+    })
+    .then(id => obtenerCategoriaPatron(id))
+    .then(categorias => {
+        cargarTablaCategoria(categorias)
+        categoriasPatron = categorias
     })
     .then(() => {
         btnCancelar.value = '  Limpiar'
@@ -68,13 +73,17 @@ function buscarEnTabla(array, buscar){
 
 function reiniciarCampos(){
     btnEliminar.style.display = 'none'
-    btnCancelar.style.display = 'none'
 
     patronSeleccionado.id = 0
     patronSeleccionado.nombre = 0
 
     txtPatron.value = ''
-    //añadir limpiar tabla de categorias
+    categoriasPatron = []
+    patronSeleccionado = {
+        id: 0,
+        nombre: ''
+    }
+    cargarTablaCategoria(categoriasPatron)
 
     btnCancelar.value = '  Cancelar'
     btnAceptar.value = '  Registrar'
@@ -82,11 +91,15 @@ function reiniciarCampos(){
 
 function guardarPatron(){
     patronSeleccionado.nombre = txtPatron.value
-    if(patronSeleccionado.nombre === ''){
+
+    if(patronSeleccionado.nombre === ''
+    || categoriasPatron.length === 0){
         window.alert("Los campos no pueden estar vacíos. Favor de verificar")
     }
     else{
-        agregarPatron(patronSeleccionado).then(respuesta => {
+        agregarPatron(patronSeleccionado).then(respuesta => 
+            guardarCategoriaPatron(respuesta.id, categoriasPatron))
+        .then(respuesta => {
             window.location.reload(true)
         })
     }

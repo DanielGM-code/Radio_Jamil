@@ -14,6 +14,7 @@ async function apiPost(objeto, subruta){
           },
           body: JSON.stringify(objeto)
     })
+    
     return await respuesta.json();
 }
 

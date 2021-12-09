@@ -24,7 +24,7 @@ router.route('/patrones')
                     res.status(400).json(err)
                     return
                 }
-                res.status(201).json({Mensaje : 'Patron agregado'})
+                res.status(201).json(respuesta)
             })
         }
         else{
@@ -59,5 +59,32 @@ router.route('/patrones/:id')
             res.status(204).json({Mensaje: 'Eliminado'})
         })
     });
+
+router.route('/patronCategoria')
+    .post((req, res) =>{
+        const patron = req.body.idPatron
+        const arrayCategorias = req.body.categorias
+
+        patronDAO.agregarCategoria(patron, arrayCategorias, (err, respuesta) =>{
+            if(err){
+                console.log(err)
+                res.status(400).json(err)
+                return
+            }
+            res.status(201).json({Mensaje: 'Categorias registradas'})
+        })
+    });
+
+router.route('/patronCategoria/:id')
+    .get((req, res) =>{ 
+        patronDAO.obtenerCategorias(req.params.id, (err, respuesta) =>{ 
+            if(err){
+                console.log(err)
+                res.status(400).json(err)
+                return
+            }
+            res.status(200).json(respuesta)
+        })
+    })
 
 module.exports = router

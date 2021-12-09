@@ -13,3 +13,14 @@ async function pedirCategorias(){
 async function pedirCategoria(id){
     return await apiGet(`/categorias/${id}`)
 }
+
+async function guardarCategoriaPatron(idPatron, categorias){
+    return await apiPost({
+        idPatron,
+        categorias
+    },'/patronCategoria')
+}
+
+async function obtenerCategoriaPatron(idPatron){
+    return await apiGet(`/patronCategoria/${idPatron}`)
+}

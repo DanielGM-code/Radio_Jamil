@@ -25,12 +25,12 @@ function obtener(id, callback){
 }
 
 function agregar(patron, callback){
-    dbConnection.query('call SP_Create_Patron(?);', [patron.nombre], (err, rows, fields) => {
+    dbConnection.query('call SP_Create_Patron(?, ?, @id); SELECT @id as id', [patron.id, patron.nombre], (err, rows, fields) => {
         if(err){
             callback(err)
         }
         else{
-            callback(null, rows)
+            callback(null, rows[1][0])
         }
     })
 }
@@ -46,4 +46,28 @@ function ajustarInactivo(id, callback){
     })
 }
 
-module.exports = {obtener, obtenerTodos, agregar, ajustarInactivo}
+function agregarCategoria(idPatron, arrayCategorias, callback){
+    dbConnection.query('call SP_Delete_Patron_Categoria(?)', [idPatron], (err, rows, fields) => {
+        arrayCategorias.forEach(categoria => {
+            dbConnection.query('call SP_Create_Patron_Categoria(?, ?)', [idPatron, categoria.id], (err, rows, fields) => {
+                if(err){
+                    return callback(err)
+                }
+            })
+        });
+    })
+    callback(null)
+}
+
+function obtenerCategorias(id, callback){
+    dbConnection.query('call SP_Read_Patron_Categoria(?)', [id], (err, rows, fields) =>{
+        if(err){
+            return callback(err)
+        }
+        else{
+            callback(null, rows[0])
+        }
+    })
+}
+
+module.exports = {obtener, obtenerTodos, agregar, ajustarInactivo, agregarCategoria, obtenerCategorias}
