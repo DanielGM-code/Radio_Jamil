@@ -158,6 +158,14 @@ body{
 	color: 				#FFFFFF;
 }
 
+#buttonGenerarReporte{
+	height: 			6vh;
+	width: 				15vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#FFFFFF;
+}
+
 
 /* - - - - - - - - - - - - - - - - - - - - - - - T E X T  F I E L D - - - - - - - - - - - - - - - - - - - */
 

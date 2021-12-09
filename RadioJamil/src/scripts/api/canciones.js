@@ -18,3 +18,7 @@ async function agregarCancion(cancion){
 async function eliminarCancion(id){
     return await apiDelete(`/canciones/${id}`)
 }
+
+async function generarProgramacion(){
+    return await apiPost({id : ""}, '/cancionesprogramacion')
+}

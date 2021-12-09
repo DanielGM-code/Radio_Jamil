@@ -70,4 +70,17 @@ function obtenerCategorias(id, callback){
     })
 }
 
-module.exports = {obtener, obtenerTodos, agregar, ajustarInactivo, agregarCategoria, obtenerCategorias}
+function obtenerReporte(){
+    return new Promise((resolve, reject) => {
+        dbConnection.query('call SP_Read_Patron_Reporte()', (err, rows, fields) =>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(rows[0])
+            }
+        })
+    })
+}
+
+module.exports = {obtener, obtenerTodos, agregar, ajustarInactivo, agregarCategoria, obtenerCategorias, obtenerReporte}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Generar reporte</title>
+	<!-- CDN FONT AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- CSS MAIN -->
+	<link href="css/generarReportes.css" rel="stylesheet" type="text/css">
+</head>
+<body style="overflow-x:hidden; overflow-y:hidden">
+	
+	<!-- particles.js container -->
+	<div id="particles-js">
+
+		<div class="div-botones-cabecera">
+			<a href="menuPrincipal.html">
+			<input id="buttonCerrarSesion" 
+					type="button"
+					value="">
+			</a>
+		</div>
+
+		<!-- Ventana principal -->
+		<div class="div-contenedor">
+
+			<!-- Contenedor para buscar canciones-->
+			<div class="div-contenedor-cambios">
+				<!-- Contenedor para los resultados de la búsqueda-->
+				<div class="div-contenedor-cambios-resultados">
+					<div class="div-headers">
+						<label class="label" id="label1">Reportes:</label>
+					</div>
+					<table class="tablaResultados" id="tabla">
+						<tbody class="tablaCuerpo" id="tablaCuerpo">
+							<tr>
+								<td>
+									<a href="http://localhost:2610/pdf/cancionesActivas.pdf" download>
+										Canciones activas
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="http://localhost:2610/pdf/cancionesActivas.pdf" download>
+										Canciones utilizadas
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="http://localhost:2610/pdf/cancionesUtilizadas.pdf" download>
+										Canciones no utilizadas
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="http://localhost:2610/pdf/Patrones.pdf" download>
+										Patrones
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="http://localhost:2610/pdf/Programas.pdf" download>
+										Programas
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				
+				
+				<div class="div-contenedor-botones">
+
+					<input class="button" 
+						   id="buttonGenerarReporte" 
+						   type="button" 
+						   value=" Generar reporte">
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- Script para reproducir particulas -->
+	<script src="resources/particles/particles.min.js"></script>
+    <script src="resources/particles/app.js"></script>
+    <script src="scripts/api/general.js"></script>
+    <script src="scripts/api/otros.js"></script>
+    <script src="scripts/generarReportes.js"></script>
+
+</body>
+</html>

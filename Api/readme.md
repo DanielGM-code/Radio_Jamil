@@ -1,2 +1,1 @@
-npm install express cors mysql jsonwebtoken bcrypt 
-npm install -g nodemon
+npm install express cors mysql pdfkit

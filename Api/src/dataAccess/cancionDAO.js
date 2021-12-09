@@ -1,3 +1,4 @@
+const { rejects } = require('assert');
 const path = require('path');
 
 const dbConnection = require(path.join(__dirname, 'dbConnection.js'))
@@ -65,4 +66,55 @@ function obtenerCancionesHorario(idHorario, callback) {
     })
 }
 
-module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo, obtenerCancionesHorario}
+function obtenerReporteActivas(){
+    return new Promise((resolve, reject) => {
+        dbConnection.query('call SP_Read_All_Cancion_reporte()', (err, rows, fields) =>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(rows[0])
+            }
+        })
+    })
+}
+
+function obtenerReporteUsadas(){
+    return new Promise((resolve, reject) => {
+        dbConnection.query('call SP_Canciones_Utilizadas()', (err, rows, fields) =>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(rows[0])
+            }
+        })
+    })
+}
+
+function obtenerReporteNoUsadas(){
+    return new Promise((resolve, reject) => {
+        dbConnection.query('call SP_Canciones_No_Utilizadas()', (err, rows, fields) =>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(rows[0])
+            }
+        })
+    })
+}
+
+function generarProgramacion() {
+    return new Promise((resolve, reject) => {
+        dbConnection.query('call SP_Generate_HorarioCancion()', (err, rows, fields) => {
+            if(err) {
+                reject(err)
+            } else {
+                resolve(rows)
+            }
+        })
+    })
+}
+
+module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo, obtenerCancionesHorario, obtenerReporteActivas, obtenerReporteUsadas, obtenerReporteNoUsadas, generarProgramacion}
