@@ -31,7 +31,7 @@ body{
 
 /* Incluye los resultados de la búsqueda */
 .div-contenedor-horarios-resultados{
-	height: 			65vh;
+	height: 			35vh;
 	width: 				30vw;
 	border-radius: 		15px;
 	background: 		#36393F;
@@ -45,7 +45,7 @@ body{
 }
 
 .div-contenedor-patrones-resultados{
-	height: 			65vh;
+	height: 			35vh;
 	width: 				30vw;
 	border-radius: 		15px;
 	background: 		#36393F;
@@ -250,7 +250,7 @@ body{
 	color: 				#FFFFFF;
 }
 
-#buttonCancelar{
+#buttonEliminarPrograma{
 	height: 			5vh;
 	width: 				11vw;
 	margin-right: 		10%;
@@ -258,7 +258,22 @@ body{
 	font-family: 		"Font Awesome 5 Free";
 }
 
-#buttonCambiar{
+#buttonEliminarHorario{
+	height: 			5vh;
+	width: 				11vw;
+	margin-right: 		10%;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+}
+
+#buttonRegistrarHorario{
+	height: 			5vh;
+	width: 				11vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+}
+
+#buttonRegistrarPrograma{
 	height: 			5vh;
 	width: 				11vw;
 	/* Fuete de texto */
@@ -289,6 +304,14 @@ body{
 	color: 				#FFFFFF; 
 	font-size: 			2.5vh;
 	font-family: 		"Font Awesome 5 Free";
+}
+
+#textFieldDia{
+	margin-top: 5%;
+}
+
+#textFieldNombre{
+	margin-top: 5%;
 }
 
 
