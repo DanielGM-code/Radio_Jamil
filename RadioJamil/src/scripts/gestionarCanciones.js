@@ -11,6 +11,7 @@ const cuerpoTabla = document.getElementById('tablaCuerpo')
 
 const btnCancelar = document.getElementById('buttonCancelar')
 const btnAceptar = document.getElementById('buttonRegistrar')
+const btnEliminar = document.getElementById('buttonEliminar')
 
 var cancionSeleccionada = {
     id: 0,
@@ -41,6 +42,7 @@ function cargarItems(items) {
 
 function clickFila(idCancion){
     cancionSeleccionada.id = idCancion
+    btnEliminar.style.display = 'block'
 
     pedirCancion(idCancion).then(cancion => {
         console.log(cancion)
@@ -81,7 +83,9 @@ function buscarEnTabla(array, buscar){
     }
 }
 
-function limpiarCampos(){
+function reiniciarCampos(){
+    btnEliminar.style.display = 'none'
+
     txtCancion.value = ''
     txtArtista.value = ''
     txtGenero.value = ''
@@ -108,6 +112,12 @@ function guardarCancion(){
     }
 
     console.log(cancionSeleccionada)
+}
+
+function eliminarCancion(){
+    if(cancionSeleccionada.id > 0){
+        console.log(`Estoy eliminando la cancion con id ${cancionSeleccionada.id}`)
+    }
 }
 
 //Se ejecuta al cargar la página
@@ -165,10 +175,14 @@ window.onload = () =>{
     }) 
 
     btnCancelar.addEventListener('click', evento => {
-        limpiarCampos()
+        reiniciarCampos()
     })
 
     btnAceptar.addEventListener('click', evento => {
         guardarCancion()
+    })
+
+    btnEliminar.addEventListener('click', evento => {
+        eliminarCancion()
     })
 }
