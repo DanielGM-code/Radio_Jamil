@@ -5,7 +5,7 @@ async function apiGet(subruta){
     return await respuesta.json();
 }
 
-function post(objeto, subruta){
+function apiPost(objeto, subruta){
     var post = new XMLHttpRequest()
     post.open('POST', rutaAPI.concat(subruta), true)
     post.setRequestHeader('Content-Type', 'application/json')

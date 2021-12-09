@@ -22,7 +22,7 @@ async function agregarCancion(cancion){
     console.log('Agregando')
     console.log(cancion)
 
-    post(cancion, '/canciones')
+    apiPost(cancion, '/canciones')
 }
 
 async function editarCancion(cancion){
