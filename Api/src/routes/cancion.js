@@ -72,6 +72,16 @@ router.route('/cancioneshorario/:id')
         })
     })
 
+router.route(`/cancionesprogramacion`)
+    .post((req, res) => {
+        cancionDAO.generarProgramacion().then(respuesta => {
+            res.status(200).json({Mensaje : 'Programacion generada'})
+        }).catch(err => {
+            console.log(err)
+            res.status(400).json(err)
+        })
+    })
+
 function cancionValida(cancion){
     if(cancion.hasOwnProperty('id') 
     && cancion.hasOwnProperty('nombre') 

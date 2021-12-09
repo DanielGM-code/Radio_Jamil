@@ -1,3 +1,4 @@
+const { rejects } = require('assert');
 const path = require('path');
 
 const dbConnection = require(path.join(__dirname, 'dbConnection.js'))
@@ -104,4 +105,16 @@ function obtenerReporteNoUsadas(){
     })
 }
 
-module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo, obtenerCancionesHorario, obtenerReporteActivas, obtenerReporteUsadas, obtenerReporteNoUsadas}
+function generarProgramacion() {
+    return new Promise((resolve, reject) => {
+        dbConnection.query('call SP_Generate_HorarioCancion()', (err, rows, fields) => {
+            if(err) {
+                reject(err)
+            } else {
+                resolve(rows)
+            }
+        })
+    })
+}
+
+module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo, obtenerCancionesHorario, obtenerReporteActivas, obtenerReporteUsadas, obtenerReporteNoUsadas, generarProgramacion}
