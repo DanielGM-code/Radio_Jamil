@@ -37,4 +37,16 @@ function guardar(id, nombre, descripcion, callback) {
     })
 }
 
-module.exports = {obtenerTodos, obtenerPrograma, eliminar, guardar}
+function obtenerReporte(){
+    return new Promise((resolve, reject) => {
+        dbConnection.query('call SP_Read_Programa_Reporte()', (err, rows, fields) =>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(rows[0])
+            }
+        })
+    })
+}
+module.exports = {obtenerTodos, obtenerPrograma, eliminar, guardar, obtenerReporte}
