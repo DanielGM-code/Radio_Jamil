@@ -75,7 +75,6 @@ function buscarEnTabla(array, buscar){
     }
 
     if(seleccionados.length > 0){ 
-        console.log(seleccionados)
         cargarItems(seleccionados)
     }
     else{
@@ -159,7 +158,7 @@ window.onload = () =>{
         txtArtista.addEventListener('input', evento =>{
             cancionSeleccionada.idArtista = 0
             if(evento.target.value){
-                autocompletar(artistas, evento.target.value, resultadosArtista, 'cancionSeleccionada.idArtista')
+                autocompletar(artistas, evento.target.value, resultadosArtista, 'cancionSeleccionada.idArtista', true)
             }
             else{
                 resultadosArtista.style.display = 'none'
@@ -171,7 +170,7 @@ window.onload = () =>{
         txtGenero.addEventListener('input', evento =>{
             cancionSeleccionada.generos = 0
             if(evento.target.value){
-                autocompletar(generos, evento.target.value, resultadosGenero, 'cancionSeleccionada.idGenero')
+                autocompletar(generos, evento.target.value, resultadosGenero, 'cancionSeleccionada.idGenero', true)
             }
             else{
                 resultadosGenero.style.display = 'none'
@@ -183,7 +182,7 @@ window.onload = () =>{
         txtCategoria.addEventListener('input', evento =>{
             cancionSeleccionada.idCategoria = 0
             if(evento.target.value){
-                autocompletar(categorias, evento.target.value, resultadosCategoria, 'cancionSeleccionada.idCategoria')
+                autocompletar(categorias, evento.target.value, resultadosCategoria, 'cancionSeleccionada.idCategoria', true)
             }
             else{
                 resultadosCategoria.style.display = 'none'

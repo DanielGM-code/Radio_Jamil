@@ -185,6 +185,7 @@ body{
 
 
 #buttonCancelar{
+	display: none;
 	height: 			5vh;
 	width: 				12vw;
 	margin-right: 		5%;
@@ -201,6 +202,7 @@ body{
 }
 
 #buttonEliminar{
+	display: none;
 	height: 			5vh;
 	width: 				12vw;
 	/* Fuete de texto */

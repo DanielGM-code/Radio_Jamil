@@ -1,4 +1,5 @@
-function autocompletar(array, buscar, listaHTML, tipo){
+function autocompletar(array, buscar, listaHTML, tipo, banderaAgregar = false){
+
     listaHTML.innerHTML = ''
     var seleccionados = []  
 
@@ -8,7 +9,9 @@ function autocompletar(array, buscar, listaHTML, tipo){
 
     if(seleccionados.length > 0){
         seleccionados.map(item => listaHTML.innerHTML += `<p class="contenido-dropdown" onclick="${tipo}=${item.id}">${item.nombre}</p>`)
-        listaHTML.innerHTML += `<p class="contenido-dropdown" onclick="${tipo}=0">NUEVO REGISTRO...</p>`
+        if(banderaAgregar) {
+            listaHTML.innerHTML += `<p class="contenido-dropdown" onclick="${tipo}=0">NUEVO REGISTRO...</p>`
+        }
         listaHTML.style.display = 'block'
     }
 }
