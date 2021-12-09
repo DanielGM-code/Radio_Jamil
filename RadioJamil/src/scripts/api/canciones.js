@@ -23,7 +23,8 @@ async function pedirCategorias(){
 }
 
 async function agregarCancion(cancion){
-    apiPost(cancion, '/canciones')
+    // apiPost(cancion, '/canciones')
+    return await apiPost(cancion, '/canciones')
 }
 
 async function eliminarCancion(id){

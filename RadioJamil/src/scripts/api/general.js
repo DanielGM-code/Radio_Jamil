@@ -5,18 +5,22 @@ async function apiGet(subruta){
     return await respuesta.json();
 }
 
-function apiPost(objeto, subruta){
-    var post = new XMLHttpRequest()
-    post.open('POST', rutaAPI.concat(subruta), true)
-    post.setRequestHeader('Content-Type', 'application/json')
-    post.send(JSON.stringify(objeto))
+async function apiPost(objeto, subruta){
+    var respuesta = await fetch(rutaAPI.concat(subruta), {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(objeto)
+    })
+    return await respuesta.json();
 }
 
 async function apiDelete(subruta){
-    rutaAPI.concat(subruta)
     var respuesta = await fetch(rutaAPI.concat(subruta), {
         method: 'DELETE',
     })
-    
-    return await respuesta.json();
+    // console.log(respuesta)
+    return respuesta;
 }

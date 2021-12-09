@@ -114,8 +114,9 @@ function guardarCancion(){
         window.alert("Los campos no pueden estar vacíos. Favor de verificar")
     }
     else{
-        agregarCancion(cancionSeleccionada)
-        window.location.reload(true)
+        agregarCancion(cancionSeleccionada).then(respuesta => {
+            window.location.reload(true)
+        })
     }
 }
 
