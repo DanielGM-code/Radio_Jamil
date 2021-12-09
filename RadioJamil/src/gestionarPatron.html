@@ -40,10 +40,10 @@
 				<!-- Contenedor para los resultados de la búsqueda-->
 				<div class="div-contenedor-patrones-resultados">
 					<div class="div-headers">
-						<label class="label" id="label1">Nombre:</label>
+						<label class="label" id="label1">Nombre patrón:</label>
 					</div>
-					<table class="tablaResultados" id="tabla">
-						<tbody class="tablaCuerpo" id="tablaCuerpo">
+					<table class="tablaResultados" id="tablaPatron">
+						<tbody class="tablaCuerpo" id="tablaCuerpoPatron">
 						</tbody>
 					</table>
 				</div>
@@ -52,7 +52,7 @@
 			<!-- Contenedor del formulario para registrar una canción-->
 			<div class="div-contenedor-formulario">
 
-				<div><p><label class="label">Registrar Usuario:</label></p></div>
+				<div><p><label class="label">Registrar patrón:</label></p></div>
 
 				<!-- Contenedor con los text fields del formulario-->
 				<div class="div-contenedor-formulario-textFields">
@@ -64,6 +64,30 @@
 							   type="text" 
 							   placeholder="Nombre del patrón"/>		
 					</div>
+				</div>
+				
+				<div><p><label class="label">Seleccionar categoría:</label></p></div>
+				
+				<div class="div-contenedor-categorias-resultados">
+					<div class="div-headers">
+						<label class="label" id="label2">Nombre categoría:</label>
+					</div>
+					<table class="tablaResultados" id="tablaCategoria">
+						<tbody class="tablaCuerpo" id="tablaCuerpoCateria">
+						</tbody>
+					</table>
+				</div>
+				
+				<div>
+					<input class="input-text"
+						   id="textFieldCategoria"
+						   type="text" 
+						   placeholder="Nombre de la categoría"/>
+					
+					
+					<input id="buttonAgregarCategoria" 
+						   	type="button" 
+						   	value="">	
 				</div>
 
 				<!-- Contenedor con los botones de registrar y cancelar-->
