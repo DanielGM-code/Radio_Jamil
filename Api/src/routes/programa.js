@@ -1,7 +1,5 @@
 const express = require('express')
-const res = require('express/lib/response')
 const path = require('path')
-const { callbackify } = require('util')
 const router = express.Router()
 const programaDAO = require(path.join(path.resolve(__dirname, '..'), 'dataAccess', 'programaDAO.js'))
 
@@ -44,4 +42,5 @@ router.route('/programas/:id')
             res.status(200).json({Mensaje : "Registro eliminado."})
         })
     })
+    
 module.exports = router

@@ -65,4 +65,15 @@ function obtenerCancionesHorario(idHorario, callback) {
     })
 }
 
-module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo, obtenerCancionesHorario}
+function obtenerReporte(callback){
+    dbConnection.query('call SP_Read_All_Cancion_reporte()', (err, rows, fields) =>{
+        if(err){
+            return callback(err)
+        }
+        else{
+            callback(null, rows[0])
+        }
+    })
+}
+
+module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo, obtenerCancionesHorario, obtenerReporte}
