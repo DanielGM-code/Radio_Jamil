@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<title>Gestionar programación</title>
+	<title>Gestionar horario</title>
 	<!-- CDN FONT AWESOME -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- CSS MAIN -->
-	<link href="css/gestionarProgramacion.css" rel="stylesheet" type="text/css">
+	<link href="css/gestionarHorario.css" rel="stylesheet" type="text/css">
 </head>
 <body style="overflow-x:hidden; overflow-y:hidden">
 	
@@ -35,7 +35,7 @@
 		
 		<!-- Ventana principal -->
 		<div class="div-contenedor">
-
+			
 			<!-- Contenedor para buscar horarios-->
 			<div class="div-contenedor-horarios">
 				<div>
@@ -62,64 +62,70 @@
 						</tbody>
 					</table>
 				</div>
-				
-				<input class="button" 
-					   id="buttonAbrirGestionarHorario" 
-					   type="button" 
-					   value="Gestionar horario">
-				
 			</div>
-			
 			
 
 			<!-- Contenedor para buscar canciones-->
 			<div class="div-contenedor-horarios">
 				<div>
 					<input class="input-text"
-						   id="textFieldBuscadorCancion"
+						   id="textFieldBuscadorPatron"
 						   type="text" 
-						   placeholder="  Buscar por Nombre o Artista una canción"/>
+						   placeholder="  Buscar por Nombre u Horario un programa"/>
 					
-					<input id="buttonRetornarCancion" 
+					<input id="buttonRetornarPrograma" 
 						   	type="button" 
 						   	value="">
 					
 				</div>
 				
 				<!-- Contenedor para los resultados de la búsqueda-->
-				<div class="div-contenedor-horarios-resultados">
+				<div class="div-contenedor-patrones-resultados">
 					<div class="div-headers">
 						<label class="label" id="label3">Nombre:</label>
-						<label class="label" id="label4">Artista:</label>
+						<label class="label" id="label4">Horario:</label>
 					</div>
-					<table class="tablaResultados" id="tablaCanciones">
-						<tbody class="tablaCuerpo" id="tablaCuerpoCanciones">
+					<table class="tablaResultados" id="tablaPatrones">
+						<tbody class="tablaCuerpo" id="tablaCuerpoPatrones">
 						</tbody>
 					</table>
 				</div>
-				
 			</div>
 			
 			<!-- Contenedor del formulario para registrar una canción-->
 			<div class="div-contenedor-formulario">
 
-				<div><p><label class="label">Horarios y canciones asignadas:</label></p></div>
+				<div><p><label class="label">Vincular un horario a un programa:</label></p></div>
 
 				<!-- Contenedor con los text fields del formulario-->
 				<div class="div-contenedor-formulario-textFields">
 					
 					<div>
 						<input class="input-text"
-							   id="textFieldHorario"
+							   id="textFieldDia"
 							   type="text" 
-							   placeholder="Horario"/>
+							   placeholder="Día"/>
 					</div>
 					
 					<div>
 						<input class="input-text"
-							   id="textFieldCancion"
+							   id="textFieldHora"
 							   type="text" 
-							   placeholder="Canción"/>
+							   placeholder="Hora"/>
+					</div>
+					
+					<div>
+						<input class="input-text"
+							   id="textFieldNombre"
+							   type="text" 
+							   placeholder="Nombre del programa"/>
+					</div>
+					
+					<div>
+						<input class="input-text"
+							   id="textFieldHorario"
+							   type="text" 
+							   placeholder="Horario del programa"/>
 					</div>
 				</div>
 
@@ -134,11 +140,9 @@
 					<input class="button" 
 						   id="buttonCambiar" 
 						   type="button" 
-						   value=" Cambiar">
+						   value=" Vincular">
 				</div>
 			</div>
-			
-			
 		</div>
 	</div>
 	

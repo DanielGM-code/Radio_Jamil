@@ -44,6 +44,21 @@ body{
 	overflow-y: 		auto;
 }
 
+.div-contenedor-patrones-resultados{
+	height: 			65vh;
+	width: 				30vw;
+	border-radius: 		15px;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
+	/* Propiedades heredadas de contenedor */
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
+	overflow-y: 		auto;
+}
+
+
 /* Incluye el contenedor de la programación */
 .div-contenedor-programacion{
 	/* Propiedades heredadas de contenedor */
@@ -225,7 +240,7 @@ body{
 }
 
 
-#buttonRetornarCancion{
+#buttonRetornarPrograma{
 	border-color: 		transparent;
 	background-color: 	transparent;
 	height: 			3vh;
@@ -246,14 +261,6 @@ body{
 #buttonCambiar{
 	height: 			5vh;
 	width: 				11vw;
-	/* Fuete de texto */
-	font-family: 		"Font Awesome 5 Free";
-}
-
-#buttonAbrirGestionarHorario{
-	height: 			5vh;
-	width: 				13vw;
-	margin-top: 		3%;
 	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
 }
