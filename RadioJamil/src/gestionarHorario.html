@@ -32,7 +32,7 @@
 						   type="text" 
 						   placeholder="  Buscar por Día u Hora un horario"/>
 					
-					<input id="buttonRetornarHorario" 
+					<input id="buttonLimpiarTextFieldHorario" 
 						   	type="button" 
 						   	value="">
 					
@@ -44,9 +44,10 @@
 					<div class="div-headers">
 						<label class="label" id="label1">Día:</label>
 						<label class="label" id="label2">Hora:</label>
+						<label class="label" id="label3">Programa:</label>
 					</div>
 					<table class="tablaResultados" id="tablaHorarios">
-						<tbody class="tablaCuerpo" id="tablaCuerpoHorarios">
+						<tbody class="tablaCuerpo" id="cuerpoTablaHorarios">
 						</tbody>
 					</table>
 				</div>
@@ -71,6 +72,15 @@
 						   id="textFieldNombrePrograma"
 						   type="text" 
 						   placeholder="Nombre del programa"/>
+					<div id="resultadosPrograma" class="dropdown"></div>	
+				</div>
+
+				<div>
+					<input class="input-text"
+						   id="textFieldPatron"
+						   type="text" 
+						   placeholder="Patron"/>
+					<div id="resultadosPatron" class="dropdown"></div>	
 				</div>
 				
 				<div class="div-contenedor-botones">
@@ -93,24 +103,23 @@
 			<div class="div-contenedor-horarios">
 				<div>
 					<input class="input-text"
-						   id="textFieldBuscadorPatron"
+						   id="textFieldBuscadorPrograma"
 						   type="text" 
 						   placeholder="  Buscar por Nombre u Horario un programa"/>
 					
-					<input id="buttonRetornarPrograma" 
+					<input id="buttonLimpiarTextFieldPrograma" 
 						   	type="button" 
 						   	value="">
 					
 				</div>
 				
 				<!-- Contenedor para los resultados de la búsqueda-->
-				<div class="div-contenedor-patrones-resultados">
+				<div class="div-contenedor-programas-resultados">
 					<div class="div-headers">
-						<label class="label" id="label3">Nombre:</label>
-						<label class="label" id="label4">Horario:</label>
+						<label class="label" id="label4">Nombre:</label>
 					</div>
-					<table class="tablaResultados" id="tablaPatrones">
-						<tbody class="tablaCuerpo" id="tablaCuerpoPatrones">
+					<table class="tablaResultados" id="tablaProgramas">
+						<tbody class="tablaCuerpo" id="tablaCuerpoProgramas">
 						</tbody>
 					</table>
 				</div>
@@ -148,7 +157,11 @@
 	<!-- Script para reproducir particulas -->
 	<script src="resources/particles/particles.min.js"></script>
     <script src="resources/particles/app.js"></script>
-
-	<script src="scripts/gestionarProgramacion.js"></script>
+	<script src="scripts/api/general.js"></script>
+	<script src="scripts/api/horarios.js"></script>
+	<script src="scripts/api/programas.js"></script>
+	<script src="scripts/autocompletar.js"></script>
+	<script src="scripts/api/patrones.js"></script>
+	<script src="scripts/gestionarHorarios.js"></script>
 </body>
 </html>

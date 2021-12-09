@@ -44,7 +44,7 @@ body{
 	overflow-y: 		auto;
 }
 
-.div-contenedor-patrones-resultados{
+.div-contenedor-programas-resultados{
 	height: 			35vh;
 	width: 				30vw;
 	border-radius: 		15px;
@@ -151,6 +151,16 @@ body{
 .div-headers{
 	margin-top: 2%;
 }
+
+.dropdown {
+	border-radius: 20px;
+	display: none;
+	position: absolute;
+	background-color: #313339;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
 
 .label{
@@ -165,7 +175,7 @@ body{
 }
 
 #label2{
-	margin-left: 35%;
+	margin-left: 1%;
 }
 
 #label3{
@@ -229,7 +239,7 @@ body{
 	color: 				#19FF25
 }
 
-#buttonRetornarHorario{
+#buttonLimpiarTextFieldHorario{
 	border-color: 		transparent;
 	background-color: 	transparent;
 	height: 			3vh;
@@ -240,7 +250,7 @@ body{
 }
 
 
-#buttonRetornarPrograma{
+#buttonLimpiarTextFieldPrograma{
 	border-color: 		transparent;
 	background-color: 	transparent;
 	height: 			3vh;
