@@ -43,10 +43,17 @@ function clickFila(idCancion){
     cancionSeleccionada.id = idCancion
 
     pedirCancion(idCancion).then(cancion => {
+        console.log(cancion)
         txtCancion.value = cancion.nombre
         txtArtista.value = cancion.artista.nombre
         txtGenero.value = cancion.nombreGenero
         txtCategoria.value = cancion.nombreCategoria
+        
+        cancionSeleccionada.nombre = cancion.nombre
+        cancionSeleccionada.idArtista = cancion.idArtista
+        cancionSeleccionada.idGenero = cancion.idGenero
+        cancionSeleccionada.idCategoria = cancion.idCategoria
+
     })
     .then( () => {
         btnCancelar.value = '  Limpiar'
@@ -72,6 +79,35 @@ function buscarEnTabla(array, buscar){
     else{
         cargarItems(array)
     }
+}
+
+function limpiarCampos(){
+    txtCancion.value = ''
+    txtArtista.value = ''
+    txtGenero.value = ''
+    txtCategoria.value = ''
+
+    cancionSeleccionada.id = 0
+    cancionSeleccionada.idArtista = 0
+    cancionSeleccionada.idGenero = 0
+    cancionSeleccionada.idCategoria = 0
+    cancionSeleccionada.nombre = ''
+
+    btnCancelar.value = '  Cancelar'
+    btnAceptar.value = '  Registrar'
+}
+
+function guardarCancion(){
+    cancionSeleccionada.nombre = txtCancion.value
+
+    if(cancionSeleccionada.id === 0){
+        console.log('Voy a registrar')
+    }
+    else{
+        console.log('Estoy editando')
+    }
+
+    console.log(cancionSeleccionada)
 }
 
 //Se ejecuta al cargar la página
@@ -129,31 +165,10 @@ window.onload = () =>{
     }) 
 
     btnCancelar.addEventListener('click', evento => {
-        txtCancion.value = ''
-        txtArtista.value = ''
-        txtGenero.value = ''
-        txtCategoria.value = ''
-
-        cancionSeleccionada.id = 0
-        cancionSeleccionada.idArtista = 0
-        cancionSeleccionada.idGenero = 0
-        cancionSeleccionada.idCategoria = 0
-        cancionSeleccionada.nombre = ''
-
-        btnCancelar.value = '  Cancelar'
-        btnAceptar.value = '  Registrar'
+        limpiarCampos()
     })
 
     btnAceptar.addEventListener('click', evento => {
-        cancionSeleccionada.nombre = txtCancion.value
-
-        if(cancionSeleccionada.id === 0){
-            console.log('Voy a registrar')
-        }
-        else{
-            console.log('Estoy editando')
-        }
-
-        console.log(cancionSeleccionada)
+        guardarCancion()
     })
 }
