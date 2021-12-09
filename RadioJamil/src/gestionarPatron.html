@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<title>Gestionar canciones</title>
+	<title>Gestionar patrón</title>
 	<!-- CDN FONT AWESOME -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<!-- CSS MAIN -->
-	<link href="css/gestionarCanciones.css" rel="stylesheet" type="text/css">
+	<link href="css/gestionarPatron.css" rel="stylesheet" type="text/css">
 </head>
 <body style="overflow-x:hidden; overflow-y:hidden">
 	
@@ -37,22 +37,22 @@
 		<div class="div-contenedor">
 
 			<!-- Contenedor para buscar canciones-->
-			<div class="div-contenedor-canciones">
+			<div class="div-contenedor-patrones">
 				<div>
 					<input class="input-text"
 						   id="textFieldBuscador"
 						   type="text" 
-						   placeholder=" Canción ó Artista"/>
+						   placeholder=" Nombre del patrón"/>
 					
-					<input id="buttonRetornar" 
-						type="button" 
-						value="">
+					
+					<input id="buttonLimpiarTextField" 
+						   	type="button" 
+						   	value="">	
 				</div>
 				<!-- Contenedor para los resultados de la búsqueda-->
-				<div class="div-contenedor-canciones-resultados">
+				<div class="div-contenedor-patrones-resultados">
 					<div class="div-headers">
 						<label class="label" id="label1">Nombre:</label>
-						<label class="label" id="label2">Artista:</label>
 					</div>
 					<table class="tablaResultados" id="tabla">
 						<tbody class="tablaCuerpo" id="tablaCuerpo">
@@ -64,44 +64,17 @@
 			<!-- Contenedor del formulario para registrar una canción-->
 			<div class="div-contenedor-formulario">
 
-				<div><p><label class="label">Registrar canción:</label></p></div>
+				<div><p><label class="label">Registrar Usuario:</label></p></div>
 
 				<!-- Contenedor con los text fields del formulario-->
 				<div class="div-contenedor-formulario-textFields">
-						
-					<div>
-						<div class="div-iconos"></div>
-						<input class="input-text"
-							   id="textFieldCancion"
-							   type="text" 
-							   placeholder="Canción"/>
-					</div>
 					
 					<div>
-						<div class="div-iconos"></div>
+						<div class="div-iconos"></div>
 						<input class="input-text"
-							   id="textFieldArtista"
+							   id="textFieldNombre"
 							   type="text" 
-							   placeholder="Artista"/>
-						<div id="resultadosArtista" class="dropdown"></div>	
-					</div>
-					
-					<div>
-						<div class="div-iconos"></div>
-						<input class="input-text"
-							   id="textFieldGenero"
-							   type="text" 
-							   placeholder="Genero"/>
-						<div id="resultadosGenero" class="dropdown"></div>	
-					</div>
-					
-					<div>
-						<div class="div-iconos"></div>
-						<input class="input-text"
-							   id="textFieldCategoria"
-							   type="text" 
-							   placeholder="Categoría"/>
-						<div id="resultadosCategoria" class="dropdown"></div>	
+							   placeholder="Nombre del patrón"/>		
 					</div>
 				</div>
 
@@ -128,9 +101,6 @@
 	</div>
 	<!-- Script para reproducir particulas -->
 	<script src="resources/particles/particles.min.js"></script>
-    <script src="resources/particles/app.js"></script>d
-	<script src="scripts/llamadasApi.js"></script>
-	<script src="scripts/autocompletar.js"></script>
-	<script src="scripts/gestionarCanciones.js"></script>
+    <script src="resources/particles/app.js"></script>
 </body>
 </html>
