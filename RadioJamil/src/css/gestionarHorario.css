@@ -6,6 +6,7 @@ body{
 }
 
 /* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
+
 /* Clase principal de la que heredan todos los contenedores*/
 .div-contenedor{
 	height: 			90vh;
@@ -18,9 +19,8 @@ body{
 	justify-content: 	center;
 }
 
-
 /* Incluye el resultado de las canciones*/
-.div-contenedor-canciones{
+.div-contenedor-horarios{
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -30,9 +30,9 @@ body{
 }
 
 /* Incluye los resultados de la búsqueda */
-.div-contenedor-canciones-resultados{
+.div-contenedor-horarios-resultados{
 	height: 			65vh;
-	width: 				50vw;
+	width: 				30vw;
 	border-radius: 		15px;
 	background: 		#36393F;
 	box-shadow: 		inset 5px 5px 0px #313339,
@@ -43,6 +43,58 @@ body{
 	justify-content: 	center;
 	overflow-y: 		auto;
 }
+
+.div-contenedor-patrones-resultados{
+	height: 			65vh;
+	width: 				30vw;
+	border-radius: 		15px;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
+	/* Propiedades heredadas de contenedor */
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
+	overflow-y: 		auto;
+}
+
+
+/* Incluye el contenedor de la programación */
+.div-contenedor-programacion{
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	column;
+}
+
+/* Incluye la programación */
+.div-contenedor-programacion-label{
+	height: 			6vh;
+	width: 				40vw;
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+}
+
+/* Incluye el nombre de las canciones de la programación actual */
+.div-contenedor-programacion-tabla{
+	height: 			75vh;
+	width: 				40vw;
+	border-radius: 		15px;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
+	/* Propiedades heredadas de contenedor */
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
+	overflow-y: 		auto;
+}
+
 
 .div-contenedor-formulario{
 	/* Propiedades heredadas de contenedor */
@@ -55,7 +107,6 @@ body{
 
 /* Incluye el formulario para registrar una canción */
 .div-contenedor-formulario-textFields{
-	width: 				35vw;
 	flex-wrap: 			wrap;
 	flex-direction: 	row;
 }
@@ -100,8 +151,6 @@ body{
 .div-headers{
 	margin-top: 2%;
 }
-
-
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
 
 .label{
@@ -116,13 +165,23 @@ body{
 }
 
 #label2{
-	margin-left: 47%;
+	margin-left: 35%;
+}
+
+#label3{
+	margin-left: 1%;
+}
+
+#label4{
+	margin-left: 35%;
 }
 
 /* - - - - - - - - - - - - - - - -  - I M A G E N E S  Y  B O T O N E S - - - - - - - - - - - - - - - - - */
 
 /* Clase principal de la que heredan todos los botones*/
 .button{
+	height: 			5vh;
+	width: 				4vw;
 	outline: 			none;
 	border: 			none;
 	border-radius: 		50px;
@@ -131,12 +190,13 @@ body{
 				 		-5px -5px 0px #3b3f45;
 	/* Estilo de texto */
 	color: 				#b8b8b8;
-	font-size: 			3vh;
+	font-size: 			3.5vh;
 	/* Necesario para la animación */
   	cursor: 			pointer;
   	transition: 		all 0.3s ease-in-out;
+	/* Fuente de texto */
+	font-family: 		"Font Awesome 5 Free";
 }
-
 
 #buttonCerrarSesion{
 	border-color: 		transparent;
@@ -145,7 +205,7 @@ body{
 	width: 				2vw;
 	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
-	color: 				#FFFFFF
+	color: 				#FFFFFF;
 }
 
 #buttonMinimizar{
@@ -169,31 +229,7 @@ body{
 	color: 				#19FF25
 }
 
-
-#buttonCancelar{
-	height: 			5vh;
-	width: 				12vw;
-	margin-right: 		5%;
-	/* Fuete de texto */
-	font-family: 		"Font Awesome 5 Free";
-}
-
-#buttonRegistrar{
-	height: 			5vh;
-	width: 				12vw;
-	margin-right: 		5%;
-	/* Fuete de texto */
-	font-family: 		"Font Awesome 5 Free";
-}
-
-#buttonEliminar{
-	height: 			5vh;
-	width: 				12vw;
-	/* Fuete de texto */
-	font-family: 		"Font Awesome 5 Free";
-}
-
-#buttonRetornar{
+#buttonRetornarHorario{
 	border-color: 		transparent;
 	background-color: 	transparent;
 	height: 			3vh;
@@ -204,12 +240,38 @@ body{
 }
 
 
+#buttonRetornarPrograma{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#FFFFFF;
+}
+
+#buttonCancelar{
+	height: 			5vh;
+	width: 				11vw;
+	margin-right: 		10%;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+}
+
+#buttonCambiar{
+	height: 			5vh;
+	width: 				11vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+}
+
+
 /* - - - - - - - - - - - - - - - - - - - - - - - T E X T  F I E L D - - - - - - - - - - - - - - - - - - - */
 
 /* Clase principal de la que heredan todos los text field*/
 .input-text{
 	height: 			6vh;
-	width: 				29vw;
+	width: 				25vw;
 	border-radius: 		10px;
 	padding-left: 		1vw;
 	outline: 			none;
@@ -219,31 +281,29 @@ body{
 						inset -5px -5px 0px #3b3f45;
 	/* Estilo del texto ingresado */
 	color: 				#FFFFFF;
-	font-size: 			3vh;
+	font-size: 			2.5vh;
 }
 
 /* Estilo de texto mostrado */
 .input-text::placeholder{
 	color: 				#FFFFFF; 
-	font-size: 			3vh;
+	font-size: 			2.5vh;
 	font-family: 		"Font Awesome 5 Free";
 }
 
 
 /* - - - - - - - - - - - - - - - - - - - - A N I M A C I O N E S - - - - - - - - - - - - - - - - - - - - */
 
-/* - - - - - - - Animación - Botón del logo - - - - - - - */
 /* Hace saltar la imagen cuando el puntero está encima */
 .button:hover{
 	transform: scale(1.1);
 }
 
 /* Disparadores del efecto Shrink (Funciona al dar click) */
-.button-menu:active {
+.button:active {
   animation: shrink  0.6s ease;
   animation-iteration-count: 1;
 }
-
 .button:focus {
   animation: shrink  0.6s ease;
   animation-iteration-count: 1;
@@ -258,44 +318,3 @@ body{
     transform: scale(0.8);
   }
 }
-
-/* - - - - - - - - - - - - - - - - - - - - S C R O L L  B A R - - - - - - - - - - - - - - - - - - - - */
-
-*::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  *::-webkit-scrollbar-track {
-    display: none;
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: gray;
-    border-radius: 20px;
-    border: 1px solid gray;
-  }
-  *::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-
-  .dropdown {
-	border-radius: 20px;
-	display: none;
-	position: absolute;
-	background-color: #313339;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-  }
-
-/* Para cambiar la forma de cada elemento de los resultados */
-  .contenido-dropdown{
-	color: #FFFFFF;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-  }
-
-  .escondido{
-	display: none;
-  }

@@ -20,7 +20,7 @@ body{
 
 
 /* Incluye el resultado de las canciones*/
-.div-contenedor-canciones{
+.div-contenedor-patrones{
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
 	flex-wrap: 			inherit;
@@ -30,9 +30,9 @@ body{
 }
 
 /* Incluye los resultados de la búsqueda */
-.div-contenedor-canciones-resultados{
+.div-contenedor-patrones-resultados{
 	height: 			65vh;
-	width: 				50vw;
+	width: 				30vw;
 	border-radius: 		15px;
 	background: 		#36393F;
 	box-shadow: 		inset 5px 5px 0px #313339,
@@ -193,7 +193,7 @@ body{
 	font-family: 		"Font Awesome 5 Free";
 }
 
-#buttonRetornar{
+#buttonLimpiarTextField{
 	border-color: 		transparent;
 	background-color: 	transparent;
 	height: 			3vh;
@@ -209,7 +209,7 @@ body{
 /* Clase principal de la que heredan todos los text field*/
 .input-text{
 	height: 			6vh;
-	width: 				29vw;
+	width: 				25vw;
 	border-radius: 		10px;
 	padding-left: 		1vw;
 	outline: 			none;

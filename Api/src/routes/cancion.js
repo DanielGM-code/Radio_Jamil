@@ -24,7 +24,7 @@ router.route('/canciones')
                     res.status(400).json(err)
                     return
                 }
-                res.status(201).json(respuesta)
+                res.status(201).json({Mensaje : 'Registrado'})
             })
         }
         else{
@@ -49,22 +49,6 @@ router.route('/canciones/:id')
 
         })
     })
-    .patch((req, res) =>{
-        const cancion = req.body
-        if(cancionValida(cancion)){
-            cancionDAO.actualizar(req.params.id, cancion, (err, respuesta) =>{ 
-                if(err){
-                    console.log(err)
-                    res.status(400).json(err)
-                    return
-                }
-                res.status(201).json(respuesta)
-            })
-        }
-        else{
-            res.status(400).json({Mensaje : 'datos invalidos'})
-        }
-    })
     .delete((req, res) =>{
         cancionDAO.ajustarInactivo([req.params.id], (err, respuesta) =>{ 
             if(err){
@@ -77,13 +61,14 @@ router.route('/canciones/:id')
     });
 
 function cancionValida(cancion){
-    if(cancion.hasOwnProperty('nombre') 
+    if(cancion.hasOwnProperty('id') 
+    && cancion.hasOwnProperty('nombre') 
     && cancion.hasOwnProperty('idArtista') 
     && cancion.hasOwnProperty('idGenero') 
     && cancion.hasOwnProperty('idCategoria') 
-    && cancion.hasOwnProperty('referencia') 
-    && cancion.hasOwnProperty('esPeticion') 
-    && cancion.hasOwnProperty('diasReproduccion')){
+    && cancion.hasOwnProperty('nombreArtista') 
+    && cancion.hasOwnProperty('nombreGenero') 
+    && cancion.hasOwnProperty('nombreCategoria')){
         return true
     }
     return false

@@ -190,7 +190,7 @@ body{
 	width: 				2vw;
 	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
-	color: 				#DF0C0F
+	color: 				#FFFFFF
 }
 
 #buttonMinimizar{
@@ -246,6 +246,14 @@ body{
 #buttonCambiar{
 	height: 			5vh;
 	width: 				11vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+}
+
+#buttonAbrirGestionarHorario{
+	height: 			5vh;
+	width: 				13vw;
+	margin-top: 		3%;
 	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
 }
