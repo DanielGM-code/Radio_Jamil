@@ -131,7 +131,18 @@ function borrarCancion(){
 
 //Se ejecuta al cargar la página
 window.onload = () =>{
-    pedirCanciones().then(canciones => {
+    pedirCanciones().then(canciones =>{
+        return canciones.sort((x, y) =>{
+            if(x.nombre < y.nombre){
+                return -1
+            }
+            if(x.nombre > y.nombre){
+                return 1
+            }
+            return 0
+        })
+    })    
+    .then(canciones => {
         cargarItems(canciones)
         txtBuscador.addEventListener('input', evento =>{
             buscarEnTabla(canciones, evento.target.value)
