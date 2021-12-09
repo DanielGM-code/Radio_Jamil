@@ -65,15 +65,43 @@ function obtenerCancionesHorario(idHorario, callback) {
     })
 }
 
-function obtenerReporte(callback){
-    dbConnection.query('call SP_Read_All_Cancion_reporte()', (err, rows, fields) =>{
-        if(err){
-            return callback(err)
-        }
-        else{
-            callback(null, rows[0])
-        }
+function obtenerReporteActivas(){
+    return new Promise((resolve, reject) => {
+        dbConnection.query('call SP_Read_All_Cancion_reporte()', (err, rows, fields) =>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(rows[0])
+            }
+        })
     })
 }
 
-module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo, obtenerCancionesHorario, obtenerReporte}
+function obtenerReporteUsadas(){
+    return new Promise((resolve, reject) => {
+        dbConnection.query('call SP_Canciones_Utilizadas()', (err, rows, fields) =>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(rows[0])
+            }
+        })
+    })
+}
+
+function obtenerReporteNoUsadas(){
+    return new Promise((resolve, reject) => {
+        dbConnection.query('call SP_Canciones_No_Utilizadas()', (err, rows, fields) =>{
+            if(err){
+                reject(err)
+            }
+            else{
+                resolve(rows[0])
+            }
+        })
+    })
+}
+
+module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo, obtenerCancionesHorario, obtenerReporteActivas, obtenerReporteUsadas, obtenerReporteNoUsadas}
