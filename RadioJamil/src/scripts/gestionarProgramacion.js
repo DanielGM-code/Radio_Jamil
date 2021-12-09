@@ -87,7 +87,7 @@ function cargarItemsHorario(horarios) {
     horarios.forEach(horario => {
         var fila = tablaHorario.insertRow()
         var programa = fila.insertCell(0)
-        programa.innerHTML = horario.idPrograma
+        programa.innerHTML = horario.nombrePrograma
         var dia = fila.insertCell(1)
         dia.innerHTML = horario.dia
         var hora = fila.insertCell(2)
@@ -193,7 +193,7 @@ function limpiarCampos() {
 }
 
 function validarCampos() {
-    return idCancionReemplazo != 0
-        && horarioSeleccionado.id != 0
-        && cancionSeleccionada.id != 0
+    return idCancionReemplazo !== 0
+        && horarioSeleccionado.id !== 0
+        && cancionSeleccionada.id !== 0
 }

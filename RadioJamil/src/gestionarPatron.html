@@ -60,34 +60,31 @@
 					<div>
 						<div class="div-iconos"></div>
 						<input class="input-text"
-							   id="textFieldNombre"
+							   id="nombrePatron"
 							   type="text" 
 							   placeholder="Nombre del patrón"/>		
 					</div>
 				</div>
-				
-				<div><p><label class="label">Seleccionar categoría:</label></p></div>
-				
+								
+				<div>
+					<input class="input-text"
+						   id="textFieldCategoria"
+						   type="text" 
+						   placeholder="Nombre de la categoría"/>						
+					
+					<input id="buttonAgregarCategoria" 
+						   	type="button" 
+						   	value="">	
+					<div id="resultadosCategoria" class="dropdown"></div>	
+				</div>			
 				<div class="div-contenedor-categorias-resultados">
 					<div class="div-headers">
-						<label class="label" id="label2">Nombre categoría:</label>
+						<label class="label" id="label2">Categoría:</label>
 					</div>
 					<table class="tablaResultados" id="tablaCategoria">
 						<tbody class="tablaCuerpo" id="tablaCuerpoCateria">
 						</tbody>
 					</table>
-				</div>
-				
-				<div>
-					<input class="input-text"
-						   id="textFieldCategoria"
-						   type="text" 
-						   placeholder="Nombre de la categoría"/>
-					
-					
-					<input id="buttonAgregarCategoria" 
-						   	type="button" 
-						   	value="">	
 				</div>
 
 				<!-- Contenedor con los botones de registrar y cancelar-->
@@ -114,5 +111,10 @@
 	<!-- Script para reproducir particulas -->
 	<script src="resources/particles/particles.min.js"></script>
     <script src="resources/particles/app.js"></script>
+	<script src="scripts/api/general.js"></script>
+	<script src="scripts/api/patrones.js"></script>
+	<script src="scripts/api/otros.js"></script>
+	<script src="scripts/autocompletar.js"></script>
+	<script src="scripts/gestionarPatron.js"></script>
 </body>
 </html>

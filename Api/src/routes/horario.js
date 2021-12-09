@@ -24,5 +24,36 @@ router.route('/horarios')
             res.status(200).json({Mensaje : "Registro actualizado."})
         })
     })
+    .post((req, res) => {
+        var data = req.body
+        horarioDAO.guardar(data.id, data.dia, data.hora, data.idPrograma, data.idPatron, (err, respuesta) => {
+            if (err) {
+                console.log(err)
+                res.status(400).json(err)
+            }
+            res.status(201).json({Mensaje : "Registro exitoso."})
+        })
+    })
 
+router.route('/horarios/:id')
+    .get((req, res) => {
+        horarioDAO.obtenerHorario(req.params.id, (err, respuesta) => {
+            if (err) {
+                console.log(err)
+                res.status(400).json(err)
+            }
+            res.status(200).json(respuesta)
+        })
+    })
+    .delete((req, res) => {
+        horarioDAO.eliminar(req.params.id, (err, respeusta) => {
+            if (err) {
+                console.log(err)
+                res.status(400).json(err)
+            }
+            res.status(200).json({Mensaje : "Registro eliminado"})
+        })
+    })
+
+    
 module.exports = router
