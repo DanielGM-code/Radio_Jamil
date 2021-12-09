@@ -18,14 +18,16 @@ router.route('/canciones')
     .post((req, res) =>{
         const cancion = req.body
         if(cancionValida(cancion)){
-            cancionDAO.agregar(cancion, (err, respuesta) =>{
-                if(err){
-                    console.log(err)
-                    res.status(400).json(err)
-                    return
-                }
-                res.status(201).json(respuesta)
-            })
+            // cancionDAO.agregar(cancion, (err, respuesta) =>{
+            //     if(err){
+            //         console.log(err)
+            //         res.status(400).json(err)
+            //         return
+            //     }
+            //     res.status(201).json(respuesta)
+            // })
+            res.status(201).json(cancion)
+            console.log(cancion)
         }
         else{
             res.status(400).json({Mensaje : 'datos invalidos'})
