@@ -30,5 +30,17 @@ async function pedirCategorias(){
     const respuesta = await fetch('http://localhost:2610/categorias');
     const json = await respuesta.json();
     
-    return json
+    return json 
+}
+
+async function agregarCancion(cancion){
+    console.log(cancion)
+}
+
+async function editarCancion(cancion){
+    console.log(cancion)
+}
+
+async function eliminarCancion(cancionId){
+    console.log(cancionId)
 }

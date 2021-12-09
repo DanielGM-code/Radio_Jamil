@@ -45,7 +45,6 @@ function clickFila(idCancion){
     btnEliminar.style.display = 'block'
 
     pedirCancion(idCancion).then(cancion => {
-        console.log(cancion)
         txtCancion.value = cancion.nombre
         txtArtista.value = cancion.artista.nombre
         txtGenero.value = cancion.nombreGenero
@@ -105,18 +104,16 @@ function guardarCancion(){
     cancionSeleccionada.nombre = txtCancion.value
 
     if(cancionSeleccionada.id === 0){
-        console.log('Voy a registrar')
+        agregarCancion(cancionSeleccionada)
     }
     else{
-        console.log('Estoy editando')
+        editarCancion(cancionSeleccionada)
     }
-
-    console.log(cancionSeleccionada)
 }
 
-function eliminarCancion(){
+function borrarCancion(){
     if(cancionSeleccionada.id > 0){
-        console.log(`Estoy eliminando la cancion con id ${cancionSeleccionada.id}`)
+        eliminarCancion(cancionSeleccionada.id)
     }
 }
 
@@ -138,10 +135,6 @@ window.onload = () =>{
                 cancionSeleccionada.idArtista = 0
             }
         })
-
-        resultadosArtista.addEventListener('click', evento => {
-            clickCompletar(txtArtista, resultadosArtista, evento)
-        })  
     }) 
     
     pedirGeneros().then(generos => {
@@ -153,10 +146,6 @@ window.onload = () =>{
                 cancionSeleccionada.idGenero = 0
             }
         })
-
-        resultadosGenero.addEventListener('click', evento => {
-            clickCompletar(txtGenero, resultadosGenero, evento)
-        })  
     }) 
 
     pedirCategorias().then(categorias => {
@@ -167,11 +156,25 @@ window.onload = () =>{
             else{
                 cancionSeleccionada.idCategoria = 0
             }
-        })
+        }) 
+    })
 
-        resultadosCategoria.addEventListener('click', evento => {
-            clickCompletar(txtCategoria, resultadosCategoria, evento)
-        })  
+    txtCancion.addEventListener('input', evento =>{
+        if(!evento.target.value){
+            cancionSeleccionada.id = 0
+        }
+    })
+        
+    resultadosGenero.addEventListener('click', evento => {
+        clickCompletar(txtGenero, resultadosGenero, evento)
+    })  
+
+    resultadosArtista.addEventListener('click', evento => {
+        clickCompletar(txtArtista, resultadosArtista, evento)
+    })  
+
+    resultadosCategoria.addEventListener('click', evento => {
+        clickCompletar(txtCategoria, resultadosCategoria, evento)
     }) 
 
     btnCancelar.addEventListener('click', evento => {
@@ -183,6 +186,6 @@ window.onload = () =>{
     })
 
     btnEliminar.addEventListener('click', evento => {
-        eliminarCancion()
+        borrarCancion()
     })
 }
