@@ -19,10 +19,9 @@ var cancionSeleccionada = {
     idArtista: 0,
     idGenero: 0,
     idCategoria: 0,
-    referencia: 0,
-    estado: "activo",
-    esPeticion: null,
-    diasReproduccion: 1234567
+    nombreArtista: '',
+    nombreGenero: '',
+    nombreCategoria: ''
 }
 
 function cargarItems(items) {
@@ -43,6 +42,7 @@ function cargarItems(items) {
 function clickFila(idCancion){
     cancionSeleccionada.id = idCancion
     btnEliminar.style.display = 'block'
+    btnCancelar.style.display = 'block'
 
     pedirCancion(idCancion).then(cancion => {
         txtCancion.value = cancion.nombre
@@ -84,6 +84,7 @@ function buscarEnTabla(array, buscar){
 
 function reiniciarCampos(){
     btnEliminar.style.display = 'none'
+    btnCancelar.style.display = 'none'
 
     txtCancion.value = ''
     txtArtista.value = ''
@@ -102,12 +103,19 @@ function reiniciarCampos(){
 
 function guardarCancion(){
     cancionSeleccionada.nombre = txtCancion.value
+    cancionSeleccionada.nombreArtista = txtArtista.value
+    cancionSeleccionada.nombreGenero = txtGenero.value
+    cancionSeleccionada.nombreCategoria = txtCategoria.value
 
-    if(cancionSeleccionada.id === 0){
-        agregarCancion(cancionSeleccionada)
+    if(cancionSeleccionada.nombre === '' 
+    || cancionSeleccionada.nombreArtista === '' 
+    || cancionSeleccionada.nombreGenero === '' 
+    || cancionSeleccionada.nombreCategoria === ''){
+        window.alert("Los campos no pueden estar vacíos. Favor de verificar")
     }
     else{
-        editarCancion(cancionSeleccionada)
+        agregarCancion(cancionSeleccionada)
+        window.location.reload(true)
     }
 }
 
@@ -128,41 +136,38 @@ window.onload = () =>{
 
     pedirArtistas().then(artistas => {
         txtArtista.addEventListener('input', evento =>{
+            cancionSeleccionada.idArtista = 0
             if(evento.target.value){
                 autocompletar(artistas, evento.target.value, resultadosArtista, 'cancionSeleccionada.idArtista')
             }
             else{
-                cancionSeleccionada.idArtista = 0
+                resultadosArtista.style.display = 'none'
             }
         })
     }) 
     
     pedirGeneros().then(generos => {
         txtGenero.addEventListener('input', evento =>{
+            cancionSeleccionada.generos = 0
             if(evento.target.value){
                 autocompletar(generos, evento.target.value, resultadosGenero, 'cancionSeleccionada.idGenero')
             }
             else{
-                cancionSeleccionada.idGenero = 0
+                resultadosGenero.style.display = 'none'
             }
         })
     }) 
 
     pedirCategorias().then(categorias => {
         txtCategoria.addEventListener('input', evento =>{
+            cancionSeleccionada.idCategoria = 0
             if(evento.target.value){
                 autocompletar(categorias, evento.target.value, resultadosCategoria, 'cancionSeleccionada.idCategoria')
             }
             else{
-                cancionSeleccionada.idCategoria = 0
+                resultadosCategoria.style.display = 'none'
             }
         }) 
-    })
-
-    txtCancion.addEventListener('input', evento =>{
-        if(!evento.target.value){
-            cancionSeleccionada.id = 0
-        }
     })
         
     resultadosGenero.addEventListener('click', evento => {
