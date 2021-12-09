@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Gestionar canciones</title>
+	<!-- CDN FONT AWESOME -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- CSS MAIN -->
+	<link href="css/historialCambios.css" rel="stylesheet" type="text/css">
+</head>
+<body style="overflow-x:hidden; overflow-y:hidden">
+	
+	<!-- particles.js container -->
+	<div id="particles-js">
+
+		<div class="div-botones-cabecera">
+			<a href="menuPrincipal.html">
+			<input id="buttonCerrarSesion" 
+					type="button"
+					value="">
+			</a>
+		</div>
+
+		<!-- Ventana principal -->
+		<div class="div-contenedor">
+
+			<!-- Contenedor para buscar canciones-->
+			<div class="div-contenedor-cambios">
+				<div>
+					<input class="input-text"
+						   id="textFieldBuscador"
+						   type="text" 
+						   placeholder=" Cambio o Usuario"/>
+					
+					<input id="buttonLimpiarTextField" 
+						type="button" 
+						value="">
+				</div>
+				<!-- Contenedor para los resultados de la búsqueda-->
+				<div class="div-contenedor-cambios-resultados">
+					<div class="div-headers">
+						<label class="label" id="label1">Cambio:</label>
+						<label class="label" id="label2">Usuario:</label>
+					</div>
+					<table class="tablaResultados" id="tabla">
+						<tbody class="tablaCuerpo" id="tablaCuerpo">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Script para reproducir particulas -->
+	<script src="resources/particles/particles.min.js"></script>
+    <script src="resources/particles/app.js"></script>
+</body>
+</html>

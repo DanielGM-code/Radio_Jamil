@@ -1,0 +1,256 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background-color: 	#36393F;
+}
+
+/* - - - - - - - - - - - - - - - - - - - -C O N T E N E D O R E S - - - - - - - - - - - - - - - - - - - - */
+/* Clase principal de la que heredan todos los contenedores*/
+.div-contenedor{
+	height: 			90vh;
+	width: 				100vw;
+	position: 			fixed;
+	/* Propiedades de flexbox */
+	display: 			flex;
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
+}
+
+
+/* Incluye el resultado de las canciones*/
+.div-contenedor-cambios{
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	column;
+}
+
+/* Incluye los resultados de la búsqueda */
+.div-contenedor-cambios-resultados{
+	height: 			65vh;
+	width: 				50vw;
+	border-radius: 		15px;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
+	/* Propiedades heredadas de contenedor */
+	flex-wrap: 			nowrap;
+	align-items: 		center;
+	justify-content: 	center;
+	overflow-y: 		auto;
+}
+
+.div-contenedor-formulario{
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	column;
+}
+
+/* Incluye el formulario para registrar una canción */
+.div-contenedor-formulario-textFields{
+	width: 				35vw;
+	flex-wrap: 			wrap;
+	flex-direction: 	row;
+}
+
+.div-iconos{
+	width: 2vw;
+	margin-top: 		1.5%;
+	float:  			left;
+	/* Fuete de texto */
+	color: 				#FFFFFF; 
+	font-size: 			4vh;
+	font-family: 		"Font Awesome 5 Free";
+}
+
+.div-contenedor-botones{
+	margin-top: 		5%;
+	/* Propiedades heredadas de contenedor */
+	display: 			inherit;
+	flex-wrap: 			inherit;
+	align-items: 		inherit;
+	justify-content: 	inherit;
+	flex-direction: 	row;
+}
+
+.tablaResultados{
+	color: 			#FFFFFF;
+	margin-top: 	2%;
+	padding-left: 	3%;
+}
+
+/* Separación entre text fields */
+.div-contenedor input{
+	margin-bottom: 	5%;
+}
+
+/* Separación entre cada contenedor */
+.div-contenedor div{
+	margin-left: 	2%;
+	margin-right:   2%;
+}
+
+.div-headers{
+	margin-top: 2%;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
+
+.label{
+	margin-top: 			5%;
+	/* Estilo de texto */
+	color: 					#757575;
+	font-size: 				3.5vh;
+}
+
+#label1{
+	margin-left: 1%;
+}
+
+#label2{
+	margin-left: 47%;
+}
+
+/* - - - - - - - - - - - - - - - -  - I M A G E N E S  Y  B O T O N E S - - - - - - - - - - - - - - - - - */
+
+/* Clase principal de la que heredan todos los botones*/
+.button{
+	outline: 			none;
+	border: 			none;
+	border-radius: 		50px;
+	background: 		#36393F;
+	box-shadow:  		5px 5px 0px #313339,
+				 		-5px -5px 0px #3b3f45;
+	/* Estilo de texto */
+	color: 				#b8b8b8;
+	font-size: 			3vh;
+	/* Necesario para la animación */
+  	cursor: 			pointer;
+  	transition: 		all 0.3s ease-in-out;
+}
+
+
+#buttonCerrarSesion{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#FFFFFF;
+}
+
+#buttonLimpiarTextField{
+	border-color: 		transparent;
+	background-color: 	transparent;
+	height: 			3vh;
+	width: 				2vw;
+	/* Fuete de texto */
+	font-family: 		"Font Awesome 5 Free";
+	color: 				#FFFFFF;
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - - - - T E X T  F I E L D - - - - - - - - - - - - - - - - - - - */
+
+/* Clase principal de la que heredan todos los text field*/
+.input-text{
+	height: 			6vh;
+	width: 				29vw;
+	border-radius: 		10px;
+	padding-left: 		1vw;
+	outline: 			none;
+	border: 			none;
+	background: 		#36393F;
+	box-shadow: 		inset 5px 5px 0px #313339,
+						inset -5px -5px 0px #3b3f45;
+	/* Estilo del texto ingresado */
+	color: 				#FFFFFF;
+	font-size: 			3vh;
+}
+
+/* Estilo de texto mostrado */
+.input-text::placeholder{
+	color: 				#FFFFFF; 
+	font-size: 			3vh;
+	font-family: 		"Font Awesome 5 Free";
+}
+
+
+/* - - - - - - - - - - - - - - - - - - - - A N I M A C I O N E S - - - - - - - - - - - - - - - - - - - - */
+
+/* - - - - - - - Animación - Botón del logo - - - - - - - */
+/* Hace saltar la imagen cuando el puntero está encima */
+.button:hover{
+	transform: scale(1.1);
+}
+
+/* Disparadores del efecto Shrink (Funciona al dar click) */
+.button-menu:active {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+
+.button:focus {
+  animation: shrink  0.6s ease;
+  animation-iteration-count: 1;
+}
+
+/* Frames de la animación Shrink */
+@keyframes shrink {
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - S C R O L L  B A R - - - - - - - - - - - - - - - - - - - - */
+
+*::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    display: none;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 20px;
+    border: 1px solid gray;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .dropdown {
+	border-radius: 20px;
+	display: none;
+	position: absolute;
+	background-color: #313339;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+
+/* Para cambiar la forma de cada elemento de los resultados */
+  .contenido-dropdown{
+	color: #FFFFFF;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+
+  .escondido{
+	display: none;
+  }
