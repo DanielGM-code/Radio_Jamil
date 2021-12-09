@@ -11,11 +11,18 @@ const cuerpoTabla = document.getElementById('tablaCuerpo')
 
 const btnCancelar = document.getElementById('buttonCancelar')
 const btnAceptar = document.getElementById('buttonRegistrar')
+const btnEliminar = document.getElementById('buttonEliminar')
 
-var esRegistro = true
-var idArtista = 0;
-var idGenero = 0;
-var idCategoria = 0;
+var cancionSeleccionada = {
+    id: 0,
+    nombre: '',
+    idArtista: 0,
+    idGenero: 0,
+    idCategoria: 0,
+    nombreArtista: '',
+    nombreGenero: '',
+    nombreCategoria: ''
+}
 
 function cargarItems(items) {
     cuerpoTabla.innerHTML = ''
@@ -33,14 +40,23 @@ function cargarItems(items) {
 }
 
 function clickFila(idCancion){
+    cancionSeleccionada.id = idCancion
+    btnEliminar.style.display = 'block'
+    btnCancelar.style.display = 'block'
+
     pedirCancion(idCancion).then(cancion => {
         txtCancion.value = cancion.nombre
         txtArtista.value = cancion.artista.nombre
         txtGenero.value = cancion.nombreGenero
         txtCategoria.value = cancion.nombreCategoria
+        
+        cancionSeleccionada.nombre = cancion.nombre
+        cancionSeleccionada.idArtista = cancion.idArtista
+        cancionSeleccionada.idGenero = cancion.idGenero
+        cancionSeleccionada.idCategoria = cancion.idCategoria
+
     })
     .then( () => {
-        esRegistro = false
         btnCancelar.value = '  Limpiar'
         btnAceptar.value = '  Guardar'
     })
@@ -66,81 +82,130 @@ function buscarEnTabla(array, buscar){
     }
 }
 
+function reiniciarCampos(){
+    btnEliminar.style.display = 'none'
+    btnCancelar.style.display = 'none'
+
+    txtCancion.value = ''
+    txtArtista.value = ''
+    txtGenero.value = ''
+    txtCategoria.value = ''
+
+    cancionSeleccionada.id = 0
+    cancionSeleccionada.idArtista = 0
+    cancionSeleccionada.idGenero = 0
+    cancionSeleccionada.idCategoria = 0
+    cancionSeleccionada.nombre = ''
+
+    btnCancelar.value = '  Cancelar'
+    btnAceptar.value = '  Registrar'
+}
+
+function guardarCancion(){
+    cancionSeleccionada.nombre = txtCancion.value
+    cancionSeleccionada.nombreArtista = txtArtista.value
+    cancionSeleccionada.nombreGenero = txtGenero.value
+    cancionSeleccionada.nombreCategoria = txtCategoria.value
+
+    if(cancionSeleccionada.nombre === '' 
+    || cancionSeleccionada.nombreArtista === '' 
+    || cancionSeleccionada.nombreGenero === '' 
+    || cancionSeleccionada.nombreCategoria === ''){
+        window.alert("Los campos no pueden estar vacíos. Favor de verificar")
+    }
+    else{
+        agregarCancion(cancionSeleccionada).then(respuesta => {
+            window.location.reload(true)
+        })
+    }
+}
+
+function borrarCancion(){
+    if(cancionSeleccionada.id > 0){
+        eliminarCancion(cancionSeleccionada.id)
+            .then(respuesta => {
+                window.location.reload(true)
+            })
+    }
+}
+
 //Se ejecuta al cargar la página
 window.onload = () =>{
-    pedirCanciones().then(canciones => {
+    pedirCanciones().then(canciones =>{
+        return canciones.sort((x, y) =>{
+            if(x.nombre < y.nombre){
+                return -1
+            }
+            if(x.nombre > y.nombre){
+                return 1
+            }
+            return 0
+        })
+    })    
+    .then(canciones => {
         cargarItems(canciones)
         txtBuscador.addEventListener('input', evento =>{
             buscarEnTabla(canciones, evento.target.value)
         })
     })
 
-    pedirArtistas()/*.then(artistas => {
-        return artistas.map(artista => {
-            return artista.nombre
-        })
-    })*/
-    .then(artistas => {
+    pedirArtistas().then(artistas => {
         txtArtista.addEventListener('input', evento =>{
-            autocompletar(artistas, evento.target.value, resultadosArtista, 'idArtista')
+            cancionSeleccionada.idArtista = 0
+            if(evento.target.value){
+                autocompletar(artistas, evento.target.value, resultadosArtista, 'cancionSeleccionada.idArtista')
+            }
+            else{
+                resultadosArtista.style.display = 'none'
+            }
         })
-
-        resultadosArtista.addEventListener('click', evento => {
-            clickCompletar(txtArtista, resultadosArtista, evento)
-        })  
     }) 
     
-    pedirGeneros()/*.then(generos => {
-        return generos.map(genero => {
-            return genero.nombre
-        })
-    })*/
-    .then(generos => {
+    pedirGeneros().then(generos => {
         txtGenero.addEventListener('input', evento =>{
-            autocompletar(generos, evento.target.value, resultadosGenero, 'idGenero')
+            cancionSeleccionada.generos = 0
+            if(evento.target.value){
+                autocompletar(generos, evento.target.value, resultadosGenero, 'cancionSeleccionada.idGenero')
+            }
+            else{
+                resultadosGenero.style.display = 'none'
+            }
         })
-
-        resultadosGenero.addEventListener('click', evento => {
-            clickCompletar(txtGenero, resultadosGenero, evento)
-        })  
     }) 
 
-    pedirCategorias()/*.then(categorias => {
-        return categorias.map(categorias => {
-            return categorias.nombre
-        })
-    })*/
-    .then(categorias => {
+    pedirCategorias().then(categorias => {
         txtCategoria.addEventListener('input', evento =>{
-            autocompletar(categorias, evento.target.value, resultadosCategoria, 'idCategoria')
-        })
+            cancionSeleccionada.idCategoria = 0
+            if(evento.target.value){
+                autocompletar(categorias, evento.target.value, resultadosCategoria, 'cancionSeleccionada.idCategoria')
+            }
+            else{
+                resultadosCategoria.style.display = 'none'
+            }
+        }) 
+    })
+        
+    resultadosGenero.addEventListener('click', evento => {
+        clickCompletar(txtGenero, resultadosGenero, evento)
+    })  
 
-        resultadosCategoria.addEventListener('click', evento => {
-            clickCompletar(txtCategoria, resultadosCategoria, evento)
-        })  
+    resultadosArtista.addEventListener('click', evento => {
+        clickCompletar(txtArtista, resultadosArtista, evento)
+    })  
+
+    resultadosCategoria.addEventListener('click', evento => {
+        clickCompletar(txtCategoria, resultadosCategoria, evento)
     }) 
 
     btnCancelar.addEventListener('click', evento => {
-        txtCancion.value = ''
-        txtArtista.value = ''
-        txtGenero.value = ''
-        txtCategoria.value = ''
-
-        btnCancelar.value = '  Cancelar'
-        btnAceptar.value = '  Registrar'
-
-        esRegistro = true
+        reiniciarCampos()
     })
 
     btnAceptar.addEventListener('click', evento => {
-        if(esRegistro){
-            console.log('Voy a registrar')
-        }
-        else{
-            console.log('Estoy editando')
-        }
-        console.log(idArtista)
-        console.log(idGenero)
-        console.log(idCategoria)
+        guardarCancion()
+    })
+
+    btnEliminar.addEventListener('click', evento => {
+        borrarCancion()
     })
 }

@@ -8,13 +8,16 @@ function autocompletar(array, buscar, listaHTML, tipo){
 
     if(seleccionados.length > 0){
         seleccionados.map(item => listaHTML.innerHTML += `<p class="contenido-dropdown" onclick="${tipo}=${item.id}">${item.nombre}</p>`)
+        listaHTML.innerHTML += `<p class="contenido-dropdown" onclick="${tipo}=0">NUEVO REGISTRO...</p>`
         listaHTML.style.display = 'block'
     }
 }
 
 function clickCompletar(txtInput, cajaResultado, evento){
     if(evento.target && evento.target.nodeName == 'P'){
-        txtInput.value = evento.target.innerHTML
+        if(evento.target.innerHTML !== 'NUEVO REGISTRO...'){
+            txtInput.value = evento.target.innerHTML
+        }
         cajaResultado.innerHTML = ''
         cajaResultado.style.display = 'none'
     }

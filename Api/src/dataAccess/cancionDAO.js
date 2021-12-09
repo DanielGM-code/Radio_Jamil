@@ -14,13 +14,13 @@ function obtenerTodos(callback){
 }
 
 function agregar(cancion, callback){
-    dbConnection.query('call SP_Create_Cancion(?, ?, ?, ?, ?, ?, ?, @estado, @mensaje); SELECT @estado as estado, @mensaje as mensaje',
-        [cancion.nombre, cancion.idArtista, cancion.idGenero, cancion.idCategoria, cancion.referencia, cancion.esPeticion, cancion.diasReproduccion], (err, rows, fields) => {
+    dbConnection.query('call SP_Create_Cancion(?, ?, ?, ?, ?, ?, ?, ?)',
+        [cancion.id, cancion.nombre, cancion.idArtista, cancion.idGenero, cancion.idCategoria, cancion.nombreArtista, cancion.nombreGenero, cancion.nombreCategoria], (err, rows, fields) => {
             if(err){
                 callback(err)
             }
             else{
-                callback(null, rows[1][0])
+                callback(null, rows)
             }
         })
 }
@@ -45,18 +45,6 @@ function obtener(id, callback){
     })
 }
 
-function actualizar(id, cancion, callback){
-    dbConnection.query('call SP_Update_Cancion(?, ?, ?, ?, ?, ?, ?, ?, @estado, @Mensaje); SELECT @estado as estado, @mensaje as mensaje',
-    [id, cancion.nombreCancion, cancion.idArtista, cancion.idGenero, cancion.idCategoria, cancion.referencia, cancion.esPeticion, cancion.diasReproduccion],(err, rows, fields) => {
-        if(err){
-            callback(err)
-        }
-        else{
-            callback(null, rows[1][0])
-        }
-    })
-}
-
 function ajustarInactivo(id, callback){
     dbConnection.query('call SP_Delete_Cancion(?)', [id], (err, rows, fields) => {
         if(err){
@@ -68,4 +56,4 @@ function ajustarInactivo(id, callback){
     })
 }
 
-module.exports = {obtenerTodos, agregar, obtener, actualizar, ajustarInactivo}
+module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo}
