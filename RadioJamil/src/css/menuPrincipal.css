@@ -19,21 +19,14 @@ body{
 	justify-content: 	center;
 }
 
-
-.div-botones-cabecera{
-	position: 			relative;
-	height: 			4vh;
-	width: 				2vw;
-}
-
 /* Incluye el contenedor de los botones del menú principal */
 .div-contenedor-botones{
 	/* Propiedades heredadas de contenedor */
 	display: 			inherit;
-	flex-wrap: 			inherit;
+	flex-wrap: 			wrap;
 	align-items: 		inherit;
-	justify-content: 	inherit;
-	flex-direction: 	column;
+	justify-content: 	space-around;
+	flex-direction: 	row;
 }
 
 /* Incluye el contenedor de la programación actual */
@@ -71,16 +64,16 @@ body{
 	overflow-y: 		auto;
 }
 
-/* Separación entre los botones */
-.div-contenedor-botones input{
-	margin-top: 	6%;
-	margin-bottom: 	6%;
-}
-
 /* Separación entre cada contenedor */
 .div-contenedor div{
 	margin-left: 	2%;
 	margin-right:   2%;
+}
+
+.div-contenedor-botones input{
+	margin-right: 10%;
+	margin-bottom: 20%;
+	margin-top:  20%;
 }
 
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
@@ -117,11 +110,11 @@ body{
 
 /* Clase principal de la que heredan todos los botones*/
 .button{
-	height: 			10vh;
-	width: 				30vw;
+	height: 			20vh;
+	width: 				20vw;
 	outline: 			none;
 	border: 			none;
-	border-radius: 		50px;
+	border-radius: 		30px;
 	background: 		#36393F;
 	box-shadow:  		5px 5px 0px #313339,
 				 		-5px -5px 0px #3b3f45;
@@ -131,17 +124,7 @@ body{
 	/* Necesario para la animación */
   	cursor: 			pointer;
   	transition: 		all 0.3s ease-in-out;
-}
-
-#buttonCerrarSesion{
-	border-color: 		transparent;
-	background-color: 	transparent;
-	height: 			5vh;
-	width: 				5vw;
-	/* Fuete de texto */
 	font-family: 		"Font Awesome 5 Free";
-	color: 				#FFFFFF;
-	font-size: 			4vh;
 }
 
 
