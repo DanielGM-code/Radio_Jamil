@@ -6,6 +6,10 @@ async function pedirCancion(id){
     return await apiGet(`/canciones/${id}`)
 }
 
+async function pedirCancionesHorario(id){
+    return await apiGet(`/cancioneshorario/${id}`)
+}
+
 async function pedirArtistas(){
     return await apiGet('/artistas')
 }
@@ -19,17 +23,9 @@ async function pedirCategorias(){
 }
 
 async function agregarCancion(cancion){
-    console.log('Agregando')
-    console.log(cancion)
-
     apiPost(cancion, '/canciones')
 }
 
-async function editarCancion(cancion){
-    console.log('Editando')
-    console.log(cancion)
-}
-
-async function eliminarCancion(cancionId){
-    console.log(cancionId)
+async function eliminarCancion(id){
+    return await apiDelete(`/canciones/${id}`)
 }

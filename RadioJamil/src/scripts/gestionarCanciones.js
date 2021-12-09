@@ -122,6 +122,9 @@ function guardarCancion(){
 function borrarCancion(){
     if(cancionSeleccionada.id > 0){
         eliminarCancion(cancionSeleccionada.id)
+            .then(respuesta => {
+                window.location.reload(true)
+            })
     }
 }
 

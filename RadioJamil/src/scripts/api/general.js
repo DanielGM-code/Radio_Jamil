@@ -11,3 +11,12 @@ function apiPost(objeto, subruta){
     post.setRequestHeader('Content-Type', 'application/json')
     post.send(JSON.stringify(objeto))
 }
+
+async function apiDelete(subruta){
+    rutaAPI.concat(subruta)
+    var respuesta = await fetch(rutaAPI.concat(subruta), {
+        method: 'DELETE',
+    })
+    
+    return await respuesta.json();
+}
