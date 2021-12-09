@@ -100,6 +100,12 @@ function guardarPatron(){
         agregarPatron(patronSeleccionado).then(respuesta => 
             guardarCategoriaPatron(respuesta.id, categoriasPatron))
         .then(respuesta => {
+            if(patronSeleccionado.id === 0){
+                window.alert("El patrón se ha registrado correctamente")
+            }
+            else{
+                window.alert("Se han guardado los cambios a patrón.")
+            }
             window.location.reload(true)
         })
     }
@@ -109,6 +115,9 @@ function borrarPatron(){
     if(patronSeleccionado.id > 0){
         eliminarPatron(patronSeleccionado.id)
             .then(respuesta => {
+                if(respuesta){
+                    window.alert("El patrón se ha borrado exitosamente.")
+                }
                 window.location.reload(true)
             })
     }

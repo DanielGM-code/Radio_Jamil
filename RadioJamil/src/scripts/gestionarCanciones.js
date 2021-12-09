@@ -115,6 +115,12 @@ function guardarCancion(){
     }
     else{
         agregarCancion(cancionSeleccionada).then(respuesta => {
+            if(cancionSeleccionada.id === 0){
+                window.alert("La canción se ha registrado correctamente")
+            }
+            else{
+                window.alert("La canción se ha editado correctamente")
+            }
             window.location.reload(true)
         })
     }
@@ -122,10 +128,12 @@ function guardarCancion(){
 
 function borrarCancion(){
     if(cancionSeleccionada.id > 0){
-        eliminarCancion(cancionSeleccionada.id)
-            .then(respuesta => {
-                window.location.reload(true)
-            })
+        eliminarCancion(cancionSeleccionada.id).then(respuesta => {
+            if(respuesta){
+                window.alert("La canción se ha borrado correctamente")
+            }
+            window.location.reload(true)
+        })
     }
 }
 
