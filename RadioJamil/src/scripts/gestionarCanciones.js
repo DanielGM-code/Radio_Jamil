@@ -1,4 +1,5 @@
 const txtBuscador = document.getElementById('textFieldBuscador')
+const btnLimpiarCampo = document.getElementById('buttonLimpiarCampo')
 
 const txtCancion = document.getElementById('textFieldCancion')
 const resultadosArtista = document.getElementById('resultadosArtista')
@@ -144,7 +145,12 @@ window.onload = () =>{
     })    
     .then(canciones => {
         cargarItems(canciones)
+
         txtBuscador.addEventListener('input', evento =>{
+            buscarEnTabla(canciones, evento.target.value)
+        })
+        btnLimpiarCampo.addEventListener('click', evento => {
+            txtBuscador.value = ''
             buscarEnTabla(canciones, evento.target.value)
         })
     })

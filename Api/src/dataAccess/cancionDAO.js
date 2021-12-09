@@ -56,4 +56,13 @@ function ajustarInactivo(id, callback){
     })
 }
 
-module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo}
+function obtenerCancionesHorario(idHorario, callback) {
+    dbConnection.query('call SP_Read_Canciones_Horario(?)', [idHorario], (err, rows, fields) => {
+        if (err) {
+            callback(err)
+        }
+        callback(null, rows[0])
+    })
+}
+
+module.exports = {obtenerTodos, agregar, obtener, ajustarInactivo, obtenerCancionesHorario}

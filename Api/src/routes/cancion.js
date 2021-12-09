@@ -60,6 +60,18 @@ router.route('/canciones/:id')
         })
     });
 
+router.route('/cancioneshorario/:id')
+    .get((req, res) => {
+        cancionDAO.obtenerCancionesHorario(req.params.id, (err, respuesta) => {
+            if (err) {
+                console.log(err)
+                res.status(400).json(err)
+                return
+            }
+            res.status(201).json(respuesta)
+        })
+    })
+
 function cancionValida(cancion){
     if(cancion.hasOwnProperty('id') 
     && cancion.hasOwnProperty('nombre') 
