@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "package-linux": "electron-packager . --overwrite --asar=true --platform=linux --arch=x64 --prune=true --out=out",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=x64 --prune=true --out=out",
+    "package-mac-arm": "electron-packager . --overwrite --asar=true --platform=mas --arch=arm64 --prune=true --out=out",
+    "package-debian": "electron-installer-debian --src out/socket-linux-x64/ --arch amd64 --dest out"
   },
   "author": "",
   "license": "ISC",
