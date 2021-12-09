@@ -2,11 +2,11 @@ const express = require("express");
 const path = require('path');
 const router = express.Router();
 
-const cancionDAO = require(path.join(path.resolve(__dirname, '..'), 'dataAccess', 'cancionDAO.js'))
+const patronDAO = require(path.join(path.resolve(__dirname, '..'), 'dataAccess', 'patronDAO.js'))
 
-router.route('/canciones')
+router.route('/patrones')
     .get((req, res) =>{ 
-        cancionDAO.obtenerTodos((err, respuesta) =>{ 
+        patronDAO.obtenerTodos((err, respuesta) =>{ 
             if(err){
                 console.log(err)
                 res.status(400).json(err)
@@ -16,15 +16,15 @@ router.route('/canciones')
         })
     })
     .post((req, res) =>{
-        const cancion = req.body
-        if(cancionValida(cancion)){
-            cancionDAO.agregar(cancion, (err, respuesta) =>{
+        const patron = req.body
+        if(patron.hasOwnProperty('nombre')){
+            patronDAO.agregar(patron, (err, respuesta) =>{
                 if(err){
                     console.log(err)
                     res.status(400).json(err)
                     return
                 }
-                res.status(201).json({Mensaje : 'Registrado'})
+                res.status(201).json(respuesta)
             })
         }
         else{
@@ -32,9 +32,9 @@ router.route('/canciones')
         }
     });
 
-router.route('/canciones/:id')
+router.route('/patrones/:id')
     .get((req, res) =>{
-        cancionDAO.obtener(req.params.id,(err, respuesta) =>{
+        patronDAO.obtener(req.params.id,(err, respuesta) =>{
             if(err){
                 console.log(err)
                 res.status(400).json(err)
@@ -44,13 +44,13 @@ router.route('/canciones/:id')
                 res.status(200).json(respuesta)
             }
             else{
-                res.status(404).json({Mensaje : 'Cancion no encontrada'})
+                res.status(404).json({Mensaje : 'Artista no encontrada'})
             }
 
         })
     })
     .delete((req, res) =>{
-        cancionDAO.ajustarInactivo([req.params.id], (err, respuesta) =>{ 
+        patronDAO.ajustarInactivo([req.params.id], (err, respuesta) =>{ 
             if(err){
                 console.log(err)
                 res.status(400).json(err)
@@ -60,30 +60,31 @@ router.route('/canciones/:id')
         })
     });
 
-router.route('/cancioneshorario/:id')
-    .get((req, res) => {
-        cancionDAO.obtenerCancionesHorario(req.params.id, (err, respuesta) => {
-            if (err) {
+router.route('/patronCategoria')
+    .post((req, res) =>{
+        const patron = req.body.idPatron
+        const arrayCategorias = req.body.categorias
+
+        patronDAO.agregarCategoria(patron, arrayCategorias, (err, respuesta) =>{
+            if(err){
                 console.log(err)
                 res.status(400).json(err)
                 return
             }
-            res.status(201).json(respuesta)
+            res.status(201).json({Mensaje: 'Categorias registradas'})
+        })
+    });
+
+router.route('/patronCategoria/:id')
+    .get((req, res) =>{ 
+        patronDAO.obtenerCategorias(req.params.id, (err, respuesta) =>{ 
+            if(err){
+                console.log(err)
+                res.status(400).json(err)
+                return
+            }
+            res.status(200).json(respuesta)
         })
     })
-
-function cancionValida(cancion){
-    if(cancion.hasOwnProperty('id') 
-    && cancion.hasOwnProperty('nombre') 
-    && cancion.hasOwnProperty('idArtista') 
-    && cancion.hasOwnProperty('idGenero') 
-    && cancion.hasOwnProperty('idCategoria') 
-    && cancion.hasOwnProperty('nombreArtista') 
-    && cancion.hasOwnProperty('nombreGenero') 
-    && cancion.hasOwnProperty('nombreCategoria')){
-        return true
-    }
-    return false
-}
 
 module.exports = router

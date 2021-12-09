@@ -14,6 +14,19 @@ async function apiPost(objeto, subruta){
           },
           body: JSON.stringify(objeto)
     })
+    
+    return await respuesta.json();
+}
+
+async function apiPatch(objeto, subruta) {
+    var respuesta = await fetch(rutaAPI.concat(subruta), {
+        method: 'PATCH',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(objeto)
+    })
     return await respuesta.json();
 }
 

@@ -111,11 +111,11 @@ body{
 	font-size: 				3.5vh;
 }
 
-#label1{
+.label1{
 	margin-left: 1%;
 }
 
-#label2{
+.label2{
 	margin-left: 47%;
 }
 
@@ -195,7 +195,7 @@ body{
 	font-family: 		"Font Awesome 5 Free";
 }
 
-#buttonRetornar{
+#buttonLimpiarCampo{
 	border-color: 		transparent;
 	background-color: 	transparent;
 	height: 			3vh;

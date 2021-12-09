@@ -136,30 +136,54 @@ body{
 .div-headers{
 	margin-top: 2%;
 }
+
+.tablaResultados label{
+    color:             #FFFFFF;
+    margin-top:     2%;
+    padding-right:     10%;
+}
+
+.dropdown {
+	border-radius: 20px;
+	display: none;
+	position: absolute;
+	background-color: #313339;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+  }
+
 /* - - - - - - - - - - - - - - - - - - - - - - - L A B E L S -  - - - - - - - - - - - - - - - - - - - - - */
 
 .label{
 	margin-top: 			5%;
 	/* Estilo de texto */
 	color: 					#757575;
-	font-size: 				3.5vh;
+	font-size: 				2.5vh;
 }
 
 #label1{
-	margin-left: 1%;
+	margin-left: 5%;
+	margin-right: 20%;
 }
 
 #label2{
-	margin-left: 35%;
+	margin-left: 5%;
 }
 
 #label3{
-	margin-left: 1%;
+	margin-left: 5%;
 }
 
 #label4{
-	margin-left: 35%;
+	margin-left: 5%;
+	margin-right: 20%;
 }
+
+#label5{
+	margin-left: 5%;
+}
+
 
 /* - - - - - - - - - - - - - - - -  - I M A G E N E S  Y  B O T O N E S - - - - - - - - - - - - - - - - - */
 
@@ -214,7 +238,7 @@ body{
 	color: 				#19FF25
 }
 
-#buttonRetornarHorario{
+#buttonLimpiarTextFieldHorario{
 	border-color: 		transparent;
 	background-color: 	transparent;
 	height: 			3vh;
@@ -225,7 +249,7 @@ body{
 }
 
 
-#buttonRetornarCancion{
+#buttonLimpiarTextFieldCancion{
 	border-color: 		transparent;
 	background-color: 	transparent;
 	height: 			3vh;
@@ -235,7 +259,7 @@ body{
 	color: 				#FFFFFF;
 }
 
-#buttonCancelar{
+#buttonQuitar{
 	height: 			5vh;
 	width: 				11vw;
 	margin-right: 		10%;
