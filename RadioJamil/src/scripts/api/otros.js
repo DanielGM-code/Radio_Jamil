@@ -24,3 +24,7 @@ async function guardarCategoriaPatron(idPatron, categorias){
 async function obtenerCategoriaPatron(idPatron){
     return await apiGet(`/patronCategoria/${idPatron}`)
 }
+
+async function generarReportes(){
+    await apiPost({id: ''},'/reportes')
+}
